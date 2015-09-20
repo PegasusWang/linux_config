@@ -1,0 +1,329 @@
+"for paste
+set pastetoggle=<F2>
+"for mac os crontab
+autocmd filetype crontab setlocal nobackup nowritebackup
+map <M-s> :w<kEnter>  "Works in normal mode, must press Esc first"
+imap <M-s> <Esc>:w<kEnter>i "Works in insert mode, saves and puts back in insert mode"
+autocmd BufWritePre * :%s/\s\+$//ge
+ab __main__ if __name__ == '__main__':
+set undofile
+set undodir=~/.Vim_undodir
+set undolevels=1000
+
+set guifont=Monaco:h16
+set backupdir=~/.Vimbackup
+"set cursorline
+setlocal textwidth=80
+set tags=tags
+set autochdir
+autocmd BufRead,BufNewFile *.py set et ts=4 sw=4 sts=4
+set nocompatible
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set cindent
+set nu
+if has('gui_running')
+    set background=dark
+else
+    set background=dark
+endif
+"colorscheme solarized
+
+" 配置多语言环境
+if has("multi_byte")
+" UTF-8 编码
+set encoding=utf-8
+set termencoding=utf-8
+set formatoptions+=mM
+set fencs=utf-8,gbk
+
+if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
+set ambiwidth=double
+endif
+
+if has("win32")
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_CN.utf-8
+endif
+else
+echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+endif
+
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+" set the menu & the message to English
+set langmenu=en_US
+let $LANG= 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+"turn off vim compatible check
+set nocompatible
+"check file type
+set completeopt=longest,menu
+"histroy line count
+set history=1000
+"set background
+set autoindent
+set smartindent
+"show match '(' and ')'
+set showmatch
+"left-down status line
+set ruler
+"auto match targets
+set incsearch
+"high light search
+set hlsearch
+"auto backup file with filename+~
+"set backup
+set title
+set foldenable
+"fold code by syntax 'cmd':
+"'zi' open/close all folds
+"'za' open/close current fold
+"'zM' close all folds
+"'zR' open all folds
+set foldmethod=indent
+"set foldmethod=marker
+"set foldmethod=indent
+set foldcolumn=0
+set foldopen=all
+"set foldclose=all
+"colorscheme evening
+"set cinoptions+={2,0,p0,t0
+set cindent
+set formatoptions=tcqr
+set nu
+function MyTitle()
+ call setline(1,"/**************************************")
+ call append(line("."),  "Author  : Pegasus Wang")
+ call append(line(".")+1,"Time    :".strftime("%c"))
+ call append(line(".")+2,"FileName:".expand("%"))
+ call append(line(".")+3,"Desc    :")
+ call append(line(".")+4,"*************************************/")
+endf
+"add header
+map <F9> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o<Esc>
+function CppFramework()
+ call setline(8,"#include <iostream>")
+ call setline(9,"#include <cstdio>")
+ call setline(10,"#include <cmath>")
+ call setline(11,"#include <algorithm>")
+ call setline(12,"using namespace std;")
+ call setline(13,"int main()")
+ call setline(14,"{")
+ call setline(15,"    return 0;")
+ call setline(16,"}")
+endf
+"add cpp framework
+map <F10> <Esc>:call CppFramework()<CR><Esc>:$<Esc>2ko
+function AddComment()
+ if &syntax=="cpp" || &syntax=="c"
+  execute "normal \<Esc>\<S-$>a\<TAB>/* */\<Esc>2ha"
+ elseif &syntax=="py"
+  execute "normal \<Esc>\<S-$>a\<TAB>#\<Esc>2ha"
+ elseif &syntax=="lua"
+  execute "normal \<Esc>\<S-$>a\<TAB>--\<Esc>2ha"
+ endif
+endf
+"add comment
+map <F4> <Esc>:call AddComment()<CR>i
+function CommOneLine()
+ let tmp=getline(".")
+ call setline(line("."),"/*")
+ call append(line("."),"".tmp." //by Pegasus ".strftime("%c"))
+ call append(line(".")+1," */")
+endf
+map <F5> <Esc>:call CommOneLine()<CR><ESC>
+"foramt code with K&R style
+map <F8> <Esc>:1,$g/^$/d<CR><Esc>gg=G<Esc>gg
+let Tlist_Ctags_Cmd='/usr/local/bin/Ctags'
+"map <F7> <Esc>:<CR>
+"nnoremap <silent><F7> :WMToggle<CR>
+let Tlist_Show_One_File = 1 " 不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1 " 如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1 " 在右侧窗口中显示taglist窗口
+let Tlist_File_Fold_Auto_Close=1 " 自动折叠当前非编辑文件的方法列表
+let Tlist_Auto_Open = 0
+let Tlist_Auto_Update = 1
+let Tlist_Hightlight_Tag_On_BufEnter = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Process_File_Always = 1
+let Tlist_Display_Prototype = 0
+let Tlist_Compact_Format = 1
+let Tlist_Use_Right_Window = 0
+nnoremap tg :!/usr/local/bin/ctags -R *<CR>
+nnoremap wm :WMToggle<cr>
+nnoremap gc :!gcc -Wall -g -o %:r %<cr>
+"nnoremap gp :!g++ -Wall -g -o %:r %<cr>
+nnoremap py :!python %<cr>
+nnoremap no :!node %<cr>
+"nnoremap gd :!sudo gdb %:r<cr>
+nnoremap ma :!make<cr>
+nnoremap ex :!./%:r<cr>
+"nnoremap tg :Tlist<cr>
+"let g:winManagerWindowLayout='FileExplorer'
+let g:winManagerWindowLayout = 'FileExplorer,BufExplorer|TagList'
+
+"big header
+map <F11> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o<Esc>
+function BigCppFramework()
+ call setline(8,"#include <iostream>")
+ call setline(9,"#include <cstdio>")
+ call setline(10,"#include <string>")
+ call setline(11,"#include <cstring>")
+ call setline(12,"#include <vector>")
+ call setline(13,"#include <list>")
+ call setline(14,"#include <deque>")
+ call setline(15,"#include <map>")
+ call setline(16,"#include <set>")
+ call setline(17,"#include <stack>")
+ call setline(18,"#include <queue>")
+ call setline(19,"#include <algorithm>")
+ call setline(20,"#include <functional>")
+ call setline(21,"#include <cmath>")
+ call setline(22,"#include <cstdlib>")
+ call setline(23,"#include <ctime>")
+ call setline(24,"using namespace std;")
+ call setline(25,"int main()")
+ call setline(26,"{")
+ call setline(27,"#ifndef ONLINE_JUDGE")
+ call setline(28,"    freopen(\"in.txt\", \"r\", stdin);")
+ call setline(29,"#endif")
+ call setline(30,"    return 0;")
+ call setline(31,"}")
+endf
+"add cpp framework
+map <F12> <Esc>:call BigCppFramework()<CR><Esc>:$<Esc>2ko
+function BigAddComment()
+ if &syntax=="cpp" || &syntax=="c"
+  execute "normal \<Esc>\<S-$>a\<TAB>/* */\<Esc>2ha"
+ elseif &syntax=="py"
+  execute "normal \<Esc>\<S-$>a\<TAB>#\<Esc>2ha"
+ elseif &syntax=="lua"
+  execute "normal \<Esc>\<S-$>a\<TAB>--\<Esc>2ha"
+ endif
+endf
+
+
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'moll/vim-node'
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+"
+" "my Bundle here:
+" "
+" " original repos on github
+" Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+Bundle 'mattn/emmet-vim'
+" Bundle 'sjl/gundo.vim'
+Bundle 'Valloric/ListToggle'
+Bundle 'SirVer/ultisnips'
+Bundle 'scrooloose/syntastic'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+"Bundle 'klen/python-mode'
+Bundle 'TFenby/python-mode'
+
+"Bundle 'Valloric/YouCompleteMe'
+" Bundle 't9md/vim-quickhl'
+" Bundle 'scrooloose/nerdcommenter'
+" "..................................
+" " vim-scripts repos
+" Bundle 'YankRing.vim'
+" Bundle 'vcscommand.vim'
+" Bundle 'ShowPairs'
+" Bundle 'SudoEdit.vim'
+" Bundle 'EasyGrep'
+" Bundle 'VOoM'
+" Bundle 'VimIM'
+" "..................................
+" " non github repos
+" " Bundle 'git://git.wincent.com/command-t.git'
+" "......................................
+
+syntax enable
+filetype plugin indent on
+
+
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+" Override run current python file key shortcut to Ctrl-Shift-e
+let g:pymode_urn=1
+let g:pymode_run_bind = "<C-S-e>"
+
+" Override view python doc key shortcut to Ctrl-Shift-d
+let g:pymod_doc=1
+let g:pymode_doc_bind = "<C-S-d>"
+
+let g:pymode_rope = 0
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope_lookup_project = 0
+
+autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
+"新建.py,.cc,.java,.sh,
+"定义函数SetTitle，自动插入文件头
+func SetTitle()
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python")
+        call setline(2, "\# -*- coding:utf-8 -*-")
+        normal G
+        normal o
+        normal o
+        call setline(5, "if __name__ == '__main__':")
+        call setline(6, "    main()")
+
+    endif
+    if &filetype == 'java'
+        call setline(1, "//coding=utf8")
+        call setline(2, "/*************************************************************************")
+        call setline(3, "\ @Author: waleking")
+        call setline(4, "\ @Created Time : ".strftime("%c"))
+        call setline(5, "")
+        call setline(6, "\ @File Name: ".expand("%"))
+        call setline(7, "\ @Description:")
+        call setline(8, "")
+        call setline(9, " ************************************************************************/")
+        call setline(10,"")
+    endif
+endfunc
