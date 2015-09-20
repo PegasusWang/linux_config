@@ -1,0 +1,71 @@
+nnoremap py :!python %<cr>
+set nu
+set ts=4
+set sw=4
+set expandtab
+syntax on
+set hls
+set cindent
+set autoindent
+
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Plugin 'mattn/emmet-vim'
+Bundle 'gmarik/vundle'
+
+"my Bundle here:
+"
+" original repos on github
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'pangloss/vim-javascript'
+Bundle 'moll/vim-node'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+"Bundle 'sjl/gundo.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'klen/python-mode'
+"Bundle 'Valloric/ListToggle'
+"Bundle 'SirVer/ultisnips'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+"Bundle 't9md/vim-quickhl'
+" Bundle 'Lokaltog/vim-powerline'
+"Bundle 'scrooloose/nerdcommenter'
+"..................................
+" vim-scripts repos
+"Bundle 'YankRing.vim'
+"Bundle 'vcscommand.vim'
+Bundle 'ShowPairs'
+"Bundle 'SudoEdit.vim'
+"Bundle 'EasyGrep'
+"Bundle 'VOoM'
+"Bundle 'VimIM'
+"..................................
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+"......................................
+
+filetype plugin indent on
+function HeaderPython()
+    call setline(1, "#!/usr/bin/env python")
+    call append(1, "# -*- coding: utf-8 -*-")
+    normal G
+    normal o
+    normal o
+    call setline(5, "if __name__ == '__main__':")
+    call setline(6, "    main()")
+endf
+
+autocmd bufnewfile *.py call HeaderPython()
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+" Override run current python file key shortcut to Ctrl-Shift-e
+let g:pymode_run_bind = "<C-S-e>"
+
+" Override view python doc key shortcut to Ctrl-Shift-d
+let g:pymode_doc_bind = "<C-S-d>"
