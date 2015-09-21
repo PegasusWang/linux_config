@@ -1,0 +1,160 @@
+#for zhcnutf8
+sudo locale-gen 
+sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
+sudo vim /etc/environment
+LC_ALL=”zh_CN.UTF-8″
+sudo dpkg-reconfigure locales
+
+#for ubuntu
+sudo apt-get update
+sudo apt-get install vim
+sudo apt-get install git
+sudo apt-get install curl
+sudo apt-get install tmux
+sudo apt-get install build-essential
+sudo apt-get install zsh git wget
+sudo apt-get install silversearcher-ag
+sudo apt-get install gnome-tweak-tool
+sudo apt-get install trash-cli
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+chsh -s /bin/zsh
+sudo apt-get install nautilus-open-terminal
+nautilus -q
+
+
+
+#for python
+export EDITOR=vi
+export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
+sudo apt-get install build-essential libssl-dev libevent-dev  libjpeg-dev libxml2-dev libxslt-dev
+sudo apt-get install python-pip
+sudo pip install virtualenv
+sudo apt-get install python-dev
+sudo apt-get install ipython
+sudo apt-get install zlib1g-dev
+sudo apt-get install libudev-dev
+sudo apt-get install  libffi-dev 
+pip install pyopenssl ndg-httpsclient pyasn1
+使用豆瓣的源:
+要配制成默认的话，需要创建或修改配置文件（linux的文件在~/.pip/pip.conf，windows在%HOMEPATH%\pip\pip.ini），修改内容为：
+
+[global]
+index-url = http://pypi.douban.com/simple
+
+#for python utf-8
+sudo vi /usr/lib/python2.7/sitecustomize.py
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import sys
+
+if sys.getdefaultencoding() != 'utf-8':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')  
+
+#modify capslock
+
+sudo vi /etc/default/keyboard
+修改下面这一行：（改变capslock为ctrl）
+XKBOPTIONS="ctrl:nocaps"
+或者可以交换capslock和ctrl
+XKBOPTIONS="ctrl:nocaps"
+最后：
+sudo dpkg-reconfigure keyboard-configuration
+
+
+
+树莓派安转配置:
+默认用户名：pi
+默认密码：raspberry
+配置：$sudo raspi-config
+无线网络：
+sudo vi  /etc/network/interfaces
+2)无线网卡的配置
+使用vi打开以下文件进行修改：
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-ssid "360WiFi"
+wpa-psk "hellworld"
+#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+重启即可连入:网络名为360WIFI，密码为helloworld的网络，
+如果想要设置为静态ip，类似有线网卡，修改相应代码即可
+。
+改变更新源：
+笔者测试这个默认的网址还是挺快的，网络上有人建议改变更新源为国内的（我没发现快多少，大家根据自己网络选择）：
+sudo vi /etc/apt/sources.list
+将默认的用#号屏蔽，改为
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/   wheezy main contrib non-free rpi
+或者
+deb http://mirror.nus.edu.sg/raspbian/raspbian wheezy main contrib non-free rpi
+
+或者用以下地址代替上面的地址栏
+
+中山大学
+Raspbian http://mirror.sysu.edu.cn/raspbian/raspbian/
+
+中国科学技术大学
+Raspbian http://mirrors.ustc.edu.cn/raspbian/raspbian/
+
+清华大学
+Raspbian http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/
+
+华中科技大学
+Raspbian http://mirrors.hustunique.com/raspbian/raspbian/
+Arch Linux ARM http://mirrors.hustunique.com/archlinuxarm/
+大连东软信息学院源（北方用户）
+Raspbian http://mirrors.neusoft.edu.cn/raspbian/raspbian/
+
+开机启动：
+
+sudo nano /etc/inittab
+向下滚动，找到行               1:2345:respawn:/sbin/getty 115200 tty1
+注释掉这一行，修改为       #1:2345:respawn:/sbin/getty 115200 tty1
+在该行下增加一行内容       
+1:2345:respawn:/bin/login -f pi tty1 /dev/tty1 2>&1
+
+按Ctrl+X退出，记得按Y键保存
+原理：linux启动时，会读取inittab文件，执行其中的登录命令，以pi用户名自动登录
+
+
+
+4 Internationalisation Options  国际化选项，可以更改默认语言
+  I1 Change Locale
+     语言和区域设置，建议不要改，默认英文就好。想改中文，最好选安装了中文字体再进行这步，安装中文字体的方法：
+     sudo apt-get update
+     sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
+     移动到屏幕底部，用空格键选中zh-CN GB2312,zh-CN GB18030,zh-CN UTF-8,然后按回车，然后默认语言选中zh-cn然后回车
+  I2 Change Timezone
+     设置时区，如果不进行设置，PI的时间就显示不正常。选择Asia（亚洲）再选择Chongqing（重庆）即可。
+  I3 Change Keyboard Layout
+      改变键盘布局
+
+
+使用github：
+3、在本地建立一个文件夹，然后做一些全局变量的初始化
+
+git config --global user.name = "用户名或者用户ID"
+
+git config --global user.email = "邮箱"
+
+这两个选项会在以后的使用过程中自动添加到代码中。
+
+4、创建验证用的公钥
+
+这个是比较复杂和困扰大多数人的地方，因为 git 是通过 ssh 的方式访问资源库的，所以需要在本地创建验证用的文件。
+
+使用命令：ssh-keygen -C ‘291374108@qq.com' -t rsa
+
+会在用户目录 ~/.ssh/ 下建立相应的密钥文件
+
+可以使用 ssh -v git@github.com 命令来测试链接是否畅通
+
+5、上传公钥
+
+在 github.com 的界面中 选择右上角的 Account Settings，然后选择 SSH Public Keys ，选择新加。
+
+Title 可以随便命名，Key 的内容拷贝自 ~/.ssh/id_rsa.pub 中的内容，完成后，可以再使用 ssh -v git@github.com 进行测试。看到下面的信息表示验证成功。
