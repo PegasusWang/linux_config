@@ -1,5 +1,5 @@
 #for zhcnutf8
-sudo locale-gen 
+sudo locale-gen
 sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
 sudo vim /etc/environment
 LC_ALL=”zh_CN.UTF-8″
@@ -33,8 +33,9 @@ sudo apt-get install python-dev
 sudo apt-get install ipython
 sudo apt-get install zlib1g-dev
 sudo apt-get install libudev-dev
-sudo apt-get install  libffi-dev 
+sudo apt-get install  libffi-dev
 pip install pyopenssl ndg-httpsclient pyasn1
+
 使用豆瓣的源:
 要配制成默认的话，需要创建或修改配置文件（linux的文件在~/.pip/pip.conf，windows在%HOMEPATH%\pip\pip.ini），修改内容为：
 
@@ -50,7 +51,7 @@ import sys
 
 if sys.getdefaultencoding() != 'utf-8':
     reload(sys)
-    sys.setdefaultencoding('utf-8')  
+    sys.setdefaultencoding('utf-8')
 
 #modify capslock
 
@@ -80,6 +81,8 @@ allow-hotplug wlan0
 iface wlan0 inet dhcp
 wpa-ssid "360WiFi"
 wpa-psk "hellworld"
+
+
 #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 重启即可连入:网络名为360WIFI，密码为helloworld的网络，
 如果想要设置为静态ip，类似有线网卡，修改相应代码即可
@@ -111,10 +114,10 @@ Raspbian http://mirrors.neusoft.edu.cn/raspbian/raspbian/
 
 开机启动：
 
-sudo nano /etc/inittab
+sudo vi /etc/inittab
 向下滚动，找到行               1:2345:respawn:/sbin/getty 115200 tty1
 注释掉这一行，修改为       #1:2345:respawn:/sbin/getty 115200 tty1
-在该行下增加一行内容       
+在该行下增加一行内容
 1:2345:respawn:/bin/login -f pi tty1 /dev/tty1 2>&1
 
 按Ctrl+X退出，记得按Y键保存
@@ -158,3 +161,79 @@ git config --global user.email = "邮箱"
 在 github.com 的界面中 选择右上角的 Account Settings，然后选择 SSH Public Keys ，选择新加。
 
 Title 可以随便命名，Key 的内容拷贝自 ~/.ssh/id_rsa.pub 中的内容，完成后，可以再使用 ssh -v git@github.com 进行测试。看到下面的信息表示验证成功。
+目录：
+制作引导SD卡
+安装操作系统Raspbian到U盘
+扩展分区
+参考文章
+树莓派官方的操作系统Raspbian最少需要4G的SDCard，如果你恰好有比较小的SD卡怎么办呢？设计上树莓派只能从SD卡引导启动，但我们可以在SD卡上装一个最小的引导系统，然后把树莓派引导到U盘上启动。SD卡连续运行，读写比较频繁也容易损坏（我已经坏掉3张了。。。），相比之下U盘价格便宜些，读写速度可以比SD卡还高。
+
+U盘装系统步骤：
+制作引导SD卡
+这个引导系统只需要16M容量的SD卡，先把SD卡格式化成FAT（windows），然后拷贝下面的文件到根目录。
+
+git clone https://github.com/hugozhu/mini_raspbian_boot
+修改 cmdline.txt 中的 root=/dev/mmcblk0p2 为 root=/dev/sda2 以指定用U盘启动
+
+dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1
+root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+cgroup_enable=memory
+安装操作系统Raspbian到U盘
+方法和安装到SD卡一样，在Mac上使用 dd
+命令安装，在Windows上可以用win32diskimager：
+
+sudo dd bs=1m if=2015-01-31-raspbian.img of=/dev/disk4 #/dev/disk4
+扩展分区
+如果你的U盘容量大于4G，那么上一步安装完后，你的U盘只能看到4G空间，大容量的SD卡的这个问题可以通过自带的raspi-config命令来解决。
+Linux下可以用fdisk来解决，我的方法是把该U盘插到已经正常启动的树莓派的USB口上，正常识别后，执行sudo
+fdisk /dev/sda
+
+按p后打印出分区表：
+/dev/sda1            8192      122879       57344    c  W95 FAT32 (LBA)
+    /dev/sda2          122880     6399999     3138560   83  Linux
+    记住/dev/sda2的起始点122880'，然后按d，删除掉二个分区，接着按n重新创建一个分区，起始点就设置为122880，结束点可以设置为最大6399999
+
+    最后按w保存新的分区表
+
+    插上引导SD卡和系统U盘后树莓派就可以愉快的运行起来了，如果U盘的速度足够快，你会发现系统还变快了。
+
+    参考文章
+    http://www.raspberrypi.org/boot-from-a-16mb-sd-card/
+
+http://bbs.elecfans.com/jishu_450347_1_1.html
+http://viiiv.lofter.com/post/46b29a_2d34eaa
+
+
+********如果用u盘启动检查失败，把init.d里边的checkfs.sh注释掉。****************
+
+
+脚本加上去后记住加上+x可执行权限。
+upload_all.sh
+#!/bin/bash
+
+PREFIX=$(cd "$(dirname "$0")"; pwd)
+cd $PREFIX
+
+python -u -m WeiboApp.db.upload_all_girls
+python -u -m WeiboApp.db.upload_all_funnygif
+python -u -m WeiboApp.db.upload_all_animals
+python -u -m WeiboApp.db.upload_all_fashion
+python -u -m WeiboApp.db.upload_all_boys
+
+upload_sexy.sh
+
+#!/bin/bash
+
+PREFIX=$(cd "$(dirname "$0")"; pwd)
+cd $PREFIX
+
+python -u -m WeiboApp.db.upload_sexy
+
+
+crontab:注意把路径wnn改成pi
+
+* */15 * * * /home/wnn/program/upload_all.sh >> /home/wnn/program/upload_all_log 2>
+&1
+0 * * * * /home/wnn/program/WeiboApp/run_weibo_app.sh >> /home/wnn/program/weiboap
+p_log 2>&1                                    
+
