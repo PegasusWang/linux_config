@@ -1,12 +1,13 @@
 #for zh-cn utf8
-sudo locale-gen
+sudo apt-get update
 sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
+sudo locale-gen
 sudo vim /etc/environment
 LC_ALL=”zh_CN.UTF-8″
 sudo dpkg-reconfigure locales
 
 #for ubuntu
-sudo apt-get update
+
 sudo apt-get install vim
 sudo apt-get install curl
 sudo apt-get install tmux
@@ -23,6 +24,7 @@ nautilus -q
 
 
 #for python
+export EDITOR=vim
 export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
 sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
 sudo apt-get install python-pip
@@ -37,9 +39,9 @@ sudo pip install virtualenv
 sudo vi /usr/lib/python2.7/sitecustomize.py
 # encoding=utf8
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-
+if sys.getdefaultencoding() != 'utf-8':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 #modify capslock
 sudo vi /etc/default/keyboard
