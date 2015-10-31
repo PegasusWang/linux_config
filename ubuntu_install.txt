@@ -3,7 +3,7 @@ sudo apt-get update
 sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
 sudo locale-gen
 sudo vim /etc/environment
-LC_ALL=”zh_CN.UTF-8″
+LC_ALL="zh_CN.UTF-8"
 sudo dpkg-reconfigure locales
 
 #for ubuntu
