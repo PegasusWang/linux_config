@@ -1,4 +1,3 @@
-nnoremap py :!python %<cr>
 set nu
 set ts=4
 set sw=4
@@ -8,33 +7,55 @@ set hls
 set cindent
 set autoindent
 
-set nocompatible                " be iMproved
-filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+function HeaderPython()
+    call setline(1, "#!/usr/bin/env python")
+    call append(1, "# -*- coding: utf-8 -*-")
+    normal G
+    normal o
+    normal o
+    call setline(5, "if __name__ == '__main__':")
+    call setline(6, "    pass")
+endf
 
+autocmd bufnewfile *.py call HeaderPython()
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle
-Plugin 'mattn/emmet-vim'
 Bundle 'gmarik/vundle'
 
 "my Bundle here:
-"
+" http://vimawesome.com
 " original repos on github
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Bundle 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/emmet-vim'
 Bundle 'moll/vim-node'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
 "Bundle 'sjl/gundo.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'klen/python-mode'
+Bundle 'heavenshell/vim-pydocstring'
 "Bundle 'Valloric/ListToggle'
 "Bundle 'SirVer/ultisnips'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 "Bundle 't9md/vim-quickhl'
-" Bundle 'Lokaltog/vim-powerline'
 "Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 "..................................
 " vim-scripts repos
 "Bundle 'YankRing.vim'
@@ -44,28 +65,69 @@ Bundle 'ShowPairs'
 "Bundle 'EasyGrep'
 "Bundle 'VOoM'
 "Bundle 'VimIM'
-"..................................
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-"......................................
 
-filetype plugin indent on
-function HeaderPython()
-    call setline(1, "#!/usr/bin/env python")
-    call append(1, "# -*- coding: utf-8 -*-")
-    normal G
-    normal o
-    normal o
-    call setline(5, "if __name__ == '__main__':")
-    call setline(6, "    main()")
-endf
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+Plugin 'ascenator/L9', {'name': 'newL9'}
 
-autocmd bufnewfile *.py call HeaderPython()
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" for python settings
 " Override go-to.definition key shortcut to Ctrl-]
+nmap <silent> <C-i> <Plug>(pydocstring)
+nnoremap py :!python %<cr>
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 " Override run current python file key shortcut to Ctrl-Shift-e
-let g:pymode_run_bind = "<C-S-e>"
+let g:pymode_run_bind = "<C-j>"
 
 " Override view python doc key shortcut to Ctrl-Shift-d
 let g:pymode_doc_bind = "<C-S-d>"
+
+
+
+
+" for nerdtree
+autocmd vimenter * NERDTree
+
+
+" for Tagbarbar, sudo apt-get install ctags
+nmap <F8> :TagbarToggle<CR>
+
+
+" for airline, http://vimawesome.com/plugin/vim-airline
+function! ArilineInit()
+    let g:airline_theme = 'wombat' 
+    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%f'])
+    let g:airline_section_c = airline#section#create(['filetype'])
+    let g:airline_section_x = airline#section#create(['%P'])
+    let g:airline_section_y = airline#section#create(['%B'])
+    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+endfunction
+autocmd VimEnter * call ArilineInit()
