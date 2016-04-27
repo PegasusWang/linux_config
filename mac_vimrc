@@ -1,3 +1,4 @@
+nmap <silent> <C-i> <Plug>(pydocstring)
 "for paste
 set pastetoggle=<F2>
 "for mac os crontab
@@ -5,7 +6,7 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 map <M-s> :w<kEnter>  "Works in normal mode, must press Esc first"
 imap <M-s> <Esc>:w<kEnter>i "Works in insert mode, saves and puts back in insert mode"
 autocmd BufWritePre * :%s/\s\+$//ge
-ab __main__ if __name__ == '__main__':
+"ab __main__ if __name__ == '__main__':
 set undofile
 set undodir=~/.Vim_undodir
 set undolevels=1000
@@ -22,7 +23,6 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
-set cindent
 set nu
 if has('gui_running')
     set background=dark
@@ -53,8 +53,8 @@ echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -93,8 +93,8 @@ set completeopt=longest,menu
 "histroy line count
 set history=1000
 "set background
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 "show match '(' and ')'
 set showmatch
 "left-down status line
@@ -120,7 +120,6 @@ set foldopen=all
 "set foldclose=all
 "colorscheme evening
 "set cinoptions+={2,0,p0,t0
-set cindent
 set formatoptions=tcqr
 set nu
 function MyTitle()
@@ -165,7 +164,7 @@ function CommOneLine()
 endf
 map <F5> <Esc>:call CommOneLine()<CR><ESC>
 "foramt code with K&R style
-map <F8> <Esc>:1,$g/^$/d<CR><Esc>gg=G<Esc>gg
+" map <F8> <Esc>:1,$g/^$/d<CR><Esc>gg=G<Esc>gg
 let Tlist_Ctags_Cmd='/usr/local/bin/Ctags'
 "map <F7> <Esc>:<CR>
 "nnoremap <silent><F7> :WMToggle<CR>
@@ -186,6 +185,7 @@ nnoremap wm :WMToggle<cr>
 nnoremap gc :!gcc -Wall -g -o %:r %<cr>
 "nnoremap gp :!g++ -Wall -g -o %:r %<cr>
 nnoremap py :!python %<cr>
+nnoremap pt :!py.test %<cr>
 nnoremap no :!node %<cr>
 "nnoremap gd :!sudo gdb %:r<cr>
 nnoremap ma :!make<cr>
@@ -243,6 +243,9 @@ call vundle#rc()
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'moll/vim-node'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
@@ -253,6 +256,7 @@ Bundle 'gmarik/vundle'
 " Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
 Bundle 'mattn/emmet-vim'
+Bundle 'heavenshell/vim-pydocstring'
 " Bundle 'sjl/gundo.vim'
 Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
@@ -260,9 +264,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'klen/python-mode'
-Bundle 'TFenby/python-mode'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'klen/python-mode'
 
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
@@ -284,21 +287,35 @@ Bundle 'TFenby/python-mode'
 syntax enable
 filetype plugin indent on
 
+nnoremap <F10> :exe 'NERDTreeToggle'<CR>
 
 " Override go-to.definition key shortcut to Ctrl-]
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 " Override run current python file key shortcut to Ctrl-Shift-e
-let g:pymode_urn=1
-let g:pymode_run_bind = "<C-S-e>"
+let g:pymode_virtualenv_path = $VIRTUAL_ENV
+let g:pymode_run_bind = "<C-j>"
+let g:pymode_trim_whitespaces = 1
+let g:pymode_indent = 1
+let g:pymode_virtualenv = 1
 
 " Override view python doc key shortcut to Ctrl-Shift-d
-let g:pymod_doc=1
+let g:pymode_doc=1
 let g:pymode_doc_bind = "<C-S-d>"
 
 let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
+
+let g:pymode_lint = 0
+let g:pymode_lint_write = 0
+let g:pymode_lint_checkers = ['pep8']
+
+" For emmemt only avilable for html,css,sass
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,sass,scss EmmetInstal
+" emment key
+let g:user_emmet_leader_key='<C-J>'
 
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 "新建.py,.cc,.java,.sh,
@@ -311,19 +328,29 @@ func SetTitle()
         normal o
         normal o
         call setline(5, "if __name__ == '__main__':")
-        call setline(6, "    main()")
+        call setline(6, "    pass")
 
     endif
-    if &filetype == 'java'
-        call setline(1, "//coding=utf8")
-        call setline(2, "/*************************************************************************")
-        call setline(3, "\ @Author: waleking")
-        call setline(4, "\ @Created Time : ".strftime("%c"))
-        call setline(5, "")
-        call setline(6, "\ @File Name: ".expand("%"))
-        call setline(7, "\ @Description:")
-        call setline(8, "")
-        call setline(9, " ************************************************************************/")
-        call setline(10,"")
-    endif
 endfunc
+
+
+" for nerdtree
+autocmd vimenter * NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+
+" for Tagbarbar, sudo apt-get install ctags
+nmap <F8> :TagbarToggle<CR>
+
+
+" for airline
+function! ArilineInit()
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%f'])
+    let g:airline_section_c = airline#section#create(['filetype'])
+    let g:airline_section_x = airline#section#create(['%P'])
+    let g:airline_section_y = airline#section#create(['%B'])
+    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+endfunction
+autocmd VimEnter * call ArilineInit()
