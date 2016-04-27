@@ -246,6 +246,7 @@ Plugin 'moll/vim-node'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
