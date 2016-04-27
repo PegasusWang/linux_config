@@ -27,6 +27,7 @@ nautilus -q
 export EDITOR=vi
 export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
 sudo apt-get install build-essential libssl-dev libevent-dev  libjpeg-dev libxml2-dev libxslt-dev
+sudo apt-get install libcurl4-openssl-dev
 sudo apt-get install python-pip
 sudo pip install virtualenv
 sudo apt-get install python-dev
