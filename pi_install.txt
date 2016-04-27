@@ -1,3 +1,8 @@
+# python虚拟环境
+#git clone https://github.com/yyuu/pyenv.git ~/.pyenv    
+#http://www.cnblogs.com/npumenglei/p/3719412.html
+
+
 #for zhcnutf8
 sudo locale-gen
 sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
