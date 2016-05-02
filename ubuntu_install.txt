@@ -29,6 +29,7 @@ export EDITOR=vim
 export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
 sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
 sudo apt-get install python-pip
+sudo apt-get install python-distribute
 sudo apt-get install python-dev
 sudo apt-get install ipython
 sudo apt-get install zlib1g-dev
