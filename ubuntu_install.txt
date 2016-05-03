@@ -9,12 +9,8 @@ sudo dpkg-reconfigure locales
 
 #for ubuntu
 
-sudo apt-get install vim
-sudo apt-get install curl
-sudo apt-get install tmux
-sudo apt-get install build-essential
-sudo apt-get install zsh git wget
-sudo apt-get install silversearcher-ag
+sudo apt-get install -y vim curl tmux build-essential zsh git wget 
+sudo apt-get install -y silversearcher-ag
 sudo apt-get install gnome-tweak-tool
 sudo apt-get install trash-cli
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
@@ -27,7 +23,7 @@ nautilus -q
 #for python
 export EDITOR=vim
 export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
-sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
+sudo apt-get install -y build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
 sudo apt-get install python-pip
 sudo apt-get install python-distribute
 sudo apt-get install python-dev
