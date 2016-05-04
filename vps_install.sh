@@ -11,6 +11,6 @@ sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y trash-cli
 
 # for develop
-sudo apt-get install redis-server
-sudo apt-get install supervisor
-sudo apt-get install nginx
+sudo apt-get install -y redis-server
+sudo apt-get install -y supervisor
+sudo apt-get install -y nginx
