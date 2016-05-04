@@ -127,6 +127,7 @@ alias cdp="pyenv activate pyenv_2.7.11; cd ~/project/pyenv_2.7.11"
 alias cdp3="pyenv activate pyenv_3.5.0; cd ~/project/pyenv_3.5.0"
 alias cdlib="cd ~/.pyenv/versions/pyenv_2.7.11/lib/python2.7/site-packages"
 alias cdlib="cd ~/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages"
+alias pyenv="~/.pyenv/bin/pyenv"
 
 
 export PYENV_ROOT="${HOME}/.pyenv"
