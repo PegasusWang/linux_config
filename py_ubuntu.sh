@@ -9,6 +9,7 @@ pyenv install 3.5.0
 
 # https://github.com/yyuu/pyenv-virtualenv
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshenv
 exec $SHELL
 pyenv virtualenv 2.7.11 ~/project/py_2.7.11
 pyenv virtualenv 3.5.0 ~/project/py_3.5.0
