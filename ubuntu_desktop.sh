@@ -23,12 +23,6 @@ chsh -s /bin/zsh
 cp ./ubuntu_zshrc ~/.zshrc
 
 
-# modify capslock
-# sudo vi /etc/default/keyboard
-echo 'XKBOPTIONS="ctrl:nocaps"' | sudo tee -a /etc/default/keyboard
-sudo dpkg-reconfigure keyboard-configuration
-
-
 # for docker install ubuntu14.04
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates
@@ -45,6 +39,12 @@ sudo service docker start
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./ubuntu_vimrc ~/.vimrc
 vim +PluginInstall +qall
+
+
+# modify capslock
+# sudo vi /etc/default/keyboard
+echo 'XKBOPTIONS="ctrl:nocaps"' | sudo tee -a /etc/default/keyboard
+sudo dpkg-reconfigure keyboard-configuration
 
 
 # restart 
