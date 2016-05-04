@@ -40,3 +40,7 @@ sudo apt-cache policy docker-engine
 sudo apt-get install -y docker-engine
 sudo service docker start
 #sudo docker run hello-world
+
+# for vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp ./ubuntu_vimrc ~/.vimrc
