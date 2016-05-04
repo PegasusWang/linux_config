@@ -56,7 +56,7 @@ sudo apt-get update && apt-get install -y --no-install-recommends \
 # https://github.com/yyuu/pyenv
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 cp ./ubuntu_zshenv ~/.zshenv
-#exec $SHELL
+exec "$SHELL"
 pyenv install 2.7.11
 pyenv install 3.5.0
 
