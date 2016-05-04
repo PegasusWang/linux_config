@@ -33,7 +33,7 @@ sudo dpkg-reconfigure keyboard-configuration
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' > /etc/apt/sources.list.d/docker.list
+echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 sudo apt-get purge lxc-docker
 sudo apt-cache policy docker-engine
@@ -44,3 +44,4 @@ sudo service docker start
 # for vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./ubuntu_vimrc ~/.vimrc
+vim +PluginInstall +qall
