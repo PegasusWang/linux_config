@@ -68,7 +68,7 @@ pyenv virtualenv 3.5.0 pyenv_3.5.0
 mkdir -p ~/project/pyenv_2.7.11
 mkdir -p ~/project/pyenv_3.5.0
 
-
+exit
 #for python utf-8
 #sudo vi /usr
 #sudo vi /usr/lib/python2.7/sitecustomize.py
