@@ -24,14 +24,8 @@ if [ -d "${PYENV_ROOT}" ]; then
 fi
 # 安装必要包
 sudo apt-get build-dep python2.7
-pyenv install 2.7.10
-pyenv install 3.5.0
-
-#创建虚拟环境
-pyenv virtualenv 2.7.1 testenv271
 
 #for python utf-8
-#sudo vi /usr
 sudo vi /usr/lib/python2.7/sitecustomize.py
 # encoding=utf8
 import sys

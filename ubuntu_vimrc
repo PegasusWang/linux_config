@@ -111,8 +111,9 @@ let g:pymode_doc_bind = "<C-S-d>"
 
 
 " for nerdtree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 
 
 " for Tagbarbar, sudo apt-get install ctags
