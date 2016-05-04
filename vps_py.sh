@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# use "source vps_py.sh" to execute
+
 # pyenv need
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
@@ -9,6 +11,8 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 cp ./ubuntu_zshenv ~/.zshenv
 #exec $SHELL
+alias pyenv="~/.pyenv/bin/pyenv"
+
 pyenv install 2.7.11
 pyenv install 3.5.0
 
