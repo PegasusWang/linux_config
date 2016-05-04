@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# use "source vps_py.sh" to execute
+# !!!note: use "source vps_py.sh" to execute
 
 # pyenv need
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \

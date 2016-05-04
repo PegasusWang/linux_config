@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# note: use "source py_install.sh"
+# !!!note: use "source py_install.sh" instead of ./py_install.sh
 # pyenv need
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
