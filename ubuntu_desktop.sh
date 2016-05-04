@@ -3,7 +3,7 @@
 #for zh-cn utf8 ubuntu14.04
 sudo apt-get update
 sudo apt-get install -y language-pack-zh-hant-base language-pack-zh-hans-base language-pack-zh
-sudo locale-gen
+sudo locale-gen zh_CN.UTF-8
 echo 'LC_ALL="zh_CN.UTF-8"' | sudo tee -a /etc/environment
 sudo dpkg-reconfigure locales
 
