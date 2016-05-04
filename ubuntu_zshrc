@@ -123,3 +123,13 @@ alias gs="git status -s"
 alias gp="git push origin master"
 alias pyc="sudo /home/wnn/下载/pycharm-community-4.5.3/bin/pycharm.sh"
 alias psp="ps aux | grep python"
+alias cdp="pyenv activate pyenv_2.7.11; cd /home/wnn/pyenv_2.7.11"
+alias cdp3="pyenv activate pyenv_3.5.0; cd /home/wnn/pyenv_3.5.0"
+
+
+export PYENV_ROOT="${HOME}/.pyenv"
+
+if [ -d "${PYENV_ROOT}"  ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    eval "$(pyenv init -)"
+fi

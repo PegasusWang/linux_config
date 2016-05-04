@@ -1,6 +1,22 @@
+#!/usr/bin/env bash
+
+# https://github.com/yyuu/pyenv
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+cp ./ubuntu_zshenv ~/.zshenv
+exec $SHELL
+pyenv install 2.7.11
+pyenv install 3.5.0
+
+# https://github.com/yyuu/pyenv-virtualenv
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+exec $SHELL
+pyenv virtualenv 2.7.11 ~/project/py_2.7.11
+pyenv virtualenv 3.5.0 ~/project/py_3.5.0
+
+
 #for python
-export EDITOR=vim
-export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
+#export EDITOR=vim
+#export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
 sudo apt-get install -y build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
 sudo apt-get install -y python-pip
 sudo apt-get install -y python-distribute
@@ -8,8 +24,8 @@ sudo apt-get install -y python-dev
 sudo apt-get install -y ipython
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libudev-dev
-sudo pip install virtualenv
 sudo apt-get install libffi-dev   # for brycpt
+#sudo pip install virtualenv
 
 
 # 安装pyenv
