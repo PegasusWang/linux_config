@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# note: use "source py_install.sh"
 # pyenv need
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
@@ -32,12 +31,3 @@ sudo apt-get install -y ipython
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libudev-dev
 sudo apt-get install -y libffi-dev   # for brycpt
-
-#for python utf-8
-#sudo vi /usr
-#sudo vi /usr/lib/python2.7/sitecustomize.py
-#encoding=utf8
-#import sys
-#if sys.getdefaultencoding() != 'utf-8':
-#    reload(sys)
-#    sys.setdefaultencoding('utf-8')
