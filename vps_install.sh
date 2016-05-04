@@ -1,24 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 sudo apt-get update
-sudo apt-get install language-pack-zh-hant-base language-pack-zh-hans-base
-sudo locale-gen
-#sudo vim /etc/environment
-#LC_ALL=”zh_CN.UTF-8″
-#sudo dpkg-reconfigure locales
+sudo apt-get install -y language-pack-zh-hant-base language-pack-zh-hans-base language-pack-zh
+sudo locale-gen zh_CN.UTF-8
+echo 'LC_ALL="zh_CN.UTF-8"' | sudo tee -a /etc/environment
 
 #for ubuntu
-sudo apt-get install vim
-sudo apt-get install curl
-sudo apt-get install tmux
-sudo apt-get install build-essential
-sudo apt-get install git
-sudo apt-get install silversearcher-ag
-#sudo apt-get install gnome-tweak-tool
-#sudo apt-get install trash-cli
-#wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-#chsh -s /bin/zsh
-#sudo apt-get install nautilus-open-terminal
-#nautilus -q
+sudo apt-get install -y vim curl tmux build-essential zsh git wget ssh make
+sudo apt-get install -y silversearcher-ag
+sudo apt-get install -y trash-cli
 
 # for develop
 sudo apt-get install redis-server
