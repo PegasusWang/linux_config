@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # https://github.com/yyuu/pyenv
-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 cp ./ubuntu_zshenv ~/.zshenv
 exec $SHELL
 pyenv install 2.7.11
