@@ -8,7 +8,7 @@ echo 'LC_ALL="zh_CN.UTF-8"' | sudo tee -a /etc/environment
 sudo dpkg-reconfigure locales
 
 #for ubuntu
-sudo apt-get install -y vim curl tmux build-essential zsh git wget 
+sudo apt-get install -y vim curl tmux build-essential zsh git wget ssh make
 sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y gnome-tweak-tool
 sudo apt-get install -y trash-cli
@@ -45,3 +45,7 @@ sudo service docker start
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./ubuntu_vimrc ~/.vimrc
 vim +PluginInstall +qall
+
+
+# restart 
+sudo reboot -h 0

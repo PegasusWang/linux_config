@@ -16,21 +16,21 @@ pyenv install 3.5.0
 pyenv virtualenv 2.7.11 pyenv_2.7.11
 pyenv virtualenv 3.5.0 pyenv_3.5.0
 
-mkdir ~/project/pyenv_2.7.11
-mkdir ~/project/pyenv_3.5.0
+mkdir -p ~/project/pyenv_2.7.11
+mkdir -p ~/project/pyenv_3.5.0
 
 
 #for python
 #export EDITOR=vim
 #export PYTHONIOENCODING=UTF-8    # for python moidfy rc file bashrc or zshrc
-sudo apt-get install -y build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev build-dep
+sudo apt-get install -y build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev build-dep libpq-dev
 sudo apt-get install -y python-pip
 sudo apt-get install -y python-distribute
 sudo apt-get install -y python-dev
 sudo apt-get install -y ipython
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libudev-dev
-sudo apt-get install libffi-dev   # for brycpt
+sudo apt-get install -y libffi-dev   # for brycpt
 
 #for python utf-8
 #sudo vi /usr
