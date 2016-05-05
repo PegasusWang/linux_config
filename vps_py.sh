@@ -35,6 +35,8 @@ sudo apt-get install -y ipython
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libudev-dev
 sudo apt-get install -y libffi-dev   # for brycpt
+
+# https://github.com/docker-library/buildpack-deps/blob/e7534be05255522954f50542ebf9c5f06485838d/jessie/Dockerfile
 sudo apt-get install -y --no-install-recommends \
         autoconf \
         automake \
