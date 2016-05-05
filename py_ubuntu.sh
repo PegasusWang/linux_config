@@ -14,7 +14,7 @@ sudo apt-get install -y ipython
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libudev-dev
 sudo apt-get install -y libffi-dev   # for brycpt
-sudo apt-get update && apt-get install -y --no-install-recommends \
+sudo apt-get install -y --no-install-recommends \
         autoconf \
         automake \
         bzip2 \
