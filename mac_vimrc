@@ -144,7 +144,7 @@ function CppFramework()
  call setline(16,"}")
 endf
 "add cpp framework
-map <F10> <Esc>:call CppFramework()<CR><Esc>:$<Esc>2ko
+" map <F10> <Esc>:call CppFramework()<CR><Esc>:$<Esc>2ko
 function AddComment()
  if &syntax=="cpp" || &syntax=="c"
   execute "normal \<Esc>\<S-$>a\<TAB>/* */\<Esc>2ha"
@@ -288,29 +288,41 @@ Bundle 'klen/python-mode'
 syntax enable
 filetype plugin indent on
 
-nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+" brew install vim --with-python3
+let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
+let g:pymode_trim_whitespaces = 1
+let g:pymode_quickfix_maxheight = 3
+let g:pymode_indent = 1
+let g:pymode_folding = 1
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = "<C-b>"
 
-" Override go-to.definition key shortcut to Ctrl-]
+
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
-" Override run current python file key shortcut to Ctrl-Shift-e
-let g:pymode_virtualenv_path = $VIRTUAL_ENV
+let g:pymode_run = 1
 let g:pymode_run_bind = "<C-j>"
-let g:pymode_trim_whitespaces = 1
-let g:pymode_indent = 1
 let g:pymode_virtualenv = 1
+"let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 " Override view python doc key shortcut to Ctrl-Shift-d
 let g:pymode_doc=1
-let g:pymode_doc_bind = "<C-S-d>"
+let g:pymode_doc_bind = 'K'
 
 let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 
-let g:pymode_lint = 0
-let g:pymode_lint_write = 0
-let g:pymode_lint_checkers = ['pep8']
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
+let g:pymode_lint_message = 1
+let g:pymode_lint_checkers = ['pep8', 'pylint']
+let g:syntastic_python_checkers = ['pep8']
+let g:pymode_lint_ignore = "C0111"
+let g:pymode_lint_signs = 1
+let g:pymode_lint_todo_symbol = 'WW'
+let g:pymode_lint_error_symbol = 'EE'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
@@ -336,8 +348,9 @@ endfunc
 
 
 " for nerdtree
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+nnoremap <F10> :exe 'NERDTreeToggle'<CR>
 
 
 " for Tagbarbar, sudo apt-get install ctags

@@ -28,9 +28,11 @@ alias cdj='cd ~/Hexo/themes/jacman'
 alias cdb='cd ~/Hexo/source/_posts'
 alias cdd='cd ~/Hexo/source/_drafts'
 alias cds='cd /Users/pegasus/Program/Sites'
-alias cdp='cd /Users/pegasus/Program/py_test; source ./bin/activate;'
+alias cdlib='cd /Users/pegasus/Program/py_test/lib/python2.7/site-packages'
+alias cdlib3='cd /Users/pegasus/.pyenv/versions/3.5.0/lib/python3.5'
+alias cdp2='cd /Users/pegasus/Program/py_test; source ./bin/activate;'
 alias cdw='cd /Users/pegasus/Program/py_test/WeiboApp'
-alias cdp3='cd /Users/pegasus/Program/py3_test; source ./bin/activate;'
+alias cdp='cd /Users/pegasus/Program/py3.5_test; source ./bin/activate;'
 alias ce='crontab -e '
 alias cl='crontab -l '
 alias lo='locate '
@@ -47,14 +49,17 @@ alias ctags='/usr/local/bin/ctags'
 alias mc='make clean'
 alias ja='java '
 alias jc='javac '
-alias py='python2.7 '
-alias py3='python3 '
-alias py3s='python3 -m http.server'
+alias py='python '
+alias py3s='python3.4 -m http.server'
 alias ipy='ipython'
-alias vi='mvim -v'
-alias vin='vi /usr/local/etc/nginx/nginx.conf'
+alias vi="/usr/local/Cellar/vim/7.4.1016/bin/vim"
+alias vim="/usr/local/Cellar/vim/7.4.1016/bin/vim"
+alias vd="/usr/local/Cellar/vim/7.4.1016/bin/vimdiff "
+#alias vd='vimdiff '
+#alias vi='mvim -v'
+#alias vin='vi /usr/local/etc/nginx/nginx.conf'
 #alias vim='mvim -v'
-alias vd='vimdiff '
+#alias vd='vimdiff '
 alias cl='clang '
 alias g++='g++ -Wall '
 alias gcc='gcc -Wall '
@@ -63,7 +68,7 @@ alias xo='open '
 alias psp='ps aux | grep python'
 alias pi='~/pi'
 alias rm='rmtrash '
-alias rmc='rm *.pyc'
+alias rmc='rm *.pyc; rm .cache; rm __pycache__'
 alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \;'
 alias runl='python manage.py runserver'
 alias run='python manage.py runserver 0.0.0.0:8000'
@@ -125,7 +130,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
+export LC_ALL=zh_CN.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -139,3 +145,10 @@ export LANG=en_US.UTF-8
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+export NVM_DIR="/Users/pegasus/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+#nvm use 0.12.0
+alias nvmm='nvm use 0.12.0'
