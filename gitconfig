@@ -2,6 +2,9 @@
     email = 291374108@qq.com
     name = PegasusWang
 
+[color]
+	ui = true
+
 [merge]
     tool = vimdiff
 [mergetool "merge3"]

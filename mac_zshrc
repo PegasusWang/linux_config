@@ -55,6 +55,7 @@ alias ipy='ipython'
 alias vi="/usr/local/Cellar/vim/7.4.1016/bin/vim"
 alias vim="/usr/local/Cellar/vim/7.4.1016/bin/vim"
 alias vd="/usr/local/Cellar/vim/7.4.1016/bin/vimdiff "
+alias vimdiff="/usr/local/Cellar/vim/7.4.1016/bin/vimdiff "
 #alias vd='vimdiff '
 #alias vi='mvim -v'
 #alias vin='vi /usr/local/etc/nginx/nginx.conf'
@@ -81,6 +82,7 @@ alias -s cpp=vi
 alias -s java=vi
 alias -s txt=vi
 alias tf='tail -f '
+alias prettyjson='python -m json.tool'
 
 
 # Uncomment the following line to use case-sensitive completion.
