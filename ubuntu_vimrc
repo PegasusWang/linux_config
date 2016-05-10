@@ -1,3 +1,4 @@
+set pastetoggle=<F2>
 set nu
 set ts=4
 set sw=4
@@ -6,6 +7,16 @@ syntax on
 set hls
 set cindent
 set autoindent
+
+"python with virtualenv support, http://codingpy.com/article/vim-and-python-match-in-heaven/
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
@@ -42,7 +53,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Bundle 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-fugitive'
 Bundle 'moll/vim-node'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
@@ -70,6 +80,7 @@ Bundle 'ShowPairs'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -116,6 +127,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 
 
+
 " for Tagbarbar, sudo apt-get install ctags
 nmap <F8> :TagbarToggle<CR>
 
@@ -131,3 +143,14 @@ function! ArilineInit()
     let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call ArilineInit()
+
+
+" shortcuts to vimdiff, http://stackoverflow.com/questions/7309707/why-does-git-mergetool-opens-4-windows-in-vimdiff-id-expect-3
+let mapleader=','
+let g:mapleader=','
+
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
