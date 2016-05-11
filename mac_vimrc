@@ -1,4 +1,3 @@
-nmap <silent> <C-i> <Plug>(pydocstring)
 "for paste
 set pastetoggle=<F2>
 "for mac os crontab
@@ -289,6 +288,8 @@ syntax enable
 filetype plugin indent on
 
 " brew install vim --with-python3
+nmap <silent> <C-i> <Plug>(pydocstring)
+nnoremap py :!python %<cr>
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
 let g:pymode_quickfix_maxheight = 3
