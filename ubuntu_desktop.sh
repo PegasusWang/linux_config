@@ -52,3 +52,8 @@ sudo reboot -h 0
 
 # if you want to use terminal solarized color
 # https://github.com/Anthony25/gnome-terminal-colors-solarized
+
+
+# install nvm and nodejs
+curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+echo 'registry =https://registry.npm.taobao.org' > ~/.npmrc
