@@ -5,7 +5,6 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 map <M-s> :w<kEnter>  "Works in normal mode, must press Esc first"
 imap <M-s> <Esc>:w<kEnter>i "Works in insert mode, saves and puts back in insert mode"
 autocmd BufWritePre * :%s/\s\+$//ge
-"ab __main__ if __name__ == '__main__':
 set undofile
 set undodir=~/.Vim_undodir
 set undolevels=1000
@@ -266,10 +265,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
+Plugin 'tpope/vim-surround'
 
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
-" Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 " "..................................
 " " vim-scripts repos
 " Bundle 'YankRing.vim'
