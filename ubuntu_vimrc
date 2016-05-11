@@ -65,8 +65,9 @@ Bundle 'heavenshell/vim-pydocstring'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 "Bundle 't9md/vim-quickhl'
-"Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 "..................................
 " vim-scripts repos
 "Bundle 'YankRing.vim'
@@ -113,7 +114,7 @@ filetype plugin indent on    " required
 " Override go-to.definition key shortcut to Ctrl-]
 nmap <silent> <C-i> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
-let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
+"let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
 let g:pymode_quickfix_maxheight = 3
 let g:pymode_indent = 1
