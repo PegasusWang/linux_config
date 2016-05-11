@@ -49,3 +49,6 @@ sudo dpkg-reconfigure keyboard-configuration
 
 # restart 
 sudo reboot -h 0
+
+# if you want to use terminal solarized color
+# https://github.com/Anthony25/gnome-terminal-colors-solarized
