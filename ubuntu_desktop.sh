@@ -24,16 +24,21 @@ cp ./ubuntu_zshrc ~/.zshrc
 
 
 # for docker install ubuntu14.04
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' | sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt-get update
-sudo apt-get purge lxc-docker
-sudo apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
-sudo service docker start
+#sudo apt-get update
+#sudo apt-get install -y apt-transport-https ca-certificates
+#sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+#echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' | sudo tee /etc/apt/sources.list.d/docker.list
+#sudo apt-get update
+#sudo apt-get purge lxc-docker
+#sudo apt-cache policy docker-engine
+#sudo apt-get install -y docker-engine
+#sudo service docker start
 #sudo docker run hello-world
+
+# https://get.daocloud.io
+curl -sSL https://get.daocloud.io/docker | sh
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 # for vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -47,7 +52,7 @@ echo 'XKBOPTIONS="ctrl:nocaps"' | sudo tee -a /etc/default/keyboard
 sudo dpkg-reconfigure keyboard-configuration
 
 
-# restart 
+# restart
 sudo reboot -h 0
 
 # if you want to use terminal solarized color
