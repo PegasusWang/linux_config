@@ -7,9 +7,9 @@ sudo locale-gen zh_CN.UTF-8
 echo 'LC_ALL="zh_CN.UTF-8"' | sudo tee -a /etc/environment
 sudo dpkg-reconfigure locales
 
-#for ubuntu
+#for ubuntu common tools
 sudo apt-get install -y vim curl tmux build-essential zsh git wget ssh make
-sudo apt-get install -y silversearcher-ag
+sudo apt-get install -y silversearcher-ag, pastebinit    # pastebinit -i filename
 sudo apt-get install -y gnome-tweak-tool
 sudo apt-get install -y trash-cli
 
@@ -46,7 +46,7 @@ cp ./ubuntu_vimrc ~/.vimrc
 vim +PluginInstall +qall
 
 
-# modify capslock
+# modify capslock to ctrl
 # sudo vi /etc/default/keyboard
 echo 'XKBOPTIONS="ctrl:nocaps"' | sudo tee -a /etc/default/keyboard
 sudo dpkg-reconfigure keyboard-configuration
