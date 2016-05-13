@@ -297,6 +297,7 @@ let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = "<C-b>"
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT'
 
 
 let g:pymode_rope_goto_definition_bind = "<C-]>"
