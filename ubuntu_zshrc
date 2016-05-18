@@ -81,7 +81,7 @@ export PYTHONIOENCODING=UTF-8    # for python
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdw="cd /home/wnn/program/python_test/WeiboApp"
-alias py="python2.7 "
+alias py="python "
 alias ipy="ipython "
 alias gcc="gcc -Wall "
 alias g++="g++ -Wall -std=c++11 "
