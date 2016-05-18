@@ -163,7 +163,8 @@ nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 
 
 " for Tagbarbar, sudo apt-get install ctags
-nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> <F12> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
