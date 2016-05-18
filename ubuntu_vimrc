@@ -5,6 +5,7 @@ set sw=4
 set expandtab
 syntax on
 set hls
+set incsearch
 set cindent
 set autoindent
 
