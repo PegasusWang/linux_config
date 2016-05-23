@@ -196,3 +196,9 @@ endif
 " 高亮当前选中单词
 autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
 nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnderCursor*-1+1:1"<CR>
+
+
+" when use diff from cmd line, change color theme
+if &diff
+    colorscheme evening
+endif
