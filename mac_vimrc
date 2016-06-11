@@ -240,6 +240,7 @@ call vundle#rc()
 
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
+Plugin 'glench/vim-jinja2-syntax'
 Plugin 'moll/vim-node'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -259,6 +260,7 @@ Bundle 'heavenshell/vim-pydocstring'
 " Bundle 'sjl/gundo.vim'
 Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Bundle 'scrooloose/syntastic'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
@@ -288,7 +290,7 @@ syntax enable
 filetype plugin indent on
 
 " brew install vim --with-python3
-nmap <silent> <C-i> <Plug>(pydocstring)
+nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
@@ -311,6 +313,7 @@ let g:pymode_virtualenv = 1
 let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
+autocmd CompleteDone * pclose
 let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
@@ -356,7 +359,9 @@ nnoremap <F10> :exe 'NERDTreeToggle'<CR>
 
 
 " for Tagbarbar, sudo apt-get install ctags
-nmap <F8> :TagbarToggle<CR>
+"nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
 
 " for airline
