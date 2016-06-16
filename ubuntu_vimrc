@@ -28,8 +28,15 @@ function HeaderPython()
     call setline(5, "if __name__ == '__main__':")
     call setline(6, "    pass")
 endf
-
 autocmd bufnewfile *.py call HeaderPython()
+
+function HeaderSh()
+    call setline(1, "#!/usr/bin/env bash")
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.sh call HeaderSh()
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -44,6 +51,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Plugin 'glench/vim-jinja2-syntax'
 
 "my Bundle here:
 " http://vimawesome.com
@@ -62,7 +70,8 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'klen/python-mode'
 Bundle 'heavenshell/vim-pydocstring'
 "Bundle 'Valloric/ListToggle'
-"Bundle 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 "Bundle 't9md/vim-quickhl'
@@ -113,7 +122,7 @@ filetype plugin indent on    " required
 
 " for python settings
 " Override go-to.definition key shortcut to Ctrl-]
-nmap <silent> <C-i> <Plug>(pydocstring)
+nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 "let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
@@ -136,8 +145,8 @@ let g:pymode_virtualenv = 1
 let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
-" autocmd CompleteDone * pclose
-let g:pymode_rope = 0
+autocmd CompleteDone * pclose
+let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 
