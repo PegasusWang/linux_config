@@ -238,6 +238,8 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'rykka/riv.vim'    " rst
+Bundle 'Rykka/InstantRst'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'glench/vim-jinja2-syntax'
@@ -390,3 +392,8 @@ endif
 " 高亮当前选中单词
 autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
 nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnderCursor*-1+1:1"<CR>
+
+
+
+let proj1 = { 'path': '~/Program/python-web-guide',}
+let g:riv_projects = [proj1]
