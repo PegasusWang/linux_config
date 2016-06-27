@@ -239,7 +239,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'rykka/riv.vim'    " rst
-Bundle 'Rykka/InstantRst'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'glench/vim-jinja2-syntax'
@@ -251,6 +250,7 @@ Plugin 'tpope/vim-fugitive'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Bundle 'Rykka/InstantRst'
 "
 " "my Bundle here:
 " "
@@ -394,6 +394,11 @@ autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match In
 nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnderCursor*-1+1:1"<CR>
 
 
-
+" rst书写插件
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
+
+
+" ctrlp, 在~/.agignore添加一行node_modules
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'

@@ -218,3 +218,8 @@ endif
 " 书写rst用到
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
+
+
+" ctrlp, 在~/.agignore添加一行node_modules
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
