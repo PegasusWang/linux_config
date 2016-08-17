@@ -300,7 +300,7 @@ let g:pymode_quickfix_maxheight = 3
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = "<C-b>"
+let g:pymode_breakpoint_bind = "<C-k>"
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT'
 
 
@@ -353,6 +353,14 @@ func SetTitle()
     endif
 endfunc
 
+
+function HeaderSh()
+    call setline(1, "#!/usr/bin/env bash")
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.sh call HeaderSh()
 
 " for nerdtree
 "autocmd vimenter * NERDTree
