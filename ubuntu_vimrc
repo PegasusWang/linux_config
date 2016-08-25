@@ -225,7 +225,9 @@ let g:riv_projects = [proj1]
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-
-
 let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
+
+
+" 指定UltiSnips python的docstring风格, sphinx, google, numpy
+let g:ultisnips_python_style = 'google'
