@@ -241,12 +241,14 @@ call vundle#rc()
 Plugin 'rykka/riv.vim'    " rst
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'glench/vim-jinja2-syntax'
 Plugin 'moll/vim-node'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'cakebaker/scss-syntax.vim'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
@@ -255,7 +257,8 @@ Bundle 'Rykka/InstantRst'
 " "my Bundle here:
 " "
 " original repos on github
-" Bundle 'kien/ctrlp.vim'
+Bundle 'jiangmiao/auto-pairs'
+Plugin 'kien/rainbow_parentheses.vim'
 Bundle 'sukima/xmledit'
 Bundle 'mattn/emmet-vim'
 Bundle 'heavenshell/vim-pydocstring'
@@ -301,8 +304,7 @@ let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = "<C-k>"
-let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT'
-
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO REMOVE'
 
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
@@ -324,12 +326,15 @@ let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-let g:pymode_lint_checkers = ['pep8', 'pylint']
+"let g:pymode_lint_checkers = ['pep8', 'pylint']
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = 'WW'
 let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_options_max_line_length = 79
+let g:pymode_options_colorcolumn = 1
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
@@ -413,3 +418,15 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
 let g:ultisnips_python_style = 'google'
+
+
+"http://vimawesome.com/plugin/scss-syntax-vim
+au BufRead,BufNewFile *.scss set filetype=scss.css
+
+
+"http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_max = 16
