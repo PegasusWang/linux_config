@@ -134,6 +134,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'gorodinskiy/vim-coloresque'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
@@ -178,6 +179,10 @@ filetype plugin indent on
 " brew install vim --with-python3
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
+" 用ctrl+l可以在insert和command模式都可以保存
+inoremap <c-l> <c-o>:w<cr>
+nnoremap <c-l> :w<cr>
+
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
 let g:pymode_quickfix_maxheight = 3
