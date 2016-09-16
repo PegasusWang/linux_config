@@ -56,6 +56,7 @@ let $LANG= 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
+set splitright
 "turn off vim compatible check
 set nocompatible
 "check file type
@@ -212,15 +213,20 @@ let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = 'WW'
-let g:pymode_lint_error_symbol = 'EE'
+" let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_lint_error_symbol = '❌'
 let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
+" 指定UltiSnips python的docstring风格, sphinx, google, numpy
+let g:ultisnips_python_style = 'google'
+
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,sass,scss EmmetInstal
 " emment key
 let g:user_emmet_leader_key='<C-J>'
+
 
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 "新建.py,.cc,.java,.sh,
@@ -296,9 +302,6 @@ let g:riv_projects = [proj1]
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" 指定UltiSnips python的docstring风格, sphinx, google, numpy
-let g:ultisnips_python_style = 'google'
-
 
 "http://vimawesome.com/plugin/scss-syntax-vim
 au BufRead,BufNewFile *.scss set filetype=scss.css
@@ -311,17 +314,31 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_max = 16
 
-
+"语法检查配置
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_enable_javascript_checker = 1
+let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol='>>'
-let g:syntastic_warning_symbol='>'
-let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jsl', 'jshint']
-let g:syntastic_html_checkers=['tidy', 'jshint']
+let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 3
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+" 评论配置
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:javascript_plugin_jsdoc = 1
