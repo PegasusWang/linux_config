@@ -1,10 +1,12 @@
-"for paste
+" for paste mode toggle
 set pastetoggle=<F2>
+
 "for mac os crontab
 autocmd filetype crontab setlocal nobackup nowritebackup
 map <M-s> :w<kEnter>  "Works in normal mode, must press Esc first"
 imap <M-s> <Esc>:w<kEnter>i "Works in insert mode, saves and puts back in insert mode"
 autocmd BufWritePre * :%s/\s\+$//ge
+
 set undofile
 set undodir=~/.Vim_undodir
 set undolevels=1000
@@ -16,7 +18,6 @@ setlocal textwidth=80
 set tags=tags
 set autochdir
 autocmd BufRead,BufNewFile *.py set et ts=4 sw=4 sts=4
-set nocompatible
 set tabstop=4
 set expandtab
 set softtabstop=4
@@ -27,7 +28,6 @@ if has('gui_running')
 else
     set background=dark
 endif
-"colorscheme solarized
 
 " 配置多语言环境
 if has("multi_byte")
@@ -51,34 +51,6 @@ echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
-
-"set diffexpr=MyDiff()
-"function MyDiff()
-"  let opt = '-a --binary '
-"  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"  let arg1 = v:fname_in
-"  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"  let arg2 = v:fname_new
-"  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"  let arg3 = v:fname_out
-"  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"  let eq = ''
-"  if $VIMRUNTIME =~ ' '
-"    if &sh =~ '\<cmd'
-"      let cmd = '""' . $VIMRUNTIME . '\diff"'
-"      let eq = '"'
-"    else
-"      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-"    endif
-"  else
-"    let cmd = $VIMRUNTIME . '\diff'
-"  endif
-"  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-"endfunction
-"" set the menu & the message to English
 set langmenu=en_US
 let $LANG= 'en_US'
 source $VIMRUNTIME/delmenu.vim
@@ -90,10 +62,6 @@ set nocompatible
 set completeopt=longest,menu
 "histroy line count
 set history=1000
-"set background
-" set autoindent
-" set smartindent
-"show match '(' and ')'
 set showmatch
 "left-down status line
 set ruler
@@ -120,49 +88,6 @@ set foldopen=all
 "set cinoptions+={2,0,p0,t0
 set formatoptions=tcqr
 set nu
-function MyTitle()
- call setline(1,"/**************************************")
- call append(line("."),  "Author  : Pegasus Wang")
- call append(line(".")+1,"Time    :".strftime("%c"))
- call append(line(".")+2,"FileName:".expand("%"))
- call append(line(".")+3,"Desc    :")
- call append(line(".")+4,"*************************************/")
-endf
-"add header
-map <F9> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o<Esc>
-function CppFramework()
- call setline(8,"#include <iostream>")
- call setline(9,"#include <cstdio>")
- call setline(10,"#include <cmath>")
- call setline(11,"#include <algorithm>")
- call setline(12,"using namespace std;")
- call setline(13,"int main()")
- call setline(14,"{")
- call setline(15,"    return 0;")
- call setline(16,"}")
-endf
-"add cpp framework
-" map <F10> <Esc>:call CppFramework()<CR><Esc>:$<Esc>2ko
-function AddComment()
- if &syntax=="cpp" || &syntax=="c"
-  execute "normal \<Esc>\<S-$>a\<TAB>/* */\<Esc>2ha"
- elseif &syntax=="py"
-  execute "normal \<Esc>\<S-$>a\<TAB>#\<Esc>2ha"
- elseif &syntax=="lua"
-  execute "normal \<Esc>\<S-$>a\<TAB>--\<Esc>2ha"
- endif
-endf
-"add comment
-map <F4> <Esc>:call AddComment()<CR>i
-function CommOneLine()
- let tmp=getline(".")
- call setline(line("."),"/*")
- call append(line("."),"".tmp." //by Pegasus ".strftime("%c"))
- call append(line(".")+1," */")
-endf
-map <F5> <Esc>:call CommOneLine()<CR><ESC>
-"foramt code with K&R style
-" map <F8> <Esc>:1,$g/^$/d<CR><Esc>gg=G<Esc>gg
 let Tlist_Ctags_Cmd='/usr/local/bin/Ctags'
 "map <F7> <Esc>:<CR>
 "nnoremap <silent><F7> :WMToggle<CR>
@@ -192,47 +117,6 @@ nnoremap ex :!./%:r<cr>
 "let g:winManagerWindowLayout='FileExplorer'
 let g:winManagerWindowLayout = 'FileExplorer,BufExplorer|TagList'
 
-"big header
-map <F11> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o<Esc>
-function BigCppFramework()
- call setline(8,"#include <iostream>")
- call setline(9,"#include <cstdio>")
- call setline(10,"#include <string>")
- call setline(11,"#include <cstring>")
- call setline(12,"#include <vector>")
- call setline(13,"#include <list>")
- call setline(14,"#include <deque>")
- call setline(15,"#include <map>")
- call setline(16,"#include <set>")
- call setline(17,"#include <stack>")
- call setline(18,"#include <queue>")
- call setline(19,"#include <algorithm>")
- call setline(20,"#include <functional>")
- call setline(21,"#include <cmath>")
- call setline(22,"#include <cstdlib>")
- call setline(23,"#include <ctime>")
- call setline(24,"using namespace std;")
- call setline(25,"int main()")
- call setline(26,"{")
- call setline(27,"#ifndef ONLINE_JUDGE")
- call setline(28,"    freopen(\"in.txt\", \"r\", stdin);")
- call setline(29,"#endif")
- call setline(30,"    return 0;")
- call setline(31,"}")
-endf
-"add cpp framework
-map <F12> <Esc>:call BigCppFramework()<CR><Esc>:$<Esc>2ko
-function BigAddComment()
- if &syntax=="cpp" || &syntax=="c"
-  execute "normal \<Esc>\<S-$>a\<TAB>/* */\<Esc>2ha"
- elseif &syntax=="py"
-  execute "normal \<Esc>\<S-$>a\<TAB>#\<Esc>2ha"
- elseif &syntax=="lua"
-  execute "normal \<Esc>\<S-$>a\<TAB>--\<Esc>2ha"
- endif
-endf
-
-
 set nocompatible                " be iMproved
 filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -253,10 +137,6 @@ Plugin 'cakebaker/scss-syntax.vim'
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'Rykka/InstantRst'
-"
-" "my Bundle here:
-" "
-" original repos on github
 Bundle 'jiangmiao/auto-pairs'
 Plugin 'kien/rainbow_parentheses.vim'
 Bundle 'sukima/xmledit'
@@ -430,3 +310,18 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_max = 16
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol='>>'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+let g:syntastic_html_checkers=['tidy', 'jshint']
