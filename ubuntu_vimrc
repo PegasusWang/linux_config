@@ -59,10 +59,12 @@ Plugin 'glench/vim-jinja2-syntax'
 Plugin 'rykka/riv.vim'    " rst
 Bundle 'Rykka/InstantRst'
 
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 Bundle 'mxw/vim-jsx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
@@ -73,6 +75,7 @@ Bundle 'sukima/xmledit'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'klen/python-mode'
 Bundle 'heavenshell/vim-pydocstring'
+Plugin 'kien/rainbow_parentheses.vim'
 "Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -130,6 +133,7 @@ nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 "let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = 0
 let g:pymode_trim_whitespaces = 1
 let g:pymode_quickfix_maxheight = 3
 let g:pymode_indent = 1
@@ -161,10 +165,10 @@ let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pep8', 'pylint', 'mccabe']
 let g:syntastic_python_checkers = ['pep8']
-let g:pymode_lint_ignore = "C0111, W0105"
+let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
-let g:pymode_lint_todo_symbol = 'WW'
-let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_lint_todo_symbol = '⚠️'
+let g:pymode_lint_error_symbol = '❌'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
@@ -227,8 +231,53 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
+
 let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
 let g:ultisnips_python_style = 'google'
+
+" 用ctrl+l可以在insert和command模式都可以保存
+inoremap <c-l> <c-o>:w<cr>
+nnoremap <c-l> :w<cr>
+
+" 评论配置
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:javascript_plugin_jsdoc = 1
+
+"http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_max = 16
+
+"http://vimawesome.com/plugin/scss-syntax-vim
+au BufRead,BufNewFile *.scss set filetype=scss.css
+
+
+"语法检查配置
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_enable_javascript_checker = 1
+let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 3
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
