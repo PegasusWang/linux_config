@@ -135,6 +135,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
@@ -347,3 +349,25 @@ highlight link SyntasticStyleWarningSign SignColumn
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:javascript_plugin_jsdoc = 1
+
+
+"enable keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_complete_in_comments = 1
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+" 比较喜欢用tab来选择补全...
+function! MyTabFunction ()
+    let line = getline('.')
+    let substr = strpart(line, -1, col('.')+1)
+    let substr = matchstr(substr, "[^ \t]*$")
+    if strlen(substr) == 0
+        return "\<tab>"
+    endif
+    return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+endfunction
+inoremap <tab> <c-r>=MyTabFunction()<cr>
