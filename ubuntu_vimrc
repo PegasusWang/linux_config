@@ -1,3 +1,4 @@
+autocmd Filetype gitcommit setlocal spell textwidth=72
 set pastetoggle=<F2>
 set nu
 set ts=4
@@ -163,7 +164,7 @@ let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
@@ -243,7 +244,6 @@ inoremap <c-l> <c-o>:w<cr>
 nnoremap <c-l> :w<cr>
 
 " 评论配置
-let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:javascript_plugin_jsdoc = 1
 
