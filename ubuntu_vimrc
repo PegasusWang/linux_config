@@ -49,6 +49,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'mhinz/vim-startify'
 Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
@@ -173,7 +174,7 @@ let g:pymode_lint_error_symbol = '❌'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,sass,scss EmmetInstal
+autocmd FileType html,mako,css,sass,scss EmmetInstal
 " emment key
 let g:user_emmet_leader_key='<C-J>'
 
