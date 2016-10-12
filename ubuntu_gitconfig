@@ -32,6 +32,7 @@
 ;[mergetool "merge3"]
     ;cmd = vim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 
+
 [diff]
     tool = pycharm
 [difftool "pycharm"]
