@@ -1,3 +1,4 @@
+set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
 set pastetoggle=<F2>
 set nu
@@ -87,6 +88,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+
+" 模糊搜索，使用z/支持模糊搜索
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
+
 "..................................
 " vim-scripts repos
 "Bundle 'YankRing.vim'

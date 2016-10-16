@@ -15,7 +15,7 @@ set undolevels=1000
 
 set guifont=Monaco:h16
 set backupdir=~/.Vimbackup
-"set cursorline
+set cursorline
 setlocal textwidth=80
 set tags=tags
 set autochdir
@@ -125,6 +125,7 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'mhinz/vim-startify'
 Plugin 'rykka/riv.vim'    " rst
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
@@ -159,6 +160,15 @@ Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
 Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+
+" 模糊搜索，使用z/支持模糊搜索
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
 
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
@@ -216,7 +226,6 @@ let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-"let g:pymode_lint_checkers = ['pep8', 'pylint']
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105"
@@ -232,7 +241,7 @@ let g:ultisnips_python_style = 'google'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,sass,scss EmmetInstal
+autocmd FileType html,mako,css,sass,scss EmmetInstal
 " emment key
 let g:user_emmet_leader_key='<C-J>'
 
@@ -348,6 +357,7 @@ highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
 " 评论配置
+" let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:javascript_plugin_jsdoc = 1
 
