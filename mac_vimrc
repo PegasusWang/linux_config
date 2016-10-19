@@ -383,7 +383,3 @@ function! MyTabFunction ()
     return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 endfunction
 inoremap <tab> <c-r>=MyTabFunction()<cr>
-
-
-" 设置缩进线条格式
-let g:indentLine_char = '┆'
