@@ -1,5 +1,7 @@
 " let g:loaded_youcompleteme = 0
 
+" http://vim.wikia.com/wiki/Fix_indentation, 自动格式化代码
+map <F5> mzgg=G`z`
 " for paste mode toggle
 set pastetoggle=<F2>
 
