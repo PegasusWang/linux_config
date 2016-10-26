@@ -10,6 +10,10 @@ set hls
 set incsearch
 set cindent
 set autoindent
+set encoding=utf-8
+set termencoding=utf-8
+set formatoptions+=mM
+set fencs=utf-8,gbk
 
 "python with virtualenv support, http://codingpy.com/article/vim-and-python-match-in-heaven/
 py << EOF
