@@ -18,7 +18,7 @@ set undolevels=1000
 set guifont=Monaco:h16
 set backupdir=~/.Vimbackup
 set cursorline
-setlocal textwidth=80
+"setlocal textwidth=80
 set tags=tags
 set autochdir
 autocmd BufRead,BufNewFile *.py set et ts=4 sw=4 sts=4
