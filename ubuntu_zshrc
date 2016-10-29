@@ -126,12 +126,15 @@ alias gcsmg='git commit -m'
 alias gdh="git diff HEAD^ HEAD"
 alias gs="git status -s"
 alias gp="git push origin master"
+alias gdm="git diff master --no-prefix -U30 -- '*.py' > diff"
 alias pyc="sudo /home/wnn/下载/pycharm-community-4.5.3/bin/pycharm.sh"
 alias psp="ps aux | grep python"
-alias cdp="pyenv activate pyenv_2.7.10; cd /home/wnn/pyenv_2.7.10"
+alias cdp2="pyenv activate pyenv_2.7.10; cd /home/wnn/pyenv_2.7.10"
+alias cdp="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
 alias cdp3="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
 alias cdlib="/home/wnn/.pyenv/versions/pyenv_2.7.10/lib/python2.7/site-packages"
 alias sd="sudo docker "
+alias y='youdao '
 
 
 export PYENV_ROOT="${HOME}/.pyenv"
@@ -158,4 +161,20 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 [[ -s /home/wnn/.autojump/etc/profile.d/autojump.sh  ]] && source /home/wnn/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+
+
+[[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && . ~/.autojump/etc/profile.d/autojump.sh
+
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
