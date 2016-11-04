@@ -132,6 +132,7 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'vim-scripts/LargeFile'
 Plugin 'mhinz/vim-startify'
 Plugin 'rykka/riv.vim'    " rst
 Plugin 'kchmck/vim-coffee-script'
@@ -391,3 +392,9 @@ function! MyTabFunction ()
     return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 endfunction
 inoremap <tab> <c-r>=MyTabFunction()<cr>
+
+
+let g:LargeFile=1
+
+" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
+command PL PymodeLint

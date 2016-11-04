@@ -54,6 +54,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'vim-scripts/LargeFile'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
 Plugin 'VundleVim/Vundle.vim'
