@@ -299,3 +299,10 @@ highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┆'
+
+
+let g:LargeFile=1
+
+
+" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
+command PL PymodeLint
