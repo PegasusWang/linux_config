@@ -153,7 +153,7 @@ nnoremap py :!python %<cr>
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_print_as_function = 0
 let g:pymode_trim_whitespaces = 1
-let g:pymode_quickfix_maxheight = 3
+let g:pymode_quickfix_maxheight = 1
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
@@ -305,5 +305,5 @@ let g:indentLine_char = '┆'
 let g:LargeFile=1
 
 
-" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
-command PL PymodeLint
+" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
+command P PymodeLint
