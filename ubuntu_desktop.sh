@@ -62,3 +62,8 @@ sudo reboot -h 0
 # install nvm and nodejs
 curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 echo 'registry =https://registry.npm.taobao.org' > ~/.npmrc
+
+ 
+# install vritualenv, http://www.jianshu.com/p/08c657bd34f1
+sudo pip install virtualenv
+virtualenv -p /usr/bin/python3.5 ENV3.5
