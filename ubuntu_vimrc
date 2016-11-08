@@ -1,3 +1,4 @@
+set scrolloff=3
 set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
 set pastetoggle=<F2>
@@ -153,7 +154,7 @@ nnoremap py :!python %<cr>
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_print_as_function = 0
 let g:pymode_trim_whitespaces = 1
-let g:pymode_quickfix_maxheight = 1
+let g:pymode_quickfix_maxheight = 2
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
@@ -203,6 +204,8 @@ nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F12> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+let g:tagbar_sort = 1
+let g:tagbar_autopreview = 0
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
