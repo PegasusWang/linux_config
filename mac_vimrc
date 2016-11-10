@@ -1,4 +1,5 @@
-"vi /usr/local/Cellar/vim/7.4.1016/share/vim/vim74/ftplugin/python.vim
+"vi /usr/local/Cellar/vim/7.4.1016/share/vim/vim74/ftplugin/python.vim,
+"http://vim.1045645.n5.nabble.com/FileType-conditional-td1141787.html
 "let g:loaded_youcompleteme = 0
 
 " http://vim.wikia.com/wiki/Fix_indentation, 自动格式化代码
