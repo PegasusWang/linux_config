@@ -1,5 +1,4 @@
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 set scrolloff=3
 set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -186,6 +185,7 @@ let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 let g:syntastic_python_checkers = ['pep8']
+let g:pymode_lint_cwindow = 0    " open quickfix window
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
@@ -253,8 +253,8 @@ let g:riv_projects = [proj1]
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-
-
+" 修改默认的红线为浅色，solorized黑色主题
+highlight ColorColumn ctermbg=black 
 let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
 
