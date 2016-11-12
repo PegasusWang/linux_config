@@ -2,6 +2,9 @@
 "http://vim.1045645.n5.nabble.com/FileType-conditional-td1141787.html
 "let g:loaded_youcompleteme = 0
 
+" http://stackoverflow.com/questions/5235543/why-doesnt-my-vim-know-my-alias
+:set shellcmdflag+=i
+
 " http://vim.wikia.com/wiki/Fix_indentation, 自动格式化代码
 map <F5> mzgg=G`z`
 " for paste mode toggle
