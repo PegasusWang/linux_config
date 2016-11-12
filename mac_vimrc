@@ -402,4 +402,4 @@ inoremap <tab> <c-r>=MyTabFunction()<cr>
 let g:LargeFile=1
 
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
-command PL PymodeLint
+command P PymodeLint

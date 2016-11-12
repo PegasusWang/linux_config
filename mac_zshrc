@@ -9,7 +9,9 @@ export DYLD_FORCE_FLAT_NAMESPACE=1
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="dpoggi"
+
 export EDITOR='vim'
 
 # Example aliases
@@ -82,6 +84,7 @@ alias runl='python manage.py runserver'
 alias run='python manage.py runserver 0.0.0.0:8000'
 alias runs='python manage.py shell'
 alias rs='redis-server'
+alias runtest='fswatch -o ./*.py  | xargs -n1  ./runtest.sh'
 alias sqlstart='mysql.server start'
 alias -s h=vi
 alias -s c=vi
