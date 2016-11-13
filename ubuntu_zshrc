@@ -6,7 +6,8 @@ export EDITOR=vim
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="dpoggi"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -110,6 +111,7 @@ alias baidu="xo http://baidu.com "
 alias loc="xo http://localhost"
 alias hn="hexo new"
 alias hs="hexo server"
+alias runtest='when-changed -r1 .  ./runtest.sh'
 alias run="py ~/program/python/mysite/manage.py runserver "
 alias pys="py ~/program/python/mysite/manage.py shell "
 alias sql="mysql -u root -p "
