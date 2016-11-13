@@ -1,3 +1,4 @@
+"http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set scrolloff=3
 set cursorline
@@ -16,16 +17,6 @@ set encoding=utf-8
 set termencoding=utf-8
 set formatoptions+=mM
 set fencs=utf-8,gbk
-
-"python with virtualenv support, http://codingpy.com/article/vim-and-python-match-in-heaven/
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
@@ -151,7 +142,7 @@ filetype plugin indent on    " required
 " Override go-to.definition key shortcut to Ctrl-]
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
-"let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
+let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_print_as_function = 0
 let g:pymode_trim_whitespaces = 1
@@ -176,7 +167,10 @@ let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
 let g:pymode_rope = 1
-let g:pymode_rope_autoimport = 0
+let g:pymode_rope_completion = 1
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_lookup_project = 0
 
 let g:pymode_lint = 1
