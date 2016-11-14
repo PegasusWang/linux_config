@@ -1,4 +1,5 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
+"http://vi.stackexchange.com/questions/2403/vim-code-completion-for-python-3
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set scrolloff=3
 set cursorline
