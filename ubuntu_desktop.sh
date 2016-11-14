@@ -67,3 +67,14 @@ echo 'registry =https://registry.npm.taobao.org' > ~/.npmrc
 # install vritualenv, http://www.jianshu.com/p/08c657bd34f1
 sudo pip install virtualenv
 virtualenv -p /usr/bin/python3.5 ENV3.5
+
+
+# install vim support python3
+sudo apt-get build-dep vim
+cd /tmp && git clone https://github.com/vim/vim.git && cd vim
+./configure --with-features=huge --enable-multibyte --enable-python3interp \
+        --enable-gui=gtk-2 --prefix=/usr
+
+make VIMRUNTIMEDIR=/usr/share/vim/vim74
+sudo make install
+alias vi='vim'
