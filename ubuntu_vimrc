@@ -1,5 +1,7 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+set backspace=indent,eol,start
 set scrolloff=3
 set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -249,7 +251,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " 修改默认的红线为浅色，solorized黑色主题
 highlight ColorColumn ctermbg=black 
-let g:pymode_options_max_line_length = 79
+let g:pymode_options_max_line_length = 80
 let g:pymode_options_colorcolumn = 1
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
