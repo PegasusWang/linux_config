@@ -95,6 +95,7 @@ alias tf='tail -f '
 alias prettyjson='python -m json.tool'
 alias y='youdao '
 alias t='tmux '
+export TERM="xterm-256color"    # iterm vim support ariline
 
 
 # Uncomment the following line to use case-sensitive completion.
