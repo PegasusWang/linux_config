@@ -138,6 +138,7 @@ alias cdp2="pyenv activate pyenv_2.7.10; cd /home/wnn/pyenv_2.7.10"
 alias cdp="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
 alias cdp3="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
 alias cdlib="/home/wnn/.pyenv/versions/pyenv_2.7.10/lib/python2.7/site-packages"
+alias cdlib3="/home/wnn/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages"
 alias sd="sudo docker "
 alias y='youdao '
 
