@@ -1,4 +1,9 @@
 # Path to your oh-my-zsh installation.
+
+export INTELLIJ_HOME=/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/
+#PATH=$IDEA_HOME $PATH
+
+
 export ZSH=$HOME/.oh-my-zsh
 export PYTHONIOENCODING=utf-8
 
@@ -34,7 +39,7 @@ alias cdb='cd ~/Hexo/source/_posts'
 alias cdd='cd ~/Hexo/source/_drafts'
 alias cds='cd /Users/pegasus/Program/Sites'
 alias cdlib='cd /Users/pegasus/Program/py_test/lib/python2.7/site-packages'
-alias cdlib3='cd /Users/pegasus/.pyenv/versions/3.5.0/lib/python3.5'
+alias cdlib3='cd /Users/pegasus/Program/py3.5_test/lib/python3.5/site-packages'
 alias cdp2='cd /Users/pegasus/Program/py_test; source ./bin/activate;'
 alias cdw='cd /Users/pegasus/Program/py_test/WeiboApp'
 alias cdp='cd /Users/pegasus/Program/py3.5_test; source ./bin/activate;'
