@@ -299,8 +299,8 @@ highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
-let g:indentLine_enabled = 0
-let g:indentLine_char = '┆'
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
 
 
 let g:LargeFile=1
