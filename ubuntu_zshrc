@@ -185,5 +185,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # https://github.com/seebi/dircolors-solarized，终端自动安装solarized主题
+# https://github.com/sigurdga/gnome-terminal-colors-solarized
 export TERM="xterm-256color"
 eval `dircolors ~/.dir_colors/dircolors.256dark`
