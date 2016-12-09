@@ -49,6 +49,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LargeFile'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
@@ -210,7 +211,7 @@ let g:tagbar_autopreview = 0
 function! ArilineInit()
     let g:airline_theme = 'wombat'
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
-    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%f'])
+    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
     let g:airline_section_c = airline#section#create(['filetype'])
     let g:airline_section_x = airline#section#create(['%P'])
     let g:airline_section_y = airline#section#create(['%B'])
@@ -249,9 +250,10 @@ let g:riv_projects = [proj1]
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" 修改默认的红线为浅色，solorized黑色主题
+" 修改默认的max-line红线为浅色，solorized黑色主题
+hi Search cterm=NONE ctermfg=black ctermbg=blue
 highlight ColorColumn ctermbg=black 
-let g:pymode_options_max_line_length = 80
+let g:pymode_options_max_line_length = 79
 let g:pymode_options_colorcolumn = 1
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
