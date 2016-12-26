@@ -23,6 +23,7 @@ set undodir=~/.Vim_undodir
 set undolevels=1000
 
 set guifont=Monaco:h16
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 set backupdir=~/.Vimbackup
 set cursorline
 "setlocal textwidth=80
@@ -134,6 +135,8 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/LargeFile'
 Plugin 'mhinz/vim-startify'
 Plugin 'rykka/riv.vim'    " rst
@@ -146,6 +149,8 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'Valloric/YouCompleteMe'
@@ -234,6 +239,7 @@ autocmd CompleteDone * pclose
 let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_goto_definition_bind = '<C-c>g'
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
@@ -300,11 +306,12 @@ let g:tagbar_autofocus = 1
 
 
 " for airline
+let g:airline_powerline_fonts=1
 function! ArilineInit()
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
     let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
-    let g:airline_section_c = airline#section#create(['filetype'])
+    "let g:airline_section_c = airline#section#create(['filetype'])
     let g:airline_section_x = airline#section#create(['%P'])
     let g:airline_section_y = airline#section#create(['%B'])
     let g:airline_section_z = airline#section#create_right(['%l', '%c'])
