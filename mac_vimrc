@@ -23,7 +23,7 @@ set undodir=~/.Vim_undodir
 set undolevels=1000
 
 set guifont=Monaco:h16
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 set backupdir=~/.Vimbackup
 set cursorline
 "setlocal textwidth=80
@@ -150,7 +150,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'Valloric/YouCompleteMe'
@@ -181,6 +180,7 @@ Plugin 'yggdroot/indentline'    " 缩进线条
 Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 " 模糊搜索，使用z/支持模糊搜索
 map z/ <Plug>(incsearch-fuzzy-/)
@@ -229,7 +229,6 @@ let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_run = 1
 let g:pymode_run_bind = "<C-j>"
 let g:pymode_virtualenv = 1
-let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 " Override view python doc key shortcut to Ctrl-Shift-d
 let g:pymode_doc=1
@@ -254,6 +253,7 @@ let g:pymode_lint_todo_symbol = 'WW'
 let g:pymode_lint_error_symbol = '❌'
 
 " 修改默认的红线为浅色，solorized黑色主题
+"highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
 let g:pymode_options_max_line_length = 80
 let g:pymode_options_colorcolumn = 1
