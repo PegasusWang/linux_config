@@ -8,7 +8,9 @@ export EDITOR=vim
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="dpoggi"
+#ZSH_THEME="dpoggi"
+#ZSH_THEME="gnzh"
+ZSH_THEME="ohwonder"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,7 +61,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=zh_CN.UTF-8
+#export LANG=zh_CN.UTF-8
 export PYTHONIOENCODING=UTF-8    # for python
 export PYTEST_ADDOPTS="--color=yes"    # py.test color output
 
@@ -137,10 +139,12 @@ alias psp="ps aux | grep python"
 alias cdp2="pyenv activate pyenv_2.7.10; cd /home/wnn/pyenv_2.7.10"
 alias cdp="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
 alias cdp3="pyenv activate pyenv_3.5.0; cd /home/wnn/project/pyenv_3.5.0"
+alias spy="pyenv activate pyenv_3.5.0"
 alias cdlib="/home/wnn/.pyenv/versions/pyenv_2.7.10/lib/python2.7/site-packages"
 alias cdlib3="/home/wnn/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages"
 alias sd="sudo docker "
 alias y='youdao '
+alias t="tmux "
 
 
 export PYENV_ROOT="${HOME}/.pyenv"
@@ -185,6 +189,5 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # https://github.com/seebi/dircolors-solarized，终端自动安装solarized主题
-# https://github.com/sigurdga/gnome-terminal-colors-solarized
 export TERM="xterm-256color"
 eval `dircolors ~/.dir_colors/dircolors.256dark`
