@@ -6,6 +6,7 @@ set scrolloff=3
 set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
 set pastetoggle=<F2>
+map <F4> :%retab! <CR> :w <CR> 
 set nu
 set ts=4
 set sw=4
