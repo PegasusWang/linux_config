@@ -308,7 +308,8 @@ let g:tagbar_autofocus = 1
 
 
 " for airline
-let g:airline_powerline_fonts=1
+set laststatus=2
+"let g:airline_powerline_fonts=1
 function! ArilineInit()
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
