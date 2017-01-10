@@ -16,6 +16,8 @@ export DYLD_FORCE_FLAT_NAMESPACE=1
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="dpoggi"
+#ZSH_THEME="gnzh"
+
 
 export EDITOR='vim'
 
