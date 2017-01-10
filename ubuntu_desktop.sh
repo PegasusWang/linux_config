@@ -78,3 +78,10 @@ cd /tmp && git clone https://github.com/vim/vim.git && cd vim
 make VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
 alias vi='vim'
+
+
+
+# install autojump
+sudo apt-get install autojump
+cd ~
+echo ". /usr/share/autojump/autojump.sh" >> .zshrc
