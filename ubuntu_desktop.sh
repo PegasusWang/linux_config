@@ -85,3 +85,15 @@ alias vi='vim'
 sudo apt-get install autojump
 cd ~
 echo ". /usr/share/autojump/autojump.sh" >> .zshrc
+
+
+
+# install golang
+sudo curl -O https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz
+sudo tar -xvf go1.6.linux-amd64.tar.gz 
+sudo mv go /usr/local  
+
+#export GOROOT=/usr/local/go
+#export GOPATH=$HOME/golang
+#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+

@@ -8,9 +8,9 @@ export EDITOR=vim
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="dpoggi"
+ZSH_THEME="dpoggi"
 #ZSH_THEME="gnzh"
-ZSH_THEME="ohwonder"
+#ZSH_THEME="ohwonder"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -191,3 +191,7 @@ fi
 # https://github.com/seebi/dircolors-solarized，终端自动安装solarized主题
 export TERM="xterm-256color"
 eval `dircolors ~/.dir_colors/dircolors.256dark`
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
