@@ -192,6 +192,7 @@ fi
 export TERM="xterm-256color"
 eval `dircolors ~/.dir_colors/dircolors.256dark`
 
+# for golang
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/golang
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
