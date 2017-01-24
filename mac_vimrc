@@ -136,6 +136,7 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'rking/ag.vim'
@@ -176,6 +177,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
+Plugin 'fatih/vim-go'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'tpope/vim-surround'
 Plugin 'yggdroot/indentline'    " 缩进线条
@@ -230,6 +232,7 @@ let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 let g:pymode_run = 1
 let g:pymode_run_bind = "<C-j>"
+"let g:pymode_run_bind = '<leader>r'
 let g:pymode_virtualenv = 1
 
 " Override view python doc key shortcut to Ctrl-Shift-d
@@ -397,20 +400,28 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-" 比较喜欢用tab来选择补全...
-function! MyTabFunction ()
-    let line = getline('.')
-    let substr = strpart(line, -1, col('.')+1)
-    let substr = matchstr(substr, "[^ \t]*$")
-    if strlen(substr) == 0
-        return "\<tab>"
-    endif
-    return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
-endfunction
-inoremap <tab> <c-r>=MyTabFunction()<cr>
+
+ "比较喜欢用tab来选择补全...
+"function! MyTabFunction ()
+    "let line = getline('.')
+    "let substr = strpart(line, -1, col('.')+1)
+    "let substr = matchstr(substr, "[^ \t]*$")
+    "if strlen(substr) == 0
+        "return "\<tab>"
+    "endif
+    "return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+"endfunction
+"inoremap <tab> <c-r>=MyTabFunction()<cr>
 
 
 let g:LargeFile=1
 
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
+
+
+" for golang https://github.com/fatih/vim-go
+" https://github.com/fatih/vim-go-tutorial
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+au FileType go nmap <leader>r <Plug>(go-run)
