@@ -253,9 +253,9 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105"
 let g:pymode_lint_signs = 1
-let g:pymode_lint_todo_symbol = 'WW'
-" let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_lint_todo_symbol = '⚠️'
 let g:pymode_lint_error_symbol = '❌'
+let g:pymode_lint_comment_symbol = '😢'
 
 " 修改默认的红线为浅色，solorized黑色主题
 "highlight ColorColumn ctermbg=233
