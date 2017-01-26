@@ -136,6 +136,7 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
 Plugin 'jszakmeister/vim-togglecursor'
