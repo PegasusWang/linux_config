@@ -136,6 +136,7 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
@@ -314,6 +315,7 @@ let g:tagbar_autofocus = 1
 " for airline
 set laststatus=2
 "let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
@@ -335,6 +337,9 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
+" change tab
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 " 高亮当前选中单词
 autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
