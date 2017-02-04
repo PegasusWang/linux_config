@@ -54,6 +54,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'rking/ag.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LargeFile'
