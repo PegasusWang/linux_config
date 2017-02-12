@@ -29,7 +29,7 @@ set backupdir=~/.Vimbackup
 set cursorline
 "setlocal textwidth=80
 set tags=tags
-set autochdir
+"set autochdir    " 注意这个自动切换目录会使rope找目录不正确，禁用，坑死我
 autocmd BufRead,BufNewFile *.py set et ts=4 sw=4 sts=4
 set tabstop=4
 set expandtab
@@ -220,6 +220,8 @@ nnoremap py :!python %<cr>
 " 用ctrl+l可以在insert和command模式都可以保存
 inoremap <c-l> <c-o>:w<cr>
 nnoremap <c-l> :w<cr>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> [n :bnext<CR>
 
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
@@ -230,7 +232,6 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = "<C-k>"
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO REMOVE'
 
-let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 let g:pymode_run = 1
 let g:pymode_run_bind = "<C-j>"
@@ -245,7 +246,7 @@ autocmd CompleteDone * pclose
 let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
