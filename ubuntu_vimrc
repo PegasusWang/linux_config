@@ -160,6 +160,7 @@ filetype plugin indent on    " required
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
+let g:pymode_path = ['/home/wnn/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages/']
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_print_as_function = 1
 let g:pymode_syntax_highlight_async_await = g:pymode_syntax_all
@@ -181,6 +182,7 @@ let g:pymode_virtualenv = 1
 "let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 " Override view python doc key shortcut to Ctrl-Shift-d
+set completeopt=menu    " Disable new window auto documentation, https://github.com/python-mode/python-mode/issues/384
 let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
@@ -194,7 +196,7 @@ let g:pymode_rope_goto_definition_bind = '<C-]>'
 let g:pymode_rope_lookup_project = 0
 
 let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_write = 0
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
