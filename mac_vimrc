@@ -29,7 +29,7 @@ set backupdir=~/.Vimbackup
 set cursorline
 "setlocal textwidth=80
 set tags=tags
-"set autochdir    " 注意这个自动切换目录会使rope找目录不正确，禁用，坑死我
+set noautochdir    " 注意这个自动切换目录会使rope找目录不正确，禁用，坑死我
 autocmd BufRead,BufNewFile *.py set et ts=4 sw=4 sts=4
 set tabstop=4
 set expandtab
@@ -125,7 +125,7 @@ nnoremap py :!python %<cr>
 nnoremap pt :!py.test %<cr>
 nnoremap no :!node %<cr>
 "nnoremap gd :!sudo gdb %:r<cr>
-nnoremap ma :!make<cr>
+"nnoremap ma :!make<cr>
 nnoremap ex :!./%:r<cr>
 "nnoremap tg :Tlist<cr>
 "let g:winManagerWindowLayout='FileExplorer'
@@ -136,6 +136,13 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"for php
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+Plugin 'stanangeloff/php.vim'
+" endfor php
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'ervandew/supertab'
@@ -244,7 +251,7 @@ let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
 let g:pymode_rope = 1
-let g:pymode_rope_autoimport = 0
+let g:pymode_rope_autoimport = 1
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
@@ -271,7 +278,7 @@ let g:ultisnips_python_style = 'google'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,mako,css,sass,scss EmmetInstal
+autocmd FileType html,php,mako,css,sass,scss EmmetInstal
 " emment key
 let g:user_emmet_leader_key='<C-J>'
 
