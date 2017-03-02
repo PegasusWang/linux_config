@@ -53,7 +53,13 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+"for php
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+Plugin 'stanangeloff/php.vim'
+" endfor php
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'rking/ag.vim'
@@ -193,6 +199,7 @@ let g:pymode_rope_autoimport = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_goto_definition_bind = '<C-]>'
+let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_rope_lookup_project = 0
 
 let g:pymode_lint = 1
@@ -207,6 +214,12 @@ let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
 let g:pymode_lint_error_symbol = '❌'
 let g:pymode_lint_comment_symbol = '😢'
+" 修改默认的max-line红线为浅色，solorized黑色主题
+hi Search cterm=NONE ctermfg=black ctermbg=blue
+highlight ColorColumn ctermbg=black 
+let g:pymode_options_max_line_length = 80
+let g:pymode_options_colorcolumn = 1
+
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
@@ -228,6 +241,7 @@ let g:tagbar_autopreview = 0
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
+let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
     let g:airline_theme = 'wombat'
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
@@ -270,11 +284,6 @@ let g:riv_projects = [proj1]
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" 修改默认的max-line红线为浅色，solorized黑色主题
-hi Search cterm=NONE ctermfg=black ctermbg=blue
-highlight ColorColumn ctermbg=black 
-let g:pymode_options_max_line_length = 79
-let g:pymode_options_colorcolumn = 1
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
 let g:ultisnips_python_style = 'google'
@@ -282,6 +291,8 @@ let g:ultisnips_python_style = 'google'
 " 用ctrl+l可以在insert和command模式都可以保存
 inoremap <c-l> <c-o>:w<cr>
 nnoremap <c-l> :w<cr>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> [n :bnext<CR>
 
 " 评论配置
 let g:NERDTrimTrailingWhitespace = 1
