@@ -1,12 +1,13 @@
+set fillchars-=vert:\|
 "vi /usr/local/Cellar/vim/7.4.1016/share/vim/vim74/ftplugin/python.vim,
 "http://vim.1045645.n5.nabble.com/FileType-conditional-td1141787.html
 "let g:loaded_youcompleteme = 0
 
-map <F4> :%retab! <CR> :w <CR>
-" http://vim.wikia.com/wiki/Fix_indentation, 自动格式化代码
-map <F5> mzgg=G`z`
 " for paste mode toggle
 set pastetoggle=<F2>
+map <F4> :%retab! <CR> :w <CR>
+" http://vim.wikia.com/wiki/Fix_indentation, 自动格式化代码
+"map <F5> mzgg=G`z`
 
 "for mac os crontab
 autocmd filetype crontab setlocal nobackup nowritebackup
@@ -50,9 +51,9 @@ set termencoding=utf-8
 set formatoptions+=mM
 set fencs=utf-8,gbk
 
-if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
-set ambiwidth=double
-endif
+"if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
+"set ambiwidth=double
+"endif
 
 if has("win32")
 source $VIMRUNTIME/delmenu.vim
@@ -137,12 +138,17 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "for php
+"Bundle 'joonty/vdebug'
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/unite.vim'
+Plugin 'shawncplus/phpcomplete.vim'
 Bundle 'm2mdas/phpcomplete-extended'
 Plugin 'stanangeloff/php.vim'
+Bundle 'joonty/vim-phpqa.git'
 " endfor php
+Plugin 'posva/vim-vue'
+Plugin 'sekel/vim-vue-syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'ervandew/supertab'
@@ -162,8 +168,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-eunuch'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'gorodinskiy/vim-coloresque'
+"Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
@@ -195,6 +202,12 @@ Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'ryanoasis/vim-devicons'
 
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+let g:easytags_python_enabled = 0
+let g:easytags_python_script = 0
+autocmd FileType python let b:easytags_auto_highlight = 0
+
 " 模糊搜索，使用z/支持模糊搜索
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
@@ -204,6 +217,7 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
 Bundle 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
 " "..................................
 " " vim-scripts repos
 " Bundle 'YankRing.vim'
@@ -270,7 +284,7 @@ let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的红线为浅色，solorized黑色主题
 "highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
-let g:pymode_options_max_line_length = 80
+let g:pymode_options_max_line_length = 119
 let g:pymode_options_colorcolumn = 1
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
 let g:ultisnips_python_style = 'google'
@@ -278,7 +292,7 @@ let g:ultisnips_python_style = 'google'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,php,mako,css,sass,scss EmmetInstal
+autocmd FileType html,php,mako,css,sass,scss,vue.html.javascript.css EmmetInstal
 " emment key
 let g:user_emmet_leader_key='<C-J>'
 
@@ -369,22 +383,52 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 
 
 "http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
+"http://www.wklken.me/posts/2015/06/07/vim-plugin-rainbowparentheses.html
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" 不加入这行, 防止黑色括号出现, 很难识别
+" \ ['black',       'SeaGreen3'],
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-let g:rbpt_max = 16
+
 
 "语法检查配置
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+"let g:syntastic_mode_map = { 'mode': 'active',
+                            "\ 'active_filetypes': ['php', 'javascript'],
+                            "\ 'passive_filetypes': [] }
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_enable_javascript_checker = 1
 let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 3
@@ -437,5 +481,17 @@ command P PymodeLint
 " for golang https://github.com/fatih/vim-go
 " https://github.com/fatih/vim-go-tutorial
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 au FileType go nmap <leader>r <Plug>(go-run)
+
+
+"for php
+let g:syntastic_php_checkers = ['php']  ", 'phpcs', 'phpmd']
+let g:phpqa_codesniffer_args = "--standard=PSR2"
+"let g:vdebug_options = {'ide_key': 'netbeans-xdebug'}
+"let g:vdebug_options = {'break_on_open': 0}
+"let g:vdebug_options = {'server': '127.0.0.1'}
+"let g:vdebug_options = {'port': '9000'}
+
+" for html
+let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
