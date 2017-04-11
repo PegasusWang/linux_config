@@ -177,6 +177,7 @@ Plugin 'marijnh/tern_for_vim'
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'Rykka/InstantRst'
+Bundle 'vim-scripts/BufOnly.vim'
 Plugin 'suan/vim-instant-markdown'
 Bundle 'jiangmiao/auto-pairs'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -422,7 +423,7 @@ set statusline+=%*
                             "\ 'active_filetypes': ['php', 'javascript'],
                             "\ 'passive_filetypes': [] }
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': ['php']  }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_enable_javascript_checker = 1
 let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
@@ -486,6 +487,7 @@ au FileType go nmap <leader>r <Plug>(go-run)
 
 
 "for php
+let g:syntastic_enable_php_checker = 0
 let g:syntastic_php_checkers = ['php']  ", 'phpcs', 'phpmd']
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 "let g:vdebug_options = {'ide_key': 'netbeans-xdebug'}
