@@ -6,7 +6,7 @@ set scrolloff=3
 set cursorline
 autocmd Filetype gitcommit setlocal spell textwidth=72
 set pastetoggle=<F2>
-map <F4> :%retab! <CR> :w <CR> 
+map <F4> :%retab! <CR> :w <CR>
 set nu
 set ts=4
 set sw=4
@@ -60,6 +60,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
 Plugin 'stanangeloff/php.vim'
 " endfor php
+Bundle 'vim-scripts/BufOnly.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'rking/ag.vim'
@@ -216,7 +217,7 @@ let g:pymode_lint_error_symbol = '❌'
 let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的max-line红线为浅色，solorized黑色主题
 hi Search cterm=NONE ctermfg=black ctermbg=blue
-highlight ColorColumn ctermbg=black 
+highlight ColorColumn ctermbg=black
 let g:pymode_options_max_line_length = 80
 let g:pymode_options_colorcolumn = 1
 
