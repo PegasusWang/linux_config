@@ -54,11 +54,11 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 "for php
-Bundle 'captbaritone/better-indent-support-for-php-with-html'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/unite.vim'
-Bundle 'm2mdas/phpcomplete-extended'
-Plugin 'stanangeloff/php.vim'
+"Bundle 'captbaritone/better-indent-support-for-php-with-html'
+"Bundle 'Shougo/vimproc'
+"Bundle 'Shougo/unite.vim'
+"Bundle 'm2mdas/phpcomplete-extended'
+"Plugin 'stanangeloff/php.vim'
 " endfor php
 Bundle 'vim-scripts/BufOnly.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -218,7 +218,7 @@ let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的max-line红线为浅色，solorized黑色主题
 hi Search cterm=NONE ctermfg=black ctermbg=blue
 highlight ColorColumn ctermbg=black
-let g:pymode_options_max_line_length = 80
+let g:pymode_options_max_line_length = 119
 let g:pymode_options_colorcolumn = 1
 
 
@@ -235,7 +235,7 @@ nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 
 
 " for Tagbarbar, sudo apt-get install ctags
-nnoremap <silent> <F12> :TagbarToggle<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 1
 let g:tagbar_autopreview = 0
