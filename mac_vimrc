@@ -1,4 +1,3 @@
-set fillchars-=vert:\|
 "vi /usr/local/Cellar/vim/7.4.1016/share/vim/vim74/ftplugin/python.vim,
 "http://vim.1045645.n5.nabble.com/FileType-conditional-td1141787.html
 "let g:loaded_youcompleteme = 0
@@ -139,6 +138,7 @@ call vundle#rc()
 
 "for php
 "Bundle 'joonty/vdebug'
+Bundle "elzr/vim-json"
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/unite.vim'
@@ -167,7 +167,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
-Plugin 'xuyuanp/nerdtree-git-plugin'
+"Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-eunuch'
 Plugin 'cakebaker/scss-syntax.vim'
 "Plugin 'gorodinskiy/vim-coloresque'
@@ -175,6 +175,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
 " let Vundle manage Vundle
+Plugin 'solarnz/thrift.vim'
 Bundle 'gmarik/vundle'
 Bundle 'Rykka/InstantRst'
 Bundle 'vim-scripts/BufOnly.vim'
@@ -204,10 +205,10 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-let g:easytags_python_enabled = 0
-let g:easytags_python_script = 0
-autocmd FileType python let b:easytags_auto_highlight = 0
+"Plugin 'xolox/vim-easytags'
+"let g:easytags_python_enabled = 0
+"let g:easytags_python_script = 0
+"autocmd FileType python let b:easytags_auto_highlight = 0
 
 " 模糊搜索，使用z/支持模糊搜索
 map z/ <Plug>(incsearch-fuzzy-/)
@@ -218,7 +219,7 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
 Bundle 'scrooloose/nerdcommenter'
-let g:NERDSpaceDelims = 1
+" let g:NERDSpaceDelims = 1
 " "..................................
 " " vim-scripts repos
 " Bundle 'YankRing.vim'
@@ -266,9 +267,10 @@ let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
 let g:pymode_rope = 1
-let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_rope_goto_definition_cmd = 'vnew'
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
@@ -285,10 +287,10 @@ let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的红线为浅色，solorized黑色主题
 "highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
-let g:pymode_options_max_line_length = 119
+let g:pymode_options_max_line_length = 120
 let g:pymode_options_colorcolumn = 1
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
-let g:ultisnips_python_style = 'google'
+let g:ultisnips_python_style = 'sphinx'
 
 
 " For emmemt only avilable for html,css,sass
@@ -325,7 +327,7 @@ autocmd bufnewfile *.sh call HeaderSh()
 
 " for nerdtree
 "autocmd vimenter * NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle'<CR>
 
 
@@ -497,3 +499,25 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 " for html
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+let g:vim_json_syntax_conceal = 0
+
+
+" https://github.com/wincent/wincent/blob/bff31c32e427c5913d1eed0b0c1b3da24e8ba8ba/roles/dotfiles/files/.vim/plugin/settings.vim#L38
+if has('folding')
+  if has('windows')
+	set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=99               " start unfolded
+endif
+
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j                " remove comment leader when joining comment lines
+endif
+
+set formatoptions+=n                  " smart auto-indenting inside numbered lists
+set guioptions-=T                     " don't show toolbar
+set hidden                            " allows you to hide buffers with unsaved changes without being prompted
+set highlight+=c:LineNr               " blend vertical separators with line numbers
+set laststatus=2                      " always show status line
+set lazyredraw                        " don't bother updating screen during macro playback
