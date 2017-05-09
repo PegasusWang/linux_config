@@ -253,7 +253,7 @@ let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = "<C-k>"
-let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO REMOVE'
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO REMOVE; from nose.tools import set_trace; set_trace()'
 
 
 let g:pymode_run = 1
