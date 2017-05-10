@@ -22,5 +22,14 @@ wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master
 
 # zhihu
 sudo apt-get install tzdata='2016c-0+deb8u1'
-sudo apt-get install thrift-compiler
+sudo apt-get install default-jdk
+# sudo apt-get install thrift-compiler
+ sudo apt-get install zhihu-protobuf
 sudo apt-get install -y mysql-server
+
+# install thrift=0.9.3
+wget http://apache.01link.hk/thrift/0.9.3/thrift-0.9.3.tar.gz
+cd thrift-0.9.3
+./configure
+make
+sudo make install
