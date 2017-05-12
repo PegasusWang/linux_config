@@ -1,6 +1,7 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+set bg=dark
 set backspace=indent,eol,start
 set scrolloff=3
 set cursorline
@@ -206,11 +207,12 @@ let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_rope_lookup_project = 0
 
 let g:pymode_lint = 1
-let g:pymode_lint_on_write = 0
+let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
-let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+"let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_cwindow = 0    " open quickfix window
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
@@ -219,7 +221,7 @@ let g:pymode_lint_error_symbol = '❌'
 let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的max-line红线为浅色，solorized黑色主题
 "hi Search cterm=NONE ctermfg=black ctermbg=blue
-"highlight ColorColumn ctermbg=black
+highlight ColorColumn ctermbg=233
 let g:pymode_options_max_line_length = 120
 let g:pymode_options_colorcolumn = 1
 
@@ -373,3 +375,16 @@ set hidden                            " allows you to hide buffers with unsaved 
 set highlight+=c:LineNr               " blend vertical separators with line numbers
 set laststatus=2                      " always show status line
 set lazyredraw                        " don't bother updating screen during macro playback
+
+" http://stackoverflow.com/questions/6488683/how-do-i-change-the-vim-cursor-in-insert-normal-mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
