@@ -192,6 +192,7 @@ Plugin 'honza/vim-snippets'
 Bundle 'scrooloose/syntastic'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
@@ -243,8 +244,10 @@ nnoremap py :!python %<cr>
 " 用ctrl+l可以在insert和command模式都可以保存
 inoremap <c-l> <c-o>:w<cr>
 nnoremap <c-l> :w<cr>
+" 切换 buffer
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
+
 
 let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
@@ -285,7 +288,7 @@ let g:pymode_lint_error_symbol = '❌'
 let g:pymode_lint_comment_symbol = '😢'
 
 " 修改默认的红线为浅色，solorized黑色主题
-"highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
 let g:pymode_options_max_line_length = 120
 let g:pymode_options_colorcolumn = 1
@@ -521,3 +524,7 @@ set hidden                            " allows you to hide buffers with unsaved 
 set highlight+=c:LineNr               " blend vertical separators with line numbers
 set laststatus=2                      " always show status line
 set lazyredraw                        " don't bother updating screen during macro playback
+
+" 退出快捷键
+noremap <leader>e :q<cr>
+noremap <leader>E :qa!<cr>
