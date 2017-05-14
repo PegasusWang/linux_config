@@ -389,3 +389,7 @@ else
 endif
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
+
+" 退出快捷键
+noremap <leader>e :q<cr>
+noremap <leader>E :qa!<cr>
