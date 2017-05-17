@@ -61,6 +61,8 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plugin 'tpope/vim-sensible'
 Plugin 'elzr/vim-json'
 Plugin 'solarnz/thrift.vim'
@@ -395,3 +397,10 @@ endif
 " 退出快捷键
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
+
+" https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
+nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
+nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
+
+" https://github.com/jaxbot/semantic-highlight.vim
+nnoremap <Leader>s :SemanticHighlightToggle<cr>

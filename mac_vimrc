@@ -138,6 +138,8 @@ call vundle#rc()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plugin 'tpope/vim-sensible'
 Bundle "elzr/vim-json"
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
@@ -341,7 +343,7 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 "let g:tagbar_show_linenumbers = 1
-set updatetime=100    " ms update
+set updatetime=1000    " ms update
 
 
 " for airline
@@ -532,3 +534,10 @@ set lazyredraw                        " don't bother updating screen during macr
 " 退出快捷键
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
+
+" https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
+nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
+nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
+
+" https://github.com/jaxbot/semantic-highlight.vim
+nnoremap <Leader>s :SemanticHighlightToggle<cr>
