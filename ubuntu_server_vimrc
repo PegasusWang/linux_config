@@ -61,6 +61,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'tpope/vim-sensible'
 Plugin 'elzr/vim-json'
 Plugin 'solarnz/thrift.vim'
 Bundle 'vim-scripts/BufOnly.vim'
@@ -242,8 +243,9 @@ nnoremap <F10> :exe 'NERDTreeToggle' <CR>
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
-let g:tagbar_sort = 1
+let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
+set updatetime=100    " ms update
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
