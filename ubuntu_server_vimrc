@@ -1,6 +1,7 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+let $TMPDIR = $HOME."/tmp"
 set bg=dark
 set backspace=indent,eol,start
 set scrolloff=3
@@ -404,3 +405,6 @@ nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
 
 " https://github.com/jaxbot/semantic-highlight.vim
 nnoremap <Leader>s :SemanticHighlightToggle<cr>
+
+" 禁止 startify 自动切换目录
+let g:startify_change_to_dir = 0
