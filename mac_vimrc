@@ -277,12 +277,16 @@ let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_rope_goto_definition_cmd = 'vnew'
+let g:pymode_rope_regenerate_on_write = 0
+command R PymodeRopeRegenerate
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
+command P PymodeLint
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105"
 let g:pymode_lint_signs = 1
@@ -310,24 +314,24 @@ autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 "新建.py,.cc,.java,.sh,
 "定义函数SetTitle，自动插入文件头
 func SetTitle()
-    if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call setline(2, "\# -*- coding:utf-8 -*-")
-        normal G
-        normal o
-        normal o
-        call setline(5, "if __name__ == '__main__':")
-        call setline(6, "    pass")
+if &filetype == 'python'
+    call setline(1, "\#!/usr/bin/env python")
+    call setline(2, "\# -*- coding:utf-8 -*-")
+    normal G
+    normal o
+    normal o
+    call setline(5, "if __name__ == '__main__':")
+    call setline(6, "    pass")
 
-    endif
+endif
 endfunc
 
 
 function HeaderSh()
-    call setline(1, "#!/usr/bin/env bash")
-    normal G
-    normal o
-    normal o
+call setline(1, "#!/usr/bin/env bash")
+normal G
+normal o
+normal o
 endf
 autocmd bufnewfile *.sh call HeaderSh()
 
@@ -351,13 +355,13 @@ set laststatus=2
 "let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
-    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
-    "let g:airline_section_c = airline#section#create(['filetype'])
-    let g:airline_section_x = airline#section#create(['%P'])
-    let g:airline_section_y = airline#section#create(['%B'])
-    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
+"let g:airline_section_c = airline#section#create(['filetype'])
+let g:airline_section_x = airline#section#create(['%P'])
+let g:airline_section_y = airline#section#create(['%B'])
+let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call ArilineInit()
 
@@ -366,9 +370,9 @@ let mapleader=','
 let g:mapleader=','
 
 if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
+map <leader>1 :diffget LOCAL<CR>
+map <leader>2 :diffget BASE<CR>
+map <leader>3 :diffget REMOTE<CR>
 endif
 
 " change tab
@@ -397,22 +401,22 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 "http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
 "http://www.wklken.me/posts/2015/06/07/vim-plugin-rainbowparentheses.html
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+\ ['brown',       'RoyalBlue3'],
+\ ['Darkblue',    'SeaGreen3'],
+\ ['darkgray',    'DarkOrchid3'],
+\ ['darkgreen',   'firebrick3'],
+\ ['darkcyan',    'RoyalBlue3'],
+\ ['darkred',     'SeaGreen3'],
+\ ['darkmagenta', 'DarkOrchid3'],
+\ ['brown',       'firebrick3'],
+\ ['gray',        'RoyalBlue3'],
+\ ['darkmagenta', 'DarkOrchid3'],
+\ ['Darkblue',    'firebrick3'],
+\ ['darkgreen',   'RoyalBlue3'],
+\ ['darkcyan',    'SeaGreen3'],
+\ ['darkred',     'DarkOrchid3'],
+\ ['red',         'firebrick3'],
+\ ]
 
 " 不加入这行, 防止黑色括号出现, 很难识别
 " \ ['black',       'SeaGreen3'],
@@ -431,8 +435,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "let g:syntastic_mode_map = { 'mode': 'active',
-                            "\ 'active_filetypes': ['php', 'javascript'],
-                            "\ 'passive_filetypes': [] }
+                        "\ 'active_filetypes': ['php', 'javascript'],
+                        "\ 'passive_filetypes': [] }
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': ['php']  }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
@@ -471,23 +475,20 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
- "比较喜欢用tab来选择补全...
+"比较喜欢用tab来选择补全...
 "function! MyTabFunction ()
-    "let line = getline('.')
-    "let substr = strpart(line, -1, col('.')+1)
-    "let substr = matchstr(substr, "[^ \t]*$")
-    "if strlen(substr) == 0
-        "return "\<tab>"
-    "endif
-    "return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+"let line = getline('.')
+"let substr = strpart(line, -1, col('.')+1)
+"let substr = matchstr(substr, "[^ \t]*$")
+"if strlen(substr) == 0
+    "return "\<tab>"
+"endif
+"return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 "endfunction
 "inoremap <tab> <c-r>=MyTabFunction()<cr>
 
 
 let g:LargeFile=1
-
-" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
-command P PymodeLint
 
 
 " for golang https://github.com/fatih/vim-go
@@ -513,15 +514,15 @@ let g:vim_json_syntax_conceal = 0
 
 " https://github.com/wincent/wincent/blob/bff31c32e427c5913d1eed0b0c1b3da24e8ba8ba/roles/dotfiles/files/.vim/plugin/settings.vim#L38
 if has('folding')
-  if has('windows')
-    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
-  endif
-  set foldmethod=indent               " not as cool as syntax, but faster
-  set foldlevelstart=99               " start unfolded
+if has('windows')
+set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+endif
+set foldmethod=indent               " not as cool as syntax, but faster
+set foldlevelstart=99               " start unfolded
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j                " remove comment leader when joining comment lines
+set formatoptions+=j                " remove comment leader when joining comment lines
 endif
 
 set formatoptions+=n                  " smart auto-indenting inside numbered lists

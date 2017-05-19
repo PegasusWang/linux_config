@@ -1,7 +1,8 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-let $TMPDIR = $HOME."/tmp"
+" 先创建 .tmp 文件夹，处理一些权限导致的无法在 /tmp 创建文件的问题，有些 vim 插件需要创建临时文件，直接在 /tmp 里创建可能会失败
+let $TMPDIR = $HOME."/.tmp"
 set bg=dark
 set backspace=indent,eol,start
 set scrolloff=3
@@ -210,12 +211,16 @@ let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_goto_definition_bind = '<C-]>'
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_regenerate_on_write = 0
+command R PymodeRopeRegenerate
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
+command P PymodeLint
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_cwindow = 0    " open quickfix window
@@ -248,7 +253,7 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
-set updatetime=100    " ms update
+set updatetime=1000    " ms update
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
@@ -348,10 +353,6 @@ let g:indentLine_color_term = 239
 
 
 let g:LargeFile=1
-
-
-" http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
-command P PymodeLint
 
 
 "http://sjl.bitbucket.org/gundo.vim/
