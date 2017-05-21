@@ -63,6 +63,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plugin 'tpope/vim-sensible'
@@ -215,7 +216,7 @@ let g:pymode_rope_regenerate_on_write = 0
 command R PymodeRopeRegenerate
 
 let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_write = 0
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
@@ -409,3 +410,11 @@ nnoremap <Leader>s :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
+
+" solarized 主题
+let g:solarized_termtrans = 1
+"let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"

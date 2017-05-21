@@ -138,6 +138,7 @@ call vundle#rc()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plugin 'tpope/vim-sensible'
@@ -353,6 +354,7 @@ set updatetime=1000    " ms update
 " for airline
 set laststatus=2
 "let g:airline_powerline_fonts=1
+let g:airline_theme = 'wombat'
 let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
 let g:airline#extensions#tabline#enabled = 1
@@ -545,3 +547,11 @@ nnoremap <Leader>s :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
+
+" solarized 主题
+let g:solarized_termtrans = 1
+"let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
