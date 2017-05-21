@@ -15,8 +15,9 @@ export DYLD_FORCE_FLAT_NAMESPACE=1
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="dpoggi"
 #ZSH_THEME="gnzh"
+ZSH_THEME="dpoggi"
+ZSH_THEME="xxf"
 
 
 export EDITOR='vim'
@@ -43,8 +44,10 @@ alias cds='cd /Users/pegasus/Program/Sites'
 alias cdlib='cd /Users/pegasus/Program/py_test/lib/python2.7/site-packages'
 alias cdlib3='cd /Users/pegasus/Program/py3.5_test/lib/python3.5/site-packages'
 alias cdp2='cd /Users/pegasus/Program/py_test; source ./bin/activate;'
+alias spy2='source /Users/pegasus/Program/py_test/bin/activate;'
 alias cdw='cd /Users/pegasus/Program/py_test/WeiboApp'
 alias cdp='cd /Users/pegasus/Program/py3.5_test; source ./bin/activate;'
+alias spy='source /Users/pegasus/Program/py3.5_test/bin/activate;'
 alias ce='crontab -e '
 alias cl='crontab -l '
 alias ed='eval $(docker-machine env default)'
@@ -53,6 +56,8 @@ alias loc="open http://127.0.0.1"
 alias lsn='ls | nl'
 alias gs='git status -s'
 alias gmg='git commit -m'
+alias gitproxy="git config --global https.proxy http://127.0.0.1:63463; git config --global https.proxy https://127.0.0.1:63463"
+alias ungitproxy="git config --global --unset http.proxy; git config --global --unset https.proxy"
 alias hexog='hexo g'
 alias hs='hexo s'
 alias hn='hexo n'
@@ -82,6 +87,7 @@ alias gcc='gcc -Wall '
 alias cc='cc -Wall '
 alias xo='open '
 alias o='open '
+alias phptag='ctags -R --fields=+laimS --languages=php'
 alias psp='ps aux | grep python'
 alias pi='~/pi'
 alias rm='rmtrash '
@@ -94,7 +100,7 @@ alias rs='redis-server'
 #alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate;fswatch -o ./*.py  | xargs -n1  ./runtest.sh'
 # https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
 alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
-alias sqlstart='mysql.server start'
+alias mysqlsqlstart='mysql.server start'
 alias -s h=vi
 alias -s c=vi
 alias -s cpp=vi
@@ -105,6 +111,7 @@ alias prettyjson='python -m json.tool'
 alias y='youdao '
 alias t='tmux '
 export TERM="xterm-256color"    # iterm vim support ariline
+
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -180,3 +187,25 @@ alias eslint='/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
 
 
 [[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+
+
+# for golang
+export GOPATH=$HOME/Program/go
+
+
+# for php
+export PATH="$(brew --prefix php70)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+
+
+# https://github.com/seebi/dircolors-solarized，终端自动安装solarized主题
+# https://github.com/gibbling/dircolors
+export TERM="xterm-256color"
+eval $(gdircolors ~/.dircolors/dircolors.256dark)
+
+# Aliases
+alias ls='gls --color=auto'
+alias ll='ls -al'
