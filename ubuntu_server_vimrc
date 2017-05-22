@@ -247,7 +247,7 @@ let g:user_emmet_leader_key='<C-J>'
 " autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle' <CR>
-
+nmap ,v :NERDTreeFind<cr> 
 
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -290,6 +290,14 @@ nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnder
 " when use diff from cmd line, change color theme
 if &diff
     colorscheme evening
+else
+    " solarized 主题
+    let g:solarized_termtrans = 1
+    "let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
+    let g:solarized_visibility = "high"
+    let g:solarized_contrast = "high"
 endif
 
 " 书写rst用到
@@ -411,10 +419,3 @@ nnoremap <Leader>s :SemanticHighlightToggle<cr>
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
 
-" solarized 主题
-let g:solarized_termtrans = 1
-"let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
