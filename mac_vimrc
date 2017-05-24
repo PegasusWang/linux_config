@@ -559,4 +559,4 @@ let g:solarized_contrast = "high"
 
 
 " 用 ,a 搜索当前 cursor 下单词
-noremap <leader>a :Ag! "def <cword>"<cr>
+noremap <leader>a :Ag! "<cword>"<cr>
