@@ -253,9 +253,8 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
 
 
-let g:pymode_python = 'python3'  " Values are `python`, `python3`, `disable`.
+let g:pymode_python = 'python'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
-let g:pymode_quickfix_maxheight = 3
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
@@ -298,6 +297,7 @@ let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的红线为浅色，solorized黑色主题
 highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
+let g:pymode_quickfix_maxheight = 1
 let g:pymode_options_max_line_length = 120
 let g:pymode_options_colorcolumn = 1
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
@@ -340,6 +340,7 @@ autocmd bufnewfile *.sh call HeaderSh()
 "autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+nmap ,v :NERDTreeFind<cr>
 
 
 " for Tagbarbar, sudo apt-get install ctags
@@ -555,3 +556,7 @@ set background=dark
 colorscheme solarized
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+
+
+" 用 ,a 搜索当前 cursor 下单词
+noremap <leader>a :Ag! "def <cword>"<cr>

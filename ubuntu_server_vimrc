@@ -247,7 +247,7 @@ let g:user_emmet_leader_key='<C-J>'
 " autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle' <CR>
-nmap ,v :NERDTreeFind<cr> 
+nmap ,v :NERDTreeFind<cr>
 
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -419,3 +419,6 @@ nnoremap <Leader>s :SemanticHighlightToggle<cr>
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
 
+
+" 用 ,a 搜索当前 cursor 下单词
+noremap <leader>a :Ag! "def <cword>"<cr>
