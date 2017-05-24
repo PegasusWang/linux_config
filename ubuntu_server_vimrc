@@ -247,10 +247,12 @@ let g:user_emmet_leader_key='<C-J>'
 " autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle' <CR>
+nnoremap on :exe 'NERDTreeToggle' <CR>     " use on open nerdtree
 nmap ,v :NERDTreeFind<cr>
 
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
+nnoremap ot :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
