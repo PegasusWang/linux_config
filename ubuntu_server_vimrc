@@ -63,6 +63,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
@@ -227,9 +228,12 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 let g:pymode_lint_cwindow = 0    " open quickfix window
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
-let g:pymode_lint_todo_symbol = '⚠️'
+let g:pymode_lint_todo_symbol = 'TD'
+let g:pymode_lint_comment_symbol = '😢'    # line too long
+let g:pymode_lint_visual_symbol = 'RR'    # mccabe
 let g:pymode_lint_error_symbol = '❌'
-let g:pymode_lint_comment_symbol = '😢'
+let g:pymode_lint_info_symbol = 'II'
+let g:pymode_lint_pyflakes_symbol = 'PF'
 " 修改默认的max-line红线为浅色，solorized黑色主题
 "hi Search cterm=NONE ctermfg=black ctermbg=blue
 highlight ColorColumn ctermbg=233
