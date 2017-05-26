@@ -260,7 +260,7 @@ nnoremap ot :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
-set updatetime=1000    " ms update
+set updatetime=500   " milliseconds update
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
@@ -428,3 +428,6 @@ let g:startify_change_to_dir = 0
 
 " 用 ,a 搜索当前 cursor 下单词
 noremap <leader>a :Ag! "<cword>"<cr>
+
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
