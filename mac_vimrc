@@ -340,16 +340,18 @@ autocmd bufnewfile *.sh call HeaderSh()
 "autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
 nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+nnoremap on :exe 'NERDTreeToggle' <CR>     " use on open nerdtree
 nmap ,v :NERDTreeFind<cr>
 
 
 " for Tagbarbar, sudo apt-get install ctags
 "nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
+nnoremap ot :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
-"let g:tagbar_show_linenumbers = 1
-set updatetime=1000    " ms update
+let g:tagbar_autopreview = 0
+set updatetime=500   " milliseconds update
 
 
 " for airline
@@ -559,4 +561,7 @@ let g:solarized_contrast = "high"
 
 
 " 用 ,a 搜索当前 cursor 下单词
-noremap <leader>a :Ag! "<cword>"<cr>
+noremap <leader>a :Ag! "def <cword>"<cr>
+
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
