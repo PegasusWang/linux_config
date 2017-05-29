@@ -393,6 +393,8 @@ nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnder
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
 
+" Plugin 'suan/vim-instant-markdown', :InstantMarkdownPreview
+let g:instant_markdown_autostart = 0
 
 " ctrlp, 在~/.agignore添加一行node_modules
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -561,7 +563,7 @@ let g:solarized_contrast = "high"
 
 
 " 用 ,a 搜索当前 cursor 下单词
-noremap <leader>a :Ag! "def <cword>"<cr>
+noremap <leader>a :Ag! "<cword>"<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
