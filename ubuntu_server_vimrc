@@ -217,7 +217,7 @@ let g:pymode_rope_regenerate_on_write = 0
 command R PymodeRopeRegenerate
 
 let g:pymode_lint = 1
-let g:pymode_lint_on_write = 0
+let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
@@ -414,13 +414,15 @@ endif
 " 退出快捷键
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
+noremap <leader>b :bd<cr>
+noremap <leader>s :vs<cr>
 
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
 nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
 
 " https://github.com/jaxbot/semantic-highlight.vim
-nnoremap <Leader>s :SemanticHighlightToggle<cr>
+"nnoremap <Leader>s :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
