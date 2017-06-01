@@ -133,23 +133,25 @@ let g:winManagerWindowLayout = 'FileExplorer,BufExplorer|TagList'
 
 set nocompatible                " be iMproved
 filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'rizzatti/dash.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plugin 'tpope/vim-sensible'
 Bundle "elzr/vim-json"
-Bundle 'captbaritone/better-indent-support-for-php-with-html'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/unite.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Bundle 'm2mdas/phpcomplete-extended'
-Plugin 'stanangeloff/php.vim'
-Bundle 'joonty/vim-phpqa.git'
+" Bundle 'captbaritone/better-indent-support-for-php-with-html'
+" Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/unite.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Bundle 'm2mdas/phpcomplete-extended'
+" Plugin 'stanangeloff/php.vim'
+" Bundle 'joonty/vim-phpqa.git'
 " endfor php
 Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
@@ -171,7 +173,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'xuyuanp/nerdtree-git-plugin'
+" Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-eunuch'
 Plugin 'cakebaker/scss-syntax.vim'
 "Plugin 'gorodinskiy/vim-coloresque'
@@ -210,10 +212,10 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
-"let g:easytags_python_enabled = 0
-"let g:easytags_python_script = 0
-"autocmd FileType python let b:easytags_auto_highlight = 0
+" Plugin 'xolox/vim-easytags'
+" let g:easytags_python_enabled = 0
+" let g:easytags_python_script = 0
+" autocmd FileType python let b:easytags_auto_highlight = 0
 
 " 模糊搜索，使用z/支持模糊搜索
 map z/ <Plug>(incsearch-fuzzy-/)
@@ -224,7 +226,7 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 "Bundle 'Valloric/YouCompleteMe'
 " Bundle 't9md/vim-quickhl'
 Bundle 'scrooloose/nerdcommenter'
-" let g:NERDSpaceDelims = 1
+let g:NERDSpaceDelims = 1
 " "..................................
 " " vim-scripts repos
 " Bundle 'YankRing.vim'
@@ -239,7 +241,7 @@ Bundle 'scrooloose/nerdcommenter'
 " " Bundle 'git://git.wincent.com/command-t.git'
 " "......................................
 
-syntax enable
+call vundle#end()
 filetype plugin indent on
 
 " brew install vim --with-python3
@@ -252,9 +254,9 @@ nnoremap <c-l> :w<cr>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
 
-
 let g:pymode_python = 'python'  " Values are `python`, `python3`, `disable`.
 let g:pymode_trim_whitespaces = 1
+let g:pymode_quickfix_maxheight = 3
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
@@ -272,7 +274,7 @@ let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-]>"
@@ -297,7 +299,6 @@ let g:pymode_lint_comment_symbol = '😢'
 " 修改默认的红线为浅色，solorized黑色主题
 highlight ColorColumn ctermbg=233
 let g:pymode_lint_cwindow = 0
-let g:pymode_quickfix_maxheight = 1
 let g:pymode_options_max_line_length = 120
 let g:pymode_options_colorcolumn = 1
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
@@ -315,24 +316,24 @@ autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 "新建.py,.cc,.java,.sh,
 "定义函数SetTitle，自动插入文件头
 func SetTitle()
-if &filetype == 'python'
-    call setline(1, "\#!/usr/bin/env python")
-    call setline(2, "\# -*- coding:utf-8 -*-")
-    normal G
-    normal o
-    normal o
-    call setline(5, "if __name__ == '__main__':")
-    call setline(6, "    pass")
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python")
+        call setline(2, "\# -*- coding:utf-8 -*-")
+        normal G
+        normal o
+        normal o
+        call setline(5, "if __name__ == '__main__':")
+        call setline(6, "    pass")
 
-endif
+    endif
 endfunc
 
 
 function HeaderSh()
-call setline(1, "#!/usr/bin/env bash")
-normal G
-normal o
-normal o
+    call setline(1, "#!/usr/bin/env bash")
+    normal G
+    normal o
+    normal o
 endf
 autocmd bufnewfile *.sh call HeaderSh()
 
@@ -350,23 +351,23 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap ot :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
-let g:tagbar_autopreview = 0
-set updatetime=500   " milliseconds update
+"let g:tagbar_show_linenumbers = 1
+set updatetime=1000    " ms update
 
 
 " for airline
 set laststatus=2
-"let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 let g:airline_theme = 'wombat'
 let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
-let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
-"let g:airline_section_c = airline#section#create(['filetype'])
-let g:airline_section_x = airline#section#create(['%P'])
-let g:airline_section_y = airline#section#create(['%B'])
-let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
+    "let g:airline_section_c = airline#section#create(['filetype'])
+    let g:airline_section_x = airline#section#create(['%P'])
+    let g:airline_section_y = airline#section#create(['%B'])
+    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call ArilineInit()
 
@@ -375,9 +376,9 @@ let mapleader=','
 let g:mapleader=','
 
 if &diff
-map <leader>1 :diffget LOCAL<CR>
-map <leader>2 :diffget BASE<CR>
-map <leader>3 :diffget REMOTE<CR>
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
 endif
 
 " change tab
@@ -408,22 +409,22 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 "http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
 "http://www.wklken.me/posts/2015/06/07/vim-plugin-rainbowparentheses.html
 let g:rbpt_colorpairs = [
-\ ['brown',       'RoyalBlue3'],
-\ ['Darkblue',    'SeaGreen3'],
-\ ['darkgray',    'DarkOrchid3'],
-\ ['darkgreen',   'firebrick3'],
-\ ['darkcyan',    'RoyalBlue3'],
-\ ['darkred',     'SeaGreen3'],
-\ ['darkmagenta', 'DarkOrchid3'],
-\ ['brown',       'firebrick3'],
-\ ['gray',        'RoyalBlue3'],
-\ ['darkmagenta', 'DarkOrchid3'],
-\ ['Darkblue',    'firebrick3'],
-\ ['darkgreen',   'RoyalBlue3'],
-\ ['darkcyan',    'SeaGreen3'],
-\ ['darkred',     'DarkOrchid3'],
-\ ['red',         'firebrick3'],
-\ ]
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 
 " 不加入这行, 防止黑色括号出现, 很难识别
 " \ ['black',       'SeaGreen3'],
@@ -442,8 +443,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "let g:syntastic_mode_map = { 'mode': 'active',
-                        "\ 'active_filetypes': ['php', 'javascript'],
-                        "\ 'passive_filetypes': [] }
+                            "\ 'active_filetypes': ['php', 'javascript'],
+                            "\ 'passive_filetypes': [] }
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': ['php']  }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
@@ -482,15 +483,15 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
-"比较喜欢用tab来选择补全...
+ "比较喜欢用tab来选择补全...
 "function! MyTabFunction ()
-"let line = getline('.')
-"let substr = strpart(line, -1, col('.')+1)
-"let substr = matchstr(substr, "[^ \t]*$")
-"if strlen(substr) == 0
-    "return "\<tab>"
-"endif
-"return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+    "let line = getline('.')
+    "let substr = strpart(line, -1, col('.')+1)
+    "let substr = matchstr(substr, "[^ \t]*$")
+    "if strlen(substr) == 0
+        "return "\<tab>"
+    "endif
+    "return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 "endfunction
 "inoremap <tab> <c-r>=MyTabFunction()<cr>
 
@@ -518,18 +519,17 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 let g:vim_json_syntax_conceal = 0
 
-
 " https://github.com/wincent/wincent/blob/bff31c32e427c5913d1eed0b0c1b3da24e8ba8ba/roles/dotfiles/files/.vim/plugin/settings.vim#L38
 if has('folding')
-if has('windows')
-set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
-endif
-set foldmethod=indent               " not as cool as syntax, but faster
-set foldlevelstart=99               " start unfolded
+  if has('windows')
+	set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=99               " start unfolded
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
-set formatoptions+=j                " remove comment leader when joining comment lines
+  set formatoptions+=j                " remove comment leader when joining comment lines
 endif
 
 set formatoptions+=n                  " smart auto-indenting inside numbered lists
@@ -553,6 +553,7 @@ nnoremap <Leader>s :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
+
 
 " solarized 主题
 let g:solarized_termtrans = 1
