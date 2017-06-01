@@ -542,6 +542,7 @@ set lazyredraw                        " don't bother updating screen during macr
 " 退出快捷键
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
+noremap <leader>b :bd<cr>
 
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
