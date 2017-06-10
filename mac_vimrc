@@ -138,6 +138,7 @@ call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/dash.vim'
 Plugin 'altercation/vim-colors-solarized.git'
@@ -177,7 +178,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-eunuch'
 Plugin 'cakebaker/scss-syntax.vim'
 "Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
 " let Vundle manage Vundle
@@ -274,7 +275,7 @@ let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-]>"
@@ -384,6 +385,8 @@ endif
 " change tab
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+" https://stackoverflow.com/questions/15583346/how-can-i-temporarily-make-the-window-im-working-on-to-be-fullscreen-in-vim
+nnoremap tt :tab split<CR>
 
 " 高亮当前选中单词
 autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
@@ -543,6 +546,8 @@ set lazyredraw                        " don't bother updating screen during macr
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 noremap <leader>b :bd<cr>
+noremap <leader>s :vs<cr>  " vertical split
+noremap <leader>r :e!<cr>  " reload without save
 
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
@@ -569,3 +574,6 @@ noremap <leader>a :Ag! "<cword>"<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
+
+" Plugin 'fullybaked/toggle-numbers.vim'
+nmap ,n :LineNumberToggle<cr>
