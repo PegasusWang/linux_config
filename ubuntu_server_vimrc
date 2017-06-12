@@ -265,9 +265,10 @@ set updatetime=500   " milliseconds update
 
 
 " for airline, http://vimawesome.com/plugin/vim-airline
+let g:airline_powerline_fonts=1
+let g:airline_theme = 'wombat'
 let g:airline#extensions#tabline#enabled = 1
 function! ArilineInit()
-    let g:airline_theme = 'wombat'
     let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
     let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
     "let g:airline_section_c = airline#section#create(['filetype'])
