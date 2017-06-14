@@ -316,6 +316,8 @@ let g:riv_projects = [proj1]
 " ctrlp, 在~/.agignore添加一行node_modules
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" without ag MacOSX/Linux use:
+" let g:ctrlp_user_command = 'find %s -type f'
 
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
