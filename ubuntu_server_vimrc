@@ -63,6 +63,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized.git'
