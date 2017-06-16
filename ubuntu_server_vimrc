@@ -63,6 +63,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -113,7 +114,7 @@ Bundle 'heavenshell/vim-pydocstring'
 Plugin 'kien/rainbow_parentheses.vim'
 "Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'  " snippets collections
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 "Bundle 't9md/vim-quickhl'
@@ -444,3 +445,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " Plugin 'fullybaked/toggle-numbers.vim'
 nmap ,n :LineNumberToggle<cr>
+
+" https://github.com/ianva/vim-youdao-translater settings
+vnoremap <silent> <C-Y> :<C-u>Ydv<CR>
+nnoremap <silent> <C-Y> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
