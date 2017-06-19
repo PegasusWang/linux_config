@@ -138,6 +138,8 @@ call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/dash.vim'
@@ -575,3 +577,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " Plugin 'fullybaked/toggle-numbers.vim'
 nmap ,n :LineNumberToggle<cr>
+
+" https://github.com/ianva/vim-youdao-translater settings
+vnoremap <silent> <C-Y> :<C-u>Ydv<CR>
+nnoremap <silent> <C-Y> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
