@@ -554,7 +554,7 @@ nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
 nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
 
 " https://github.com/jaxbot/semantic-highlight.vim
-nnoremap <Leader>s :SemanticHighlightToggle<cr>
+nnoremap <Leader>h :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
