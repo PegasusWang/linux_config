@@ -138,6 +138,8 @@ call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/dash.vim'
@@ -291,7 +293,7 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
 let g:syntastic_python_checkers = ['pep8']
-let g:pymode_lint_ignore = "C0111, W0105"
+let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
 let g:pymode_lint_error_symbol = '❌'
@@ -552,7 +554,7 @@ nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
 nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
 
 " https://github.com/jaxbot/semantic-highlight.vim
-nnoremap <Leader>s :SemanticHighlightToggle<cr>
+nnoremap <Leader>h :SemanticHighlightToggle<cr>
 
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
@@ -575,3 +577,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " Plugin 'fullybaked/toggle-numbers.vim'
 nmap ,n :LineNumberToggle<cr>
+
+" https://github.com/ianva/vim-youdao-translater settings
+vnoremap <silent> <C-Y> :<C-u>Ydv<CR>
+nnoremap <silent> <C-Y> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
