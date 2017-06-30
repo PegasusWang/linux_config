@@ -293,7 +293,7 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
 let g:syntastic_python_checkers = ['pep8']
-let g:pymode_lint_ignore = "C0111, W0105"
+let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
 let g:pymode_lint_error_symbol = '❌'
