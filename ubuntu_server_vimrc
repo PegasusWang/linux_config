@@ -63,6 +63,10 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'ryanss/vim-hackernews'
 Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
@@ -149,6 +153,7 @@ Bundle 'ShowPairs'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 Plugin 'wincent/command-t'
