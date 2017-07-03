@@ -1,6 +1,13 @@
 "http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+" https://superuser.com/questions/302186/vim-scrolls-very-slowly-when-a-line-is-too-long
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=128
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
+
 " 先创建 .tmp 文件夹，处理一些权限导致的无法在 /tmp 创建文件的问题，有些 vim 插件需要创建临时文件，直接在 /tmp 里创建可能会失败
 let $TMPDIR = $HOME."/.tmp"
 set bg=dark
