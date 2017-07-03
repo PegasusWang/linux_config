@@ -145,6 +145,7 @@ call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
+Plugin 'roxma/vim-paste-easy'
 Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
