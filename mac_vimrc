@@ -1,3 +1,9 @@
+" wget https://github.com/vim/vim/archive/v8.0.0666.tar.gz
+" ./configure --with-features=huge --enable-pythoninterp=yes  --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --prefix=/usr/local
+" make
+" sudo make install
+" alias vi='/usr/local/bin/vim '
+
 "vi /usr/local/Cellar/vim/7.4.1016/share/vim/vim74/ftplugin/python.vim,
 "http://vim.1045645.n5.nabble.com/FileType-conditional-td1141787.html
 "let g:loaded_youcompleteme = 0
