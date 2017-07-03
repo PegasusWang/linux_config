@@ -151,7 +151,7 @@ call vundle#begin()
 
 "for php
 "Bundle 'joonty/vdebug'
-Plugin 'roxma/vim-paste-easy'
+" Plugin 'roxma/vim-paste-easy'
 Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
@@ -357,6 +357,18 @@ function HeaderSh()
 endf
 autocmd bufnewfile *.sh call HeaderSh()
 
+
+" shortcuts to vimdiff, http://stackoverflow.com/questions/7309707/why-does-git-mergetool-opens-4-windows-in-vimdiff-id-expect-3
+let mapleader=','
+let g:mapleader=','
+
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
+
+
 " for nerdtree
 "autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
@@ -368,7 +380,7 @@ nmap ,v :NERDTreeFind<cr>
 " for Tagbarbar, sudo apt-get install ctags
 "nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
-nnoremap ot :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 "let g:tagbar_show_linenumbers = 1
@@ -388,16 +400,6 @@ function! ArilineInit()
     let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call ArilineInit()
-
-" shortcuts to vimdiff, http://stackoverflow.com/questions/7309707/why-does-git-mergetool-opens-4-windows-in-vimdiff-id-expect-3
-let mapleader=','
-let g:mapleader=','
-
-if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
-endif
 
 " change tab
 nnoremap <C-Left> :tabprevious<CR>
