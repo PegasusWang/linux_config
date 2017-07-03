@@ -176,6 +176,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
 " Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-eunuch'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -188,6 +189,8 @@ Plugin 'solarnz/thrift.vim'
 Bundle 'gmarik/vundle'
 Bundle 'Rykka/InstantRst'
 Bundle 'vim-scripts/BufOnly.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 Bundle 'jiangmiao/auto-pairs'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -293,7 +296,7 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
 let g:syntastic_python_checkers = ['pep8']
-let g:pymode_lint_ignore = "C0111, W0105, C0325"
+let g:pymode_lint_ignore = "C0111, W0105"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
 let g:pymode_lint_error_symbol = '❌'
