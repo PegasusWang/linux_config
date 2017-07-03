@@ -71,6 +71,7 @@ call vundle#begin()
 "Plugin 'stanangeloff/php.vim'
 " endfor php
 
+Plugin 'roxma/vim-paste-easy'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ryanss/vim-hackernews'
