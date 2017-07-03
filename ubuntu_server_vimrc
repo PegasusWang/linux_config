@@ -54,9 +54,19 @@ function HeaderSh()
 endf
 autocmd bufnewfile *.sh call HeaderSh()
 
+" shortcuts to vimdiff, http://stackoverflow.com/questions/7309707/why-does-git-mergetool-opens-4-windows-in-vimdiff-id-expect-3
+let mapleader=','
+let g:mapleader=','
+
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -272,7 +282,7 @@ nmap ,v :NERDTreeFind<cr>
 
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
-nnoremap ot :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
@@ -292,17 +302,6 @@ function! ArilineInit()
     let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call ArilineInit()
-
-
-" shortcuts to vimdiff, http://stackoverflow.com/questions/7309707/why-does-git-mergetool-opens-4-windows-in-vimdiff-id-expect-3
-let mapleader=','
-let g:mapleader=','
-
-if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
-endif
 
 
 " 高亮当前选中单词
