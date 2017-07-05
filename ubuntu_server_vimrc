@@ -3,7 +3,7 @@
 
 " https://superuser.com/questions/302186/vim-scrolls-very-slowly-when-a-line-is-too-long
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=128
+set synmaxcol=200
 set ttyfast " u got a fast terminal
 set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
@@ -81,7 +81,7 @@ call vundle#begin()
 "Plugin 'stanangeloff/php.vim'
 " endfor php
 
-Plugin 'roxma/vim-paste-easy'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ryanss/vim-hackernews'
