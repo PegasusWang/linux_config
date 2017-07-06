@@ -602,3 +602,6 @@ nmap ,n :LineNumberToggle<cr>
 vnoremap <silent> <C-Y> :<C-u>Ydv<CR>
 nnoremap <silent> <C-Y> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
+
+" add :FormatJSON command
+com! FormatJSON %!python -m json.tool
