@@ -80,6 +80,8 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'tpope/vim-dispatch'
+Plugin 'fatih/vim-go'
 
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
@@ -249,6 +251,7 @@ let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
 command P PymodeLint
+command F PymodeLintAuto    " auto pep8 fix
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_cwindow = 0    " open quickfix window
@@ -465,3 +468,17 @@ noremap <leader>yd :<C-u>Yde<CR>
 
 " add :FormatJSON command
 com! FormatJSON %!python -m json.tool
+
+
+" for golang https://github.com/fatih/vim-go
+" https://github.com/fatih/vim-go-tutorial
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+set autowrite
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+let g:go_list_type = "quickfix"
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['golint']
+let g:go_metalinter_autosave = 1

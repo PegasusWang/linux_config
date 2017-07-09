@@ -223,6 +223,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
+Plugin 'tpope/vim-dispatch'
 Plugin 'fatih/vim-go'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'tpope/vim-surround'
@@ -310,6 +311,7 @@ let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
+command F PymodeLintAuto    " auto pep8 fix
 let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
@@ -526,7 +528,14 @@ let g:LargeFile=1
 " https://github.com/fatih/vim-go-tutorial
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-au FileType go nmap <leader>r <Plug>(go-run)
+set autowrite
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+let g:go_list_type = "quickfix"
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['golint']
+let g:go_metalinter_autosave = 1
 
 
 "for php
