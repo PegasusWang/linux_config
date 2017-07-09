@@ -80,9 +80,6 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
-Plugin 'tpope/vim-dispatch'
-Plugin 'fatih/vim-go'
-
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -132,6 +129,7 @@ Bundle 'sukima/xmledit'
 Bundle 'jiangmiao/auto-pairs'
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
+Plugin 'tpope/vim-dispatch'
 Plugin 'fatih/vim-go'
 "Plugin 'jmcantrell/vim-virtualenv'
 Bundle 'heavenshell/vim-pydocstring'
