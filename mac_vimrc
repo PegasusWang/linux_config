@@ -153,6 +153,8 @@ call vundle#begin()
 "for php
 "Bundle 'joonty/vdebug'
 " Plugin 'roxma/vim-paste-easy'
+Plugin 'stephpy/vim-yaml'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
@@ -614,3 +616,6 @@ noremap <leader>yd :<C-u>Yde<CR>
 
 " add :FormatJSON command
 com! FormatJSON %!python -m json.tool
+
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

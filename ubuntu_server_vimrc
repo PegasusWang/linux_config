@@ -80,6 +80,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'stephpy/vim-yaml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -481,3 +482,6 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_autosave = 1
+
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
