@@ -153,6 +153,7 @@ call vundle#begin()
 "for php
 "Bundle 'joonty/vdebug'
 " Plugin 'roxma/vim-paste-easy'
+Plugin 'terryma/vim-expand-region'
 Plugin 'stephpy/vim-yaml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
@@ -473,7 +474,7 @@ set statusline+=%*
                             "\ 'active_filetypes': ['php', 'javascript'],
                             "\ 'passive_filetypes': [] }
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': ['php']  }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['yaml'],'passive_filetypes': ['php']  }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_enable_javascript_checker = 1
 let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
@@ -618,4 +619,6 @@ noremap <leader>yd :<C-u>Yde<CR>
 com! FormatJSON %!python -m json.tool
 
 
+" sudo pip install yamllint
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:syntastic_yaml_checkers = ['yamllint']
