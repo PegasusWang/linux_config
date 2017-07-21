@@ -147,6 +147,7 @@ Bundle 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
