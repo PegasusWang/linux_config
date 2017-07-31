@@ -153,6 +153,7 @@ call vundle#begin()
 "for php
 "Bundle 'joonty/vdebug'
 " Plugin 'roxma/vim-paste-easy'
+Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
 Plugin 'terryma/vim-expand-region'
 Plugin 'stephpy/vim-yaml'
 Plugin 'chase/vim-ansible-yaml'
