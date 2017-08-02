@@ -11,7 +11,7 @@
 
 " https://superuser.com/questions/302186/vim-scrolls-very-slowly-when-a-line-is-too-long
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=128
+set synmaxcol=1000
 set ttyfast " u got a fast terminal
 set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
@@ -487,7 +487,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 3
 
 let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_style_error_symbol = '❗'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
 
