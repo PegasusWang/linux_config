@@ -80,6 +80,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
 Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
 Plugin 'terryma/vim-expand-region'
 Plugin 'stephpy/vim-yaml'
