@@ -221,8 +221,8 @@ Bundle 'heavenshell/vim-pydocstring'
 Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Bundle 'scrooloose/syntastic'
-Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-syntastic/syntastic'
+" Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kien/ctrlp.vim'
@@ -292,7 +292,7 @@ let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO 
 
 
 let g:pymode_run = 1
-let g:pymode_run_bind = "<C-j>"
+let g:pymode_run_bind = "<C-e>"
 "let g:pymode_run_bind = '<leader>r'
 let g:pymode_virtualenv = 1
 
@@ -317,7 +317,7 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command P PymodeLint
 command F PymodeLintAuto    " auto pep8 fix
-let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_checkers = ['pylint']
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
@@ -478,6 +478,7 @@ set statusline+=%*
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['yaml'],'passive_filetypes': ['php']  }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+command S SyntasticCheck
 let g:syntastic_enable_javascript_checker = 1
 let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
