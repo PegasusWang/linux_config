@@ -282,9 +282,10 @@ let g:user_emmet_leader_key='<C-J>'
 " for nerdtree
 " autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
-nnoremap <F10> :exe 'NERDTreeToggle' <CR>
-nnoremap on :exe 'NERDTreeToggle' <CR>     " use on open nerdtree
+nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+" nnoremap on :exe 'NERDTreeToggle' <CR>     " use on open nerdtree
 nmap ,v :NERDTreeFind<cr>
+nmap ,g :NERDTreeToggle<cr>
 
 " for Tagbarbar, sudo apt-get install ctags
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -402,6 +403,7 @@ let g:LargeFile=1
 
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 let g:vim_json_syntax_conceal = 0     " 显示json编辑时候的双引号
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " https://github.com/wincent/wincent/blob/bff31c32e427c5913d1eed0b0c1b3da24e8ba8ba/roles/dotfiles/files/.vim/plugin/settings.vim#L38
