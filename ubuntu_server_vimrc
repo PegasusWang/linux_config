@@ -335,7 +335,11 @@ let g:riv_projects = [proj1]
 
 
 " ctrlp, 在~/.agignore添加一行node_modules
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|swp|pyc|pyo)$',
+  \ }
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " without ag MacOSX/Linux use:
 " let g:ctrlp_user_command = 'find %s -type f'
