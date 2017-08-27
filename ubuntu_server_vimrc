@@ -444,6 +444,8 @@ endif
 :autocmd InsertLeave * set nocul
 
 " 退出快捷键
+" inoremap jj <Esc>`^
+inoremap <C-k> <Esc>`^    " use ctrl+k replace ESC when in insert mode
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 noremap <leader>b :bd<cr>
