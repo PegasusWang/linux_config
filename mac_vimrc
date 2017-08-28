@@ -584,8 +584,8 @@ set laststatus=2                      " always show status line
 set lazyredraw                        " don't bother updating screen during macro playback
 
 " 退出快捷键
-" inoremap jj <Esc>`^
-inoremap <C-k> <Esc>`^    " use ctrl+k replace ESC when in insert mode
+inoremap jj <Esc>`^
+inoremap <C-k> <Esc>`^
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 noremap <leader>b :bd<cr>
