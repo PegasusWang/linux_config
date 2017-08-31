@@ -427,6 +427,7 @@ let g:riv_projects = [proj1]
 
 " Plugin 'suan/vim-instant-markdown', :InstantMarkdownPreview
 let g:instant_markdown_autostart = 0
+let g:vim_markdown_conceal = 0
 
 " ctrlp, 在~/.agignore添加一行node_modules
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
