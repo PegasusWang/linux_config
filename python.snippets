@@ -188,12 +188,20 @@ snippet ip "ipdb set_trace" !b
 import ipdb; ipdb.set_trace()
 endsnippet
 
+snippet ipdb "ipdb set_trace" !b
+import ipdb; ipdb.set_trace()
+endsnippet
+
 snippet pdb "pdb set_trace" !b
 import pdb; pdb.set_trace()
 endsnippet
 
 snippet pp "pprint" !b
 import pprint; pprint.pprint(${1})
+endsnippet
+
+snippet noqa "flake8" !b
+# flake8: noqa
 endsnippet
 
 # vim:ft=snippets:
