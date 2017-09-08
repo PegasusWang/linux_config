@@ -320,7 +320,7 @@ command F PymodeLintAuto    " auto pep8 fix
 let g:syntastic_python_checkers = ['pylint']
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
-let g:pymode_lint_todo_symbol = '⚠️'
+let g:pymode_lint_todo_symbol = '😡'
 let g:pymode_lint_error_symbol = '❌'
 let g:pymode_lint_comment_symbol = '😢'
 
