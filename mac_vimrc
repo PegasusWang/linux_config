@@ -562,8 +562,10 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 "let g:vdebug_options = {'port': '9000'}
 
 " for html
-autocmd Filetype html setlocal ts=2 sw=2    " 2 space indent
+autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+
+" for json
 let g:vim_json_syntax_conceal = 0
 autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 

@@ -412,7 +412,7 @@ let g:LargeFile=1
 
 
 " for html
-autocmd Filetype html setlocal ts=2 sw=2    " 2 space indent
+autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
 
