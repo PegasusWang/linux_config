@@ -153,6 +153,7 @@ call vundle#begin()
 "for php
 "Bundle 'joonty/vdebug'
 " Plugin 'roxma/vim-paste-easy'
+Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/tpope-vim-abolish'
 Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
 Plugin 'terryma/vim-expand-region'
@@ -634,3 +635,7 @@ com! FormatJSON %!python -m json.tool
 " sudo pip install yamllint
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:syntastic_yaml_checkers = ['yamllint']
+
+" Setting up how to display whitespace characters
+set list
+set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~

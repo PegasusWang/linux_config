@@ -80,6 +80,7 @@ call vundle#begin()
 "Bundle 'm2mdas/phpcomplete-extended'
 "Plugin 'stanangeloff/php.vim'
 " endfor php
+Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
 Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
 Plugin 'terryma/vim-expand-region'
@@ -501,3 +502,7 @@ let g:go_metalinter_autosave = 1
 
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Setting up how to display whitespace characters
+set list
+set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
