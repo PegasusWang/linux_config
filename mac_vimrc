@@ -189,6 +189,7 @@ Plugin 'vim-scripts/LargeFile'
 Plugin 'mhinz/vim-startify'
 Plugin 'rykka/riv.vim'    " rst
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'glench/vim-jinja2-syntax'
@@ -561,6 +562,7 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 "let g:vdebug_options = {'port': '9000'}
 
 " for html
+autocmd Filetype html setlocal ts=2 sw=2    " 2 space indent
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 let g:vim_json_syntax_conceal = 0
 autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
