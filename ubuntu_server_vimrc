@@ -277,7 +277,7 @@ let g:pymode_options_colorcolumn = 1
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,mako,css,sass,scss EmmetInstal
+autocmd FileType html,mako,css,sass,scss EmmetInstall
 " emment key
 let g:user_emmet_leader_key='<C-J>'
 
@@ -355,8 +355,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ultisnips_python_style = 'sphinx'
 
 " 用ctrl+l可以在insert和command模式都可以保存
-inoremap <c-l> <c-o>:w<cr>
-nnoremap <c-l> :w<cr>
+inoremap <c-s> <c-o>:w<cr>
+nnoremap <c-s> :w<cr>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
 " https://stackoverflow.com/questions/15583346/how-can-i-temporarily-make-the-window-im-working-on-to-be-fullscreen-in-vim

@@ -277,8 +277,8 @@ filetype plugin indent on
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 " 用ctrl+l可以在insert和command模式都可以保存
-inoremap <c-l> <c-o>:w<cr>
-nnoremap <c-l> :w<cr>
+inoremap <c-s> <c-o>:w<cr>
+nnoremap <c-s> :w<cr>
 " 切换 buffer
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
@@ -337,8 +337,9 @@ let g:ultisnips_python_style = 'sphinx'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,php,mako,css,sass,scss,vue.html.javascript.css EmmetInstal
+autocmd FileType html,php,mako,css,sass,scss,vue.html.javascript.css EmmetInstall
 " emment key
+command E EmmetInstall
 let g:user_emmet_leader_key='<C-J>'
 
 
