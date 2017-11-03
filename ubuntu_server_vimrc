@@ -129,7 +129,7 @@ Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
 Bundle 'moll/vim-node'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'sukima/xmledit'
 "Bundle 'sjl/gundo.vim'
 Bundle 'jiangmiao/auto-pairs'
@@ -341,14 +341,22 @@ let g:vim_markdown_conceal = 0
 
 
 " ctrlp, 在~/.agignore添加一行node_modules
+" https://stackoverflow.com/questions/24479101/vim-ctrlp-not-parsing-ag-silver-search-ignore-option-correctly
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll|swp|pyc|pyo)$',
   \ }
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-" without ag MacOSX/Linux use:
-" let g:ctrlp_user_command = 'find %s -type f'
+if executable('ag')
+  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore
+  " and .agignore. Ignores hidden files by default.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -g ""'
+else
+  "ctrl+p ignore files in .gitignore
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
 
 
 " 指定UltiSnips python的docstring风格, sphinx, google, numpy
