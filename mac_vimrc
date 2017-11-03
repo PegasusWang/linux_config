@@ -277,8 +277,8 @@ filetype plugin indent on
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 " 用ctrl+l可以在insert和command模式都可以保存
-inoremap <c-s> <c-o>:w<cr>
-nnoremap <c-s> :w<cr>
+inoremap <c-l> <c-o>:w<cr>
+nnoremap <c-l> :w<cr>
 " 切换 buffer
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>

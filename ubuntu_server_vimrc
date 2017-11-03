@@ -355,8 +355,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ultisnips_python_style = 'sphinx'
 
 " 用ctrl+l可以在insert和command模式都可以保存
-inoremap <c-s> <c-o>:w<cr>
-nnoremap <c-s> :w<cr>
+inoremap <c-l> <c-o>:w<cr>
+nnoremap <c-l> :w<cr>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
 " https://stackoverflow.com/questions/15583346/how-can-i-temporarily-make-the-window-im-working-on-to-be-fullscreen-in-vim
