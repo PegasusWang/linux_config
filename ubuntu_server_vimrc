@@ -498,8 +498,9 @@ vnoremap <silent> <C-Y> :<C-u>Ydv<CR>
 nnoremap <silent> <C-Y> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
 
-" add :FormatJSON command
+" add :FormatJSON command, https://coderwall.com/p/faceag/format-json-in-vim
 com! FormatJSON %!python -m json.tool
+com! FormatJSONUtf8 %!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4)"
 
 
 " for golang https://github.com/fatih/vim-go
