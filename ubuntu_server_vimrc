@@ -502,7 +502,7 @@ noremap <leader>yd :<C-u>Yde<CR>
 com! FormatJSON %!python -m json.tool
 com! FormatJSONUtf8 %!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4)"
 com! FormatJSONPy3 %!python3 -m json.tool
-com! FormatJSONUtf8Py3 %!python2 -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))"
+com! FormatJSONUtf8Py3 %!python3 -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))"
 
 
 " for golang https://github.com/fatih/vim-go
