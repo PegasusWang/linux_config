@@ -2,6 +2,7 @@
 
 # Ned's .startup.py file    ipython 启动加载文件，用来导入一些自定义函数或者模块
 # http://stackoverflow.com/questions/11124578/automatically-import-modules-when-entering-the-python-or-ipython-interpreter
+# ~/.ipython/profile_default/startup/startup.py
 
 print("(.startup.py)")
 
