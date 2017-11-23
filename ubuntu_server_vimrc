@@ -212,6 +212,7 @@ nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 let g:pymode_python = 'python'  " Values are `python`, `python3`, `disable`.
 "let g:pymode_path = ['/home/wnn/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages/']
+let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))    " support zc.buildout
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_print_as_function = 1
 let g:pymode_syntax_highlight_async_await = g:pymode_syntax_all
@@ -247,7 +248,7 @@ let g:pymode_rope_goto_definition_bind = '<C-j>'
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_regenerate_on_write = 0
-command R PymodeRopeRegenerate
+command PR PymodeRopeRegenerate
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
@@ -255,7 +256,7 @@ let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
-command P PymodeLint
+command PL PymodeLint
 command F PymodeLintAuto    " auto pep8 fix
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "let g:syntastic_python_checkers = ['pep8']
