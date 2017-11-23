@@ -24,3 +24,8 @@ except ImportError:
 
 print("(imported datetime, os, pprint, re, sys, time, json)")
 pp = pprint.pprint
+
+
+def repr_dict(d):
+    """https://stackoverflow.com/questions/25118698/print-python-dictionary-with-utf8-values"""
+    print('{%s}' % ',\n'.join("'%s': '%s'" % pair for pair in d.iteritems()))
