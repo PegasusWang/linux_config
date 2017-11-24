@@ -1,3 +1,6 @@
 # https://github.com/gotcha/ipdb/issues/111
+
 import os
 alias kk os._exit(0)
+
+alias pd for k in sorted(%1.keys()): print "%s: %s" % (k, (%1[k]))
