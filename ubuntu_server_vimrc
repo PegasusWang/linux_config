@@ -102,6 +102,7 @@ Plugin 'solarnz/thrift.vim'
 Bundle 'vim-scripts/BufOnly.vim'
 Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'PegasusWang/vim-ubuntu-pastebin'
+Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LargeFile'
@@ -486,7 +487,12 @@ let g:startify_change_to_dir = 0
 
 
 " 用 ,a 搜索当前 cursor 下单词，-w 参数精确匹配单词
-noremap <leader>a :Ag! -w "<cword>"<cr>
+if executable('ag')
+    noremap <leader>a :Ag! -w "<cword>"<cr>
+else
+    noremap <Leader>a :Ack <cword><cr>
+endif
+
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null

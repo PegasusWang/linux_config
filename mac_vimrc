@@ -184,6 +184,7 @@ Plugin 'PegasusWang/vim-ubuntu-pastebin'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
 Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/LargeFile'
 Plugin 'mhinz/vim-startify'
@@ -284,7 +285,6 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
 
 let g:pymode_python = 'python'  " Values are `python`, `python3`, `disable`.
-"let g:pymode_path = ['/home/wnn/.pyenv/versions/pyenv_3.5.0/lib/python3.5/site-packages/']
 let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))    " support zc.buildout
 let g:pymode_trim_whitespaces = 1
 let g:pymode_quickfix_maxheight = 3
@@ -632,7 +632,11 @@ let g:solarized_contrast = "high"
 
 
 " 用 ,a 搜索当前 cursor 下单词
-noremap <leader>a :Ag! -w "<cword>"<cr>
+if executable('ag')
+    noremap <leader>a :Ag! -w "<cword>"<cr>
+else
+    noremap <Leader>a :Ack <cword><cr>
+endif
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
