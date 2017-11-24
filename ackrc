@@ -1,0 +1,10 @@
+--ignore-dir=eggs
+--ignore-dir=node_modules/
+--ignore-dir=.idea/
+--ignore-dir=.ropeproject
+
+
+--ignore-file
+ext:pyc
+--ignore-file
+match:.coverage.python

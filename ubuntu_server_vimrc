@@ -490,6 +490,7 @@ let g:startify_change_to_dir = 0
 if executable('ag')
     noremap <leader>a :Ag! -w "<cword>"<cr>
 else
+    let g:ack_default_options = " -H --nopager --nocolor --nogroup --column"
     noremap <Leader>a :Ack <cword><cr>
 endif
 
