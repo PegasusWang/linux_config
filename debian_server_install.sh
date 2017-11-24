@@ -1,4 +1,4 @@
-# zhihu debian server setup
+sudo apt-get remove vim-tiny vim-common vim-gui-common vim-nox# zhihu debian server setup
 
 # install vim8
 sudo apt-get update
@@ -7,6 +7,7 @@ sudo apt-get remove vim-tiny vim-common vim-gui-common vim-nox
 git clone https://github.com/vim/vim
 sudo apt-get install -y ncurses-dev
 
+# 注意这里 python dir 配置的 path
 ./configure --with-features=huge  --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/plat-x86_64-linux-gnu --enable-perlinterp --enable-luainterp --enable-cscope --prefix=/usr
 make && sudo make install
 

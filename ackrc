@@ -3,8 +3,5 @@
 --ignore-dir=.idea/
 --ignore-dir=.ropeproject
 
-
---ignore-file
-ext:pyc
---ignore-file
-match:.coverage.python
+--type-set=ORIG=.orig
+--noORIG
