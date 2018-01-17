@@ -159,7 +159,7 @@ Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for 
 Plugin 'terryma/vim-expand-region'
 Plugin 'stephpy/vim-yaml'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+"Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -604,6 +604,10 @@ set lazyredraw                        " don't bother updating screen during macr
 
 " 退出快捷键
 inoremap jj <Esc>`^
+inoremap hhh <Esc>`^
+inoremap kkk <Esc>`^
+inoremap lll <Esc>`^
+inoremap ooo <Esc>`^o
 inoremap <C-k> <Esc>`^
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>

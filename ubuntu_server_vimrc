@@ -467,6 +467,10 @@ endif
 
 " 退出快捷键
 inoremap jj <Esc>`^
+inoremap hhh <Esc>`^
+inoremap kkk <Esc>`^
+inoremap lll <Esc>`^
+inoremap ooo <Esc>`^o
 inoremap <C-k> <Esc>`^
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
