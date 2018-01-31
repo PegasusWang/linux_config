@@ -6,10 +6,6 @@ source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline
 set -g default-shell $SHELL
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 
-set -g prefix C-w
-unbind-key C-b
-bind-key C-w send-prefix
-
 # 0 is too far from ` ;)
 set -g base-index 1
 
