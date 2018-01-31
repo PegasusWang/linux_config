@@ -78,6 +78,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # plugins
+# prefix + Ctrl-s - save;  prefix + Ctrl-r - restore
 set -g @plugin 'tmux-plugins/tmux-resurrect' # https://github.com/tmux-plugins/tmux-resurrect
 # for vim
 set -g @resurrect-strategy-vim 'session'
@@ -85,5 +86,5 @@ set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-# $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm , use prefix + I install plugins
 run '~/.tmux/plugins/tpm/tpm'
