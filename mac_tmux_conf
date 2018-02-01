@@ -6,14 +6,10 @@ source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline
 set -g default-shell $SHELL
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 
-# 0 is too far from ` ;)
-set -g base-index 1
-
 # Automatically set window title
 set-window-option -g automatic-rename on
 set-option -g set-titles on
 
-#set -g default-terminal screen-256color
 set -g status-keys vi
 set -g history-limit 10000
 
