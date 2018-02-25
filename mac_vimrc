@@ -145,104 +145,105 @@ nnoremap ex :!./%:r<cr>
 "let g:winManagerWindowLayout='FileExplorer'
 let g:winManagerWindowLayout = 'FileExplorer,BufExplorer|TagList'
 
-set nocompatible                " be iMproved
-filetype off                    " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-"for php
-"Bundle 'joonty/vdebug'
-" Plugin 'roxma/vim-paste-easy'
-Plugin 'gregsexton/MatchTag'
-Plugin 'tpope/tpope-vim-abolish'
-Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
-Plugin 'terryma/vim-expand-region'
-Plugin 'stephpy/vim-yaml'
-Plugin 'chase/vim-ansible-yaml'
-"Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fullybaked/toggle-numbers.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rizzatti/dash.vim'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'jaxbot/semantic-highlight.vim'
-Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
-Plugin 'tpope/vim-sensible'
-Bundle "elzr/vim-json"
-" Bundle 'captbaritone/better-indent-support-for-php-with-html'
-" Bundle 'Shougo/vimproc'
-" Bundle 'Shougo/unite.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Plugin 'stanangeloff/php.vim'
-" Bundle 'joonty/vim-phpqa.git'
-" endfor php
-Plugin 'posva/vim-vue'
-Plugin 'sekel/vim-vue-syntastic'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'PegasusWang/vim-ubuntu-pastebin'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-repeat'
-Plugin 'jszakmeister/vim-togglecursor'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/LargeFile'
-Plugin 'mhinz/vim-startify'
-Plugin 'rykka/riv.vim'    " rst
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'glench/vim-jinja2-syntax'
-Plugin 'moll/vim-node'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
-" Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-eunuch'
-Plugin 'cakebaker/scss-syntax.vim'
-"Plugin 'gorodinskiy/vim-coloresque'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
+call plug#begin('~/.vim/plugged')
+Plug 'gregsexton/MatchTag'
+Plug 'tpope/tpope-vim-abolish'
+Plug 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
+Plug 'terryma/vim-expand-region'
+Plug 'stephpy/vim-yaml'
+Plug 'chase/vim-ansible-yaml'
+"Plug 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'fullybaked/toggle-numbers.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'rizzatti/dash.vim'
+Plug 'altercation/vim-colors-solarized.git'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
+Plug 'tpope/vim-sensible'
+Plug 'elzr/vim-json'
+Plug 'posva/vim-vue'
+Plug 'sekel/vim-vue-syntastic'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'PegasusWang/vim-ubuntu-pastebin'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-repeat'
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'vim-scripts/LargeFile'
+Plug 'mhinz/vim-startify'
+Plug 'rykka/riv.vim'    " rst
+Plug 'kchmck/vim-coffee-script'
+Plug 'othree/html5.vim'
+
+" for javascript and react
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier'
+
+Plug 'glench/vim-jinja2-syntax'
+Plug 'moll/vim-node'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
+" Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-eunuch'
+Plug 'cakebaker/scss-syntax.vim'
+"Plug 'gorodinskiy/vim-coloresque'
+" Plug 'Valloric/YouCompleteMe'
+"
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'marijnh/tern_for_vim'
 
 " let Vundle manage Vundle
-Plugin 'solarnz/thrift.vim'
-Bundle 'gmarik/vundle'
-Bundle 'Rykka/InstantRst'
-Bundle 'vim-scripts/BufOnly.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
-Bundle 'jiangmiao/auto-pairs'
-Plugin 'kien/rainbow_parentheses.vim'
-Bundle 'sukima/xmledit'
-Bundle 'mattn/emmet-vim'
-Bundle 'heavenshell/vim-pydocstring'
-" Bundle 'sjl/gundo.vim'
-Bundle 'Valloric/ListToggle'
-Bundle 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Bundle 'vim-syntastic/syntastic'
-" Bundle 'davidhalter/jedi-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'ctrlpvim/ctrlp.vim'
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'python-mode/python-mode'
-Plugin 'tpope/vim-dispatch'
-Plugin 'fatih/vim-go'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'tpope/vim-surround'
-Plugin 'yggdroot/indentline'    " 缩进线条
-Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'solarnz/thrift.vim'
+Plug 'Rykka/InstantRst'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'sukima/xmledit'
+Plug 'mattn/emmet-vim'
+Plug 'heavenshell/vim-pydocstring'
+" Plug 'sjl/gundo.vim'
+Plug 'Valloric/ListToggle'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Plug 'vim-syntastic/syntastic'
+" Plug 'davidhalter/jedi-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'Lokaltog/vim-powerline'
+Plug 'python-mode/python-mode'
+Plug 'tpope/vim-dispatch'
+Plug 'fatih/vim-go'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'    " 缩进线条
+Plug 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'ryanoasis/vim-devicons'
 
-Plugin 'xolox/vim-misc'
-" Plugin 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
 " let g:easytags_python_enabled = 0
 " let g:easytags_python_script = 0
 " autocmd FileType python let b:easytags_auto_highlight = 0
@@ -253,26 +254,12 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 
-"Bundle 'Valloric/YouCompleteMe'
-" Bundle 't9md/vim-quickhl'
-Bundle 'scrooloose/nerdcommenter'
+"Plug 'Valloric/YouCompleteMe'
+" Plug 't9md/vim-quickhl'
+Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
-" "..................................
-" " vim-scripts repos
-" Bundle 'YankRing.vim'
-" Bundle 'vcscommand.vim'
-" Bundle 'ShowPairs'
-" Bundle 'SudoEdit.vim'
-" Bundle 'EasyGrep'
-" Bundle 'VOoM'
-" Bundle 'VimIM'
-" "..................................
-" " non github repos
-" " Bundle 'git://git.wincent.com/command-t.git'
-" "......................................
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " brew install vim --with-python3
 nmap <silent> <C-d> <Plug>(pydocstring)
@@ -321,7 +308,6 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成PL
 command PL PymodeLint
 command F PymodeLintAuto    " auto pep8 fix
-let g:syntastic_python_checkers = ['pylint']
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '😡'
@@ -339,10 +325,8 @@ let g:ultisnips_python_style = 'sphinx'
 
 " For emmemt only avilable for html,css,sass
 let g:user_emmet_install_global = 0
-autocmd FileType html,php,mako,css,sass,scss,vue.html.javascript.css EmmetInstall
-" emment key
-command E EmmetInstall
-let g:user_emmet_leader_key='<C-J>'
+autocmd FileType html,htmldjango,css,scss.css,sass,jsx,javascript,javascript.jsx  EmmetInstall
+let g:user_emmet_expandabbr_key = '<C-j>'
 
 
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
@@ -357,7 +341,6 @@ func SetTitle()
         normal o
         call setline(5, "if __name__ == '__main__':")
         call setline(6, "    pass")
-
     endif
 endfunc
 
@@ -430,7 +413,7 @@ nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnder
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
 
-" Plugin 'suan/vim-instant-markdown', :InstantMarkdownPreview
+" Plug 'suan/vim-instant-markdown', :InstantMarkdownPreview
 let g:instant_markdown_autostart = 0
 let g:vim_markdown_conceal = 0
 
@@ -493,32 +476,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_mode_map = { 'mode': 'active',
-                            "\ 'active_filetypes': ['php', 'javascript'],
-                            "\ 'passive_filetypes': [] }
-
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['yaml'],'passive_filetypes': ['php']  }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-command S SyntasticCheck
-let g:syntastic_enable_javascript_checker = 1
-let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 3
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '❗'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-
 " 评论配置
 " let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
@@ -553,8 +510,7 @@ let g:LargeFile=1
 
 " for golang https://github.com/fatih/vim-go
 " https://github.com/fatih/vim-go-tutorial
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_version_warning = 0
 set autowrite
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
@@ -566,8 +522,6 @@ let g:go_metalinter_autosave = 1
 
 
 "for php
-let g:syntastic_enable_php_checker = 0
-let g:syntastic_php_checkers = ['php']  ", 'phpcs', 'phpmd']
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 "let g:vdebug_options = {'ide_key': 'netbeans-xdebug'}
 "let g:vdebug_options = {'break_on_open': 0}
@@ -576,7 +530,6 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 " for html
 autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
-let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
 " for json
 let g:vim_json_syntax_conceal = 0
@@ -609,11 +562,13 @@ inoremap kkk <Esc>`^
 inoremap lll <Esc>`^
 inoremap ooo <Esc>`^o
 inoremap <C-k> <Esc>`^
+inoremap <leader>w <Esc>:w<cr>
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 noremap <leader>b :bd<cr>
 noremap <leader>s :vs<cr>  " vertical split
 noremap <leader>r :e!<cr>  " reload without save
+noremap <leader>w :w<cr>
 
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
@@ -645,7 +600,7 @@ endif
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Plugin 'fullybaked/toggle-numbers.vim'
+" Plug 'fullybaked/toggle-numbers.vim'
 nmap ,n :LineNumberToggle<cr>
 
 " https://github.com/ianva/vim-youdao-translater settings
@@ -662,7 +617,6 @@ com! FormatJSONPy2Utf8 %!python -c "import json, sys, collections; print json.du
 
 " sudo pip install yamllint
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-let g:syntastic_yaml_checkers = ['yamllint']
 
 " Setting up how to display whitespace characters
 set list
