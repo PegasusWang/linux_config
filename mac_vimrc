@@ -58,23 +58,11 @@ endif
 
 " 配置多语言环境
 if has("multi_byte")
-" UTF-8 编码
-set encoding=utf-8
-set termencoding=utf-8
-set formatoptions+=mM
-set fencs=utf-8,gbk
-
-"if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
-"set ambiwidth=double
-"endif
-
-if has("win32")
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-language messages zh_CN.utf-8
-endif
-else
-echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+    " UTF-8 编码
+    set encoding=utf-8
+    set termencoding=utf-8
+    set formatoptions+=mM
+    set fencs=utf-8,gbk
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -116,23 +104,7 @@ set foldopen=all
 "set cinoptions+={2,0,p0,t0
 set formatoptions=tcqr
 set nu
-let Tlist_Ctags_Cmd='/usr/local/bin/Ctags'
-"map <F7> <Esc>:<CR>
-"nnoremap <silent><F7> :WMToggle<CR>
-let Tlist_Show_One_File = 1 " 不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Exit_OnlyWindow = 1 " 如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Use_Right_Window = 1 " 在右侧窗口中显示taglist窗口
-let Tlist_File_Fold_Auto_Close=1 " 自动折叠当前非编辑文件的方法列表
-let Tlist_Auto_Open = 0
-let Tlist_Auto_Update = 1
-let Tlist_Hightlight_Tag_On_BufEnter = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Process_File_Always = 1
-let Tlist_Display_Prototype = 0
-let Tlist_Compact_Format = 1
-let Tlist_Use_Right_Window = 0
-nnoremap tg :!/usr/local/bin/ctags -R *<CR>
-nnoremap wm :WMToggle<cr>
+
 nnoremap gc :!gcc -Wall -g -o %:r %<cr>
 "nnoremap gp :!g++ -Wall -g -o %:r %<cr>
 nnoremap py :!python %<cr>
@@ -140,10 +112,6 @@ nnoremap pt :!py.test %<cr>
 nnoremap no :!node %<cr>
 "nnoremap gd :!sudo gdb %:r<cr>
 "nnoremap ma :!make<cr>
-nnoremap ex :!./%:r<cr>
-"nnoremap tg :Tlist<cr>
-"let g:winManagerWindowLayout='FileExplorer'
-let g:winManagerWindowLayout = 'FileExplorer,BufExplorer|TagList'
 
 
 call plug#begin('~/.vim/plugged')
@@ -159,6 +127,7 @@ Plug 'fullybaked/toggle-numbers.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rizzatti/dash.vim'
 Plug 'altercation/vim-colors-solarized.git'
+Plug 'w0ng/vim-hybrid'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plug 'tpope/vim-sensible'
@@ -327,6 +296,12 @@ let g:ultisnips_python_style = 'sphinx'
 let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,css,scss.css,sass,jsx,javascript,javascript.jsx  EmmetInstall
 let g:user_emmet_expandabbr_key = '<C-j>'
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends': 'jsx',
+\      'quote_char': "'",
+\  },
+\}
 
 
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
@@ -521,19 +496,12 @@ let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_autosave = 1
 
 
-"for php
-let g:phpqa_codesniffer_args = "--standard=PSR2"
-"let g:vdebug_options = {'ide_key': 'netbeans-xdebug'}
-"let g:vdebug_options = {'break_on_open': 0}
-"let g:vdebug_options = {'server': '127.0.0.1'}
-"let g:vdebug_options = {'port': '9000'}
-
 " for html
 autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
 
 " for json
 let g:vim_json_syntax_conceal = 0
-autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json,javascript,html,jsx,javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 
 " https://github.com/wincent/wincent/blob/bff31c32e427c5913d1eed0b0c1b3da24e8ba8ba/roles/dotfiles/files/.vim/plugin/settings.vim#L38
 if has('folding')
@@ -583,11 +551,13 @@ let g:startify_change_to_dir = 0
 
 " solarized 主题
 let g:solarized_termtrans = 1
-"let g:solarized_termcolors=256
+" set background=dark
+" colorscheme solarized
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" colorschema hybrid, https://github.com/w0ng/vim-hybrid
 set background=dark
-colorscheme solarized
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+colorscheme hybrid
 
 
 " 用 ,a 搜索当前 cursor 下单词

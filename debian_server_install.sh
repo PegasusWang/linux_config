@@ -34,3 +34,13 @@ cd thrift-0.9.3
 ./configure
 make
 sudo make install
+
+
+ # install tmux 2.2, https://gist.github.com/mirskiy/19c712ab8f24fbf221b13f9699cd6f6c
+sudo apt-get update
+sudo apt-get install -y libevent-dev libncurses-dev make
+wget https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz
+tar xvzf tmux-2.2.tar.gz
+cd tmux-2.2/
+./configure && make
+sudo make install
