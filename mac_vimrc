@@ -341,13 +341,13 @@ endif
 
 
 " for nerdtree
-"autocmd vimenter * NERDTree
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\~$', '__pycache__'] "ignore files in NERDTree
-nnoremap <F10> :exe 'NERDTreeToggle'<CR>
-" nnoremap on :exe 'NERDTreeToggle' <CR>     " use on open nerdtree
 nmap ,v :NERDTreeFind<cr>
 nmap ,g :NERDTreeToggle<cr>
-
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = [
+            \ '\.git$', '\.hg$', '\.svn$', '\.stversions$', '\.pyc$', '\.pyo$', '\.svn$', '\.swp$',
+            \ '\.DS_Store$', '\.sass-cache$', '__pycache__$', '\.egg-info$', '\.ropeproject$',
+            \ ]
 
 " for Tagbarbar, sudo apt-get install ctags
 "nmap <F8> :TagbarToggle<CR>
