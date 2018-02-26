@@ -454,7 +454,6 @@ set statusline+=%*
 " 评论配置
 " let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
-let g:javascript_plugin_jsdoc = 1
 
 
 "enable keyboard shortcuts
@@ -591,3 +590,9 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Setting up how to display whitespace characters
 set list
 set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
+
+
+" javascript plugin config
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#print_width = 80
+let g:prettier#exec_cmd_async = 1
