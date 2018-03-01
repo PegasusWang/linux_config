@@ -478,6 +478,7 @@ noremap <leader>b :bd<cr>
 noremap <leader>s :vs<cr>  " vertical split
 noremap <leader>r :e!<cr>  " reload without save
 noremap <leader>q :qa!<cr>  " quit all window without save
+noremap <leader>w :w<cr>
 
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
