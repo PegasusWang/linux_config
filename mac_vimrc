@@ -154,7 +154,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', {'do': 'npm install -g prettier'}
 Plug 'Quramy/tsuquyomi'
 
 Plug 'glench/vim-jinja2-syntax'
@@ -187,7 +187,7 @@ Plug 'Rykka/InstantRst'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown', {'do': 'npm -g install instant-markdown-d'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'sukima/xmledit'
