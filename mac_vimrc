@@ -156,6 +156,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', {'do': 'npm install -g prettier'}
 Plug 'Quramy/tsuquyomi'
+Plug 'groenewege/vim-less'
 
 Plug 'glench/vim-jinja2-syntax'
 Plug 'moll/vim-node'
@@ -598,6 +599,7 @@ set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1
+" let g:prettier#config#bracket_spacing = 'true'
 
 " ale config
 let g:ale_sign_error = '✗'
