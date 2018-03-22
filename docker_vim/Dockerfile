@@ -37,7 +37,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# Install vim8 and neovim
+# Install vim8 and neovim, must vim first, or neovim will replace vim
 # https://github.com/PegasusWang/vim-config
 RUN add-apt-repository ppa:jonathonf/vim
 RUN apt-get update && apt-get install -y vim
@@ -71,7 +71,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION 8.9.0
 
-# Install nvm with node and npm
+# Install nvm with node and npm install plugins for vim
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
