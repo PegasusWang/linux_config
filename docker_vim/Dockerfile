@@ -37,6 +37,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+
 # Install vim8 and neovim, must vim first, or neovim will replace vim
 # https://github.com/PegasusWang/vim-config
 RUN add-apt-repository ppa:jonathonf/vim
@@ -50,6 +51,10 @@ RUN git clone https://github.com/pegasuswang/vim-config ~/.config/nvim
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# install https://github.com/junegunn/vim-plug
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ########################################
 # Python
 ########################################
@@ -57,8 +62,8 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install python linting and neovim plugin
 RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
-RUN pip install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes pep8-naming pep257 isort autopep8
-RUN pip3 install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes pep8-naming pep257 isort mypy ansible-lint autopep8
+RUN pip install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes pep8-naming pep257 isort autopep8 PyYAML
+RUN pip3 install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes pep8-naming pep257 isort mypy ansible-lint autopep8 PyYAML
 
 
 ########################################
@@ -66,21 +71,18 @@ RUN pip3 install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes
 # https://stackoverflow.com/questions/25899912/install-nvm-in-docker
 ########################################
 # Replace shell with bash so we can source files
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-ENV NVM_DIR ~/.nvm
+ENV NVM_DIR /root/.nvm
 ENV NODE_VERSION 8.9.0
 
 # Install nvm with node and npm install plugins for vim
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash \
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
+    && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default \
-    && npm install -g \
-        eslint \
-        prettier \
-        jsctags
+    && npm install -g  eslint prettier jsctags tern
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
@@ -89,5 +91,10 @@ ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 ########################################
 # Personalizations
 ########################################
+COPY .vimrc /root/.vimrc
+RUN vim +silent +PlugInstall +qall
+
+# RUN cd /root/.config/nvim && make test && make
+RUN cd /root/.config/nvim && git pull origin master && make silent_install
 
 # ENTRYPOINT [ "nvim" ]
