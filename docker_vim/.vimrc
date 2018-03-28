@@ -199,12 +199,13 @@ Plug 'Valloric/ListToggle'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'vim-syntastic/syntastic'
-" Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'Lokaltog/vim-powerline'
 Plug 'python-mode/python-mode'
+Plug 'zchee/deoplete-jedi'
+
 Plug 'tpope/vim-dispatch'
 Plug 'fatih/vim-go'
 Plug 'jmcantrell/vim-virtualenv'
@@ -264,7 +265,8 @@ let g:pymode_doc=1
 let g:pymode_doc_bind = 'K'
 
 autocmd CompleteDone * pclose
-let g:pymode_rope = 1
+" python-mode conflict with jedi
+let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_goto_definition_bind = "<C-j>"
@@ -605,3 +607,4 @@ let g:prettier#config#bracket_spacing = 'true'
 " ale config
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
+let g:ale_linters = {'python': []}
