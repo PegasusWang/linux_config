@@ -184,7 +184,8 @@ Plug 'marijnh/tern_for_vim'
 
 " let Vundle manage Vundle
 Plug 'solarnz/thrift.vim'
-Plug 'Rykka/InstantRst'
+" https://github.com/gu-fan/InstantRst
+Plug 'Rykka/InstantRst', { 'do': 'pip install https://github.com/Rykka/instant-rst.py/archive/master.zip'}
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
