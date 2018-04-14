@@ -274,6 +274,7 @@ let g:pymode_rope_goto_definition_bind = "<C-j>"
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_rope_regenerate_on_write = 0
 command PR PymodeRopeRegenerate
+autocmd FileType python noremap <leader>p :Autoformat<cr>
 
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
