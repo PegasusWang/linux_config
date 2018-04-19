@@ -607,3 +607,6 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
 let g:ale_linters = {'python': []}
+
+" markdown
+let g:vim_markdown_conceal = 0
