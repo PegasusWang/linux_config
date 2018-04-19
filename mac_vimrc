@@ -189,7 +189,8 @@ Plug 'Rykka/InstantRst', { 'do': 'pip install https://github.com/Rykka/instant-r
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown', {'do': 'npm -g install instant-markdown-d'}
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'sukima/xmledit'
@@ -394,10 +395,6 @@ nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnder
 " rst书写插件
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
-
-" Plug 'suan/vim-instant-markdown', :InstantMarkdownPreview
-let g:instant_markdown_autostart = 0
-let g:vim_markdown_conceal = 0
 
 " ctrlp, 在~/.agignore添加一行node_modules
 " https://stackoverflow.com/questions/24479101/vim-ctrlp-not-parsing-ag-silver-search-ignore-option-correctly
