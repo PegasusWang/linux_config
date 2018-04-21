@@ -30,10 +30,10 @@ bind-key M-h resize-pane -L
 bind-key M-l resize-pane -R
 
 # Vim style pane selection
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
 
 # Use Alt-vim keys without prefix key to switch panes
 bind -n M-h select-pane -L
