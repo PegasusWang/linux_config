@@ -265,9 +265,12 @@ let g:pymode_lint_cwindow = 0    " open quickfix window
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '⚠️'
-let g:pymode_lint_comment_symbol = '😢'
-let g:pymode_lint_visual_symbol = 'RR'
-let g:pymode_lint_error_symbol = '❌'
+" let g:pymode_lint_comment_symbol = '😢'
+" let g:pymode_lint_error_symbol = '❌'
+" let g:pymode_lint_visual_symbol = 'RR'
+let g:pymode_lint_error_symbol = "\U2717"
+let g:pymode_lint_comment_symbol = "\u2757"
+let g:pymode_lint_visual_symbol = "\u0021"
 let g:pymode_lint_info_symbol = 'II'
 let g:pymode_lint_pyflakes_symbol = 'PF'
 " 修改默认的max-line红线为浅色，solorized黑色主题

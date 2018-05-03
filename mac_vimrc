@@ -288,8 +288,11 @@ command F PymodeLintAuto    " auto pep8 fix
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
 let g:pymode_lint_signs = 1
 let g:pymode_lint_todo_symbol = '😡'
-let g:pymode_lint_error_symbol = '❌'
-let g:pymode_lint_comment_symbol = '😢'
+" let g:pymode_lint_error_symbol = '❌'
+" let g:pymode_lint_comment_symbol = '😢'
+let g:pymode_lint_error_symbol = "\U2717"
+let g:pymode_lint_comment_symbol = "\u2757"
+let g:pymode_lint_visual_symbol = "\u0021"
 
 " 修改默认的红线为浅色，solorized黑色主题
 highlight ColorColumn ctermbg=233
