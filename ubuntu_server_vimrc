@@ -475,6 +475,7 @@ inoremap kkk <Esc>`^
 inoremap lll <Esc>`^
 inoremap ooo <Esc>`^o
 inoremap <C-k> <Esc>`^
+inoremap <leader>w <Esc>:w<cr>
 noremap <leader>e :q<cr>
 noremap <leader>E :qa!<cr>
 noremap <leader>b :bd<cr>
