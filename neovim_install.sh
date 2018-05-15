@@ -17,19 +17,19 @@ fi
 
 cd ~/src/$cmake_package && ./configure -- -DCMAKE_USE_OPENSSL=ON && sudo make install -j4 && cd ~/src
 
-#Install dependencies                                                 
-sudo apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip              
+#Install dependencies
+sudo apt-get install libtool libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip
 
 #Get or update neovim github repo
 if [ ! -e ~/src/neovim ]; then
   git clone https://github.com/neovim/neovim
 else
-  cd neovim                                                                                                        
+  cd neovim
   git pull origin
 fi
 
-cd ~/src/neovim                                                                                                    
+cd ~/src/neovim
 sudo make install
-popd                                                                                                               
+popd
 
 echo nvim command: `which nvim`

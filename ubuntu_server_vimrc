@@ -72,85 +72,97 @@ set nocompatible              " be iMproved, required
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plugin 'gregsexton/MatchTag'
-Plugin 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
-Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
-Plugin 'terryma/vim-expand-region'
-Plugin 'stephpy/vim-yaml'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" Plugin 'ryanss/vim-hackernews'
-" Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fullybaked/toggle-numbers.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'jaxbot/semantic-highlight.vim'
-Plugin 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
-Plugin 'tpope/vim-sensible'
-Plugin 'elzr/vim-json'
-Plugin 'solarnz/thrift.vim'
-Bundle 'vim-scripts/BufOnly.vim'
-Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'PegasusWang/vim-ubuntu-pastebin'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/LargeFile'
-Plugin 'Yggdroot/indentLine'
-Plugin 'mhinz/vim-startify'
+Plug 'gregsexton/MatchTag'
+Plug 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
+Plug 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
+Plug 'terryma/vim-expand-region'
+Plug 'stephpy/vim-yaml'
+Plug 'chase/vim-ansible-yaml'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Plug 'ryanss/vim-hackernews'
+" Plug 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'fullybaked/toggle-numbers.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized.git'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
+Plug 'tpope/vim-sensible'
+Plug 'elzr/vim-json'
+Plug 'solarnz/thrift.vim'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'terryma/vim-multiple-cursors'
+"Plug 'PegasusWang/vim-ubuntu-pastebin'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-scripts/LargeFile'
+Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-startify'
 " let Vundle manage Vundle
-Plugin 'glench/vim-jinja2-syntax'
+Plug 'glench/vim-jinja2-syntax'
 
-"my Bundle here:
+"my Plug here:
 " http://vimawesome.com
 " original repos on github
-Plugin 'rykka/riv.vim'    " rst
-Bundle 'Rykka/InstantRst'
+Plug 'rykka/riv.vim'    " rst
+Plug 'Rykka/InstantRst'
 
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Bundle 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-Bundle 'mxw/vim-jsx'
-Plugin 'othree/html5.vim'
-" Plugin 'kchmck/vim-coffee-script'
-Plugin 'mattn/emmet-vim'
-Bundle 'moll/vim-node'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'sukima/xmledit'
-"Bundle 'sjl/gundo.vim'
-Bundle 'jiangmiao/auto-pairs'
-"Bundle 'davidhalter/jedi-vim'
-Bundle 'python-mode/python-mode'
-Plugin 'tpope/vim-dispatch'
-Plugin 'fatih/vim-go'
-"Plugin 'jmcantrell/vim-virtualenv'
-Bundle 'heavenshell/vim-pydocstring'
-Plugin 'kien/rainbow_parentheses.vim'
-"Bundle 'Valloric/ListToggle'
-Bundle 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'  " snippets collections
-"Bundle 'Valloric/YouCompleteMe'
-" Bundle 'scrooloose/syntastic'
-"Bundle 't9md/vim-quickhl'
-"Plugin 'xuyuanp/nerdtree-git-plugin'
-Bundle 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'https://github.com/Shougo/unite.vim.git'
-Plugin 'https://github.com/Shougo/vimfiler.vim.git'
-"Plugin 'ryanoasis/vim-devicons'
-"" Initialize plugin system
-
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+" Plug 'kchmck/vim-coffee-script'
+Plug 'mattn/emmet-vim'
+Plug 'moll/vim-node'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sukima/xmledit'
+"Plug 'sjl/gundo.vim'
+Plug 'jiangmiao/auto-pairs'
+"Plug 'davidhalter/jedi-vim'
+Plug 'python-mode/python-mode'
+Plug 'tpope/vim-dispatch'
+Plug 'fatih/vim-go'
+"Plug 'jmcantrell/vim-virtualenv'
+Plug 'heavenshell/vim-pydocstring'
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'Valloric/ListToggle'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'  " snippets collections
+"Plug 'Valloric/YouCompleteMe'
+" Plug 'scrooloose/syntastic'
+"Plug 't9md/vim-quickhl'
+"Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'easymotion/vim-easymotion'    " 快速移动插件, ',,w'可以在单词上出现前缀，然后快速跳转
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'https://github.com/Shougo/unite.vim.git'
+Plug 'https://github.com/Shougo/vimfiler.vim.git'
+"Plug 'ryanoasis/vim-devicons'
+"..................................
+" plugin on GitHub repo
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plug 'L9'
+Plug 'wincent/command-t'
+" git repos on your local machine (i.e. when working on your own plugin)
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+Plug 'ascenator/L9', {'name': 'newL9'}
 call plug#end()
 
 
@@ -158,48 +170,6 @@ call plug#end()
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
-
-"..................................
-" vim-scripts repos
-"Bundle 'YankRing.vim'
-"Bundle 'vcscommand.vim'
-Bundle 'ShowPairs'
-"Bundle 'SudoEdit.vim'
-"Bundle 'EasyGrep'
-"Bundle 'VOoM'
-"Bundle 'VimIM'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'    " https://github.com/junegunn/gv.vim git commit browser
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-Plugin 'wincent/command-t'
-" git repos on your local machine (i.e. when working on your own plugin)
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 
 " for python settings
 " Override go-to.definition key shortcut to Ctrl-]
@@ -220,7 +190,6 @@ let g:pymode_folding = 1
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # BREAKPOINT TODO REMOVE; from nose.tools import set_trace; set_trace()'
 let g:pymode_breakpoint_bind = "<C-k>"
-
 
 
 let g:pymode_run = 1
@@ -318,24 +287,13 @@ nnoremap <silent> <F3> :exe "let HlUnderCursor=exists(\"HlUnderCursor\")?HlUnder
 
 
 " when use diff from cmd line, change color theme
-if &diff
-    colorscheme evening
-else
-    " solarized 主题
-    let g:solarized_termtrans = 1
-    "let g:solarized_termcolors=256
-    set background=dark
-    colorscheme solarized
-    let g:solarized_visibility = "high"
-    let g:solarized_contrast = "high"
-endif
 
 " 书写rst用到
 let proj1 = { 'path': '~/Program/python-web-guide',}
 let g:riv_projects = [proj1]
 
 
-" Plugin 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_conceal = 0
 
 
@@ -474,7 +432,7 @@ endif
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Plugin 'fullybaked/toggle-numbers.vim'
+" Plug 'fullybaked/toggle-numbers.vim'
 nmap ,n :LineNumberToggle<cr>
 
 " https://github.com/ianva/vim-youdao-translater settings
@@ -508,3 +466,16 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Setting up how to display whitespace characters
 set list
 set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
+
+" when use diff from cmd line, change color theme
+if &diff
+    colorscheme evening
+else
+    " solarized 主题
+    let g:solarized_termtrans = 1
+    "let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
+    let g:solarized_visibility = "high"
+    let g:solarized_contrast = "high"
+endif
