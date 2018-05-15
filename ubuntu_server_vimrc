@@ -64,22 +64,14 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
-
 set nocompatible              " be iMproved, required
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-"for php
-"Bundle 'captbaritone/better-indent-support-for-php-with-html'
-"Bundle 'Shougo/vimproc'
-"Bundle 'Shougo/unite.vim'
-"Bundle 'm2mdas/phpcomplete-extended'
-"Plugin 'stanangeloff/php.vim'
-" endfor php
+" https://github.com/junegunn/vim-plug
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
 Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
 Plugin 'Chiel92/vim-autoformat' " https://github.com/Chiel92/vim-autoformat for code formatter
@@ -157,6 +149,10 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'https://github.com/Shougo/unite.vim.git'
 Plugin 'https://github.com/Shougo/vimfiler.vim.git'
 "Plugin 'ryanoasis/vim-devicons'
+"" Initialize plugin system
+
+call plug#end()
+
 
 " 模糊搜索，使用z/支持模糊搜索
 map z/ <Plug>(incsearch-fuzzy-/)
