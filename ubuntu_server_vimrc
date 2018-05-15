@@ -88,8 +88,8 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'ryanss/vim-hackernews'
-Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
+" Plugin 'ryanss/vim-hackernews'
+" Plugin 'ianva/vim-youdao-translater'  " https://github.com/ianva/vim-youdao-translater
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fullybaked/toggle-numbers.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -108,9 +108,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LargeFile'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mhinz/vim-startify'
-Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
 Plugin 'glench/vim-jinja2-syntax'
 
 "my Bundle here:
@@ -127,7 +125,7 @@ Bundle 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Bundle 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
 Bundle 'moll/vim-node'
 Bundle 'ctrlpvim/ctrlp.vim'
@@ -145,7 +143,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Bundle 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'  " snippets collections
 "Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 "Bundle 't9md/vim-quickhl'
 "Plugin 'xuyuanp/nerdtree-git-plugin'
 Bundle 'scrooloose/nerdcommenter'
@@ -259,7 +257,7 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 " http://stackoverflow.com/questions/16021297/how-to-map-alias-a-command-in-vim, PymodeLint映射成P
 command PL PymodeLint
 command F PymodeLintAuto    " auto pep8 fix
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+" let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "let g:syntastic_python_checkers = ['pep8']
 let g:pymode_lint_cwindow = 0    " open quickfix window
 let g:pymode_lint_ignore = "C0111, W0105, C0325"
@@ -390,39 +388,12 @@ let g:rbpt_max = 16
 au BufRead,BufNewFile *.scss set filetype=scss.css
 
 
-"语法检查配置
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_enable_javascript_checker = 1
-let g:syntastic_javascript_eslint_exec = '/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 3
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '❗'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
-
-
 let g:LargeFile=1
-
 
 "http://sjl.bitbucket.org/gundo.vim/
 "nnoremap <F4> :GundoToggle<CR>
-
 
 " for html
 autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
