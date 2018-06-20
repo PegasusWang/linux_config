@@ -163,6 +163,7 @@ Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 Plug 'ascenator/L9', {'name': 'newL9'}
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 

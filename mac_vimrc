@@ -218,6 +218,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'ryanoasis/vim-devicons'
 
 Plug 'xolox/vim-misc'
+Plug 'farmergreg/vim-lastplace'
 " Plug 'xolox/vim-easytags'
 " let g:easytags_python_enabled = 0
 " let g:easytags_python_script = 0
