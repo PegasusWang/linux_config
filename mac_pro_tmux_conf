@@ -130,12 +130,9 @@ alias tpl='tmuxp load '
 
 
 # for zhihu
-alias zhihu="git pull zhihu master"
 alias bd="buildout"
 alias tt="./bin/test"
-export SERVICE_DISCOVERY_URI=consul://discovery.dev.zhihu.com:8500
 # lens admin debug
-export LENS_ADMIN_DEBUG=1
 
 
 # Uncomment the following line to use case-sensitive completion.

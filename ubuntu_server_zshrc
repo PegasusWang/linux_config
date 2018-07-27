@@ -138,7 +138,6 @@ alias vgdb="nemiver "
 alias rm="trash-put"
 alias pi="~/pi"
 alias gpom='git pull origin master'
-alias zhihu='git pull zhihu master'
 alias gmg='git commit -m'
 alias gcsmg='git commit -m'
 alias gdc="git diff --cached"
