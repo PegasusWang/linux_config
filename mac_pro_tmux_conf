@@ -129,7 +129,6 @@ alias tnew='tmux new -s '
 alias tpl='tmuxp load '
 
 
-# for zhihu
 alias bd="buildout"
 alias tt="./bin/test"
 # lens admin debug
