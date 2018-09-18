@@ -241,11 +241,18 @@ call plug#end()
 nmap <silent> <C-d> <Plug>(pydocstring)
 nnoremap py :!python %<cr>
 " 用ctrl+l可以在insert和command模式都可以保存
-inoremap <c-l> <c-o>:w<cr>
-nnoremap <c-l> :w<cr>
+" inoremap <c-l> <c-o>:w<cr>
+" nnoremap <c-l> :w<cr>
 " 切换 buffer
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
+
+" use ctrl+h/j/k/l switch window
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 
 let g:pymode_python = 'python'  " Values are `python`, `python3`, `disable`.
 let g:pymode_paths = reverse(split(globpath(getcwd().'/eggs', '*'), '\n'))    " support zc.buildout

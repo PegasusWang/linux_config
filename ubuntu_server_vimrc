@@ -410,6 +410,13 @@ noremap <leader>r :e!<cr>  " reload without save
 noremap <leader>q :qa!<cr>  " quit all window without save
 noremap <leader>w :w<cr>
 
+" use ctrl+h/j/k/l switch window
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+
 " https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
 nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
 nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
