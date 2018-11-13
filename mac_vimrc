@@ -34,12 +34,12 @@ set scrolloff=3
 set shiftround
 
 set undofile
-set undodir=~/.Vim_undodir
+set undodir=~/.vim/undo
 set undolevels=1000
 
 set guifont=Monaco:h16
 set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
-set backupdir=~/.Vimbackup
+set backupdir=~/.vim/backup
 set cursorline
 "setlocal textwidth=80
 set tags=tags
@@ -219,6 +219,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 
 Plug 'xolox/vim-misc'
 Plug 'farmergreg/vim-lastplace'
+Plug 'mbbill/undotree'
 " Plug 'xolox/vim-easytags'
 " let g:easytags_python_enabled = 0
 " let g:easytags_python_script = 0
