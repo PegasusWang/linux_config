@@ -35,6 +35,11 @@ set termencoding=utf-8
 set formatoptions+=mM
 set fencs=utf-8,gbk
 
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set backupdir=~/.vim/backup
+
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
     call append(1, "# -*- coding: utf-8 -*-")
