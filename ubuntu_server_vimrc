@@ -35,6 +35,7 @@ set termencoding=utf-8
 set formatoptions+=mM
 set fencs=utf-8,gbk
 
+" NOTE: you must create ~/.vim/undo first
 set undofile
 set undodir=~/.vim/undo
 set undolevels=1000

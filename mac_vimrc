@@ -33,6 +33,7 @@ autocmd BufWritePre * :%s/\s\+$//ge
 set scrolloff=3
 set shiftround
 
+" NOTE: you must create ~/.vim/undo first
 set undofile
 set undodir=~/.vim/undo
 set undolevels=1000
