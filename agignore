@@ -1,4 +1,11 @@
 node_modules
 .git
 .ropeproject
-eggs
+
+gen-py/
+gen-go/
+eggs/
+.tmp/
+
+*.swp
+*.pyc
