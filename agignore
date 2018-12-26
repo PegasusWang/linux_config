@@ -10,3 +10,4 @@ eggs/
 *.swp
 *.pyc
 .pytest_cache
+__pycache__/
