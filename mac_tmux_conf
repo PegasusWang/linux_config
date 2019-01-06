@@ -1,7 +1,10 @@
 # tmux source-file ~/.tmux.conf
+# https://jdhao.github.io/2018/10/19/tmux_nvim_true_color/
 set -g default-terminal "screen-256color"
+# tell Tmux that outside terminal supports true color
+set -ga terminal-overrides ",xterm-256color*:Tc"
 setw -g aggressive-resize on
-source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+# source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 
 set -g default-shell $SHELL
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
