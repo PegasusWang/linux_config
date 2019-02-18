@@ -7,6 +7,7 @@ setw -g aggressive-resize on
 # source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 
 set -g default-shell $SHELL
+# brew install reattach-to-user-namespace
 set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 
 # Automatically set window title
