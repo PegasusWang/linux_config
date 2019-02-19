@@ -120,8 +120,8 @@ alias -s txt=vi
 alias tf='tail -f '
 alias prettyjson='python -m json.tool'
 alias y='youdao '
-alias t='tmux '
-alias tl='tmux ls'
+
+# tmux and tmuxp config
 alias tat='tmux at -t'
 alias ta='tmux at -t'
 alias tn='tmux rename -t'
