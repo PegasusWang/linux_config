@@ -122,6 +122,7 @@ alias prettyjson='python -m json.tool'
 alias y='youdao '
 
 # tmux and tmuxp config
+alias tl='tmux ls'
 alias tat='tmux at -t'
 alias ta='tmux at -t'
 alias tn='tmux rename -t'
