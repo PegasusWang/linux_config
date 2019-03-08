@@ -1,0 +1,30 @@
+[Flake8]
+# config : https://flake8.pycqa.org/en/latest/user/configuration.html
+# Flake8 looks for ~\.flake8 on Windows and ~/.config/flake8 on Linux and other Unix systems.
+ignore = E123, E124
+max-line-length = 120
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist
+
+ignore =
+    # H202: assertRaises Exception too broad
+    H202,
+    # H233: Python 3.x incompatible use of print operator
+    H233,
+    # H301: one import per line
+    H301,
+    # H401: docstring should not start with a space
+    H401,
+    # H403: multi line docstrings should end on a new line
+    H403,
+    # H404: multi line docstring should start without a leading new line
+    H404,
+    # H405: multi line docstring summary not separated with an empty line
+    H405,
+    # H501: Do not use self.__dict__ for string formatting
+    H501
