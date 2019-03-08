@@ -1,4 +1,4 @@
-[Flake8]
+[flake8]
 # config : https://flake8.pycqa.org/en/latest/user/configuration.html
 # Flake8 looks for ~\.flake8 on Windows and ~/.config/flake8 on Linux and other Unix systems.
 max-line-length = 120
