@@ -1,8 +1,3 @@
-[user]
-    email = 291374108@qq.com
-    name = PegasusWang
-
-
 [alias]
     lo = log --pretty=format:\"%h %ce %cd %s\" --graph
     co = checkout
