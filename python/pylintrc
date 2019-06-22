@@ -56,7 +56,8 @@ load-plugins=
 # I0011: *Locally disabling %s*
 disable-msg=I0011
 
-# 跳过一些无伤大雅的警告, pylint 默认检太严格, http://pylint-messages.wikidot.com/all-codes
+# NOTE: 跳过一些无伤大雅的警告, pylint 默认检太严格, http://pylint-messages.wikidot.com/all-codes
+# NOTE: 您可以根据项目当前情况进行调整
 # https://stackoverflow.com/questions/47348786/how-to-break-a-long-line-in-pylintrc-file
 #
 # Disable the message(s) with the given id(s).
