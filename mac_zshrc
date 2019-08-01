@@ -1,125 +1,53 @@
 # Path to your oh-my-zsh installation.
-
-export INTELLIJ_HOME=/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/
-#PATH=$IDEA_HOME $PATH
-
-
 export ZSH=$HOME/.oh-my-zsh
-export PYTHONIOENCODING=utf-8
-
-# Fix python crash with vim and YCM plugin
-export DYLD_FORCE_FLAT_NAMESPACE=1
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="gnzh"
-ZSH_THEME="dpoggi"
-ZSH_THEME="xxf"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs pyenv)
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
+POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%F{white}"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%F{white} "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir dir_writable_joined)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time
+                                    vcs background_jobs_joined time_joined)
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="clear"
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="clear"
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="yellow"
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="yellow"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="clear"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="blue"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="clear"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="blue"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="clear"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="red"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="clear"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="red"
+POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND="white"
+POWERLEVEL9K_STATUS_OK_BACKGROUND="clear"
+POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND="clear"
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
+POWERLEVEL9K_TIME_BACKGROUND="clear"
+POWERLEVEL9K_TIME_FOREGROUND="cyan"
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='clear'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
 
-export EDITOR='vim'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias co='coffee '
-alias no='node '
-alias a='./a.out'
-alias q='exit'
-alias quit='exit'
-alias apache='sudo apachectl start'
-alias blog='open http://ningning.today'
-alias baidu='open http://www.baidu.com'
-alias sub='open -a "Sublime Text 2"'
-alias val='valgrind '
-alias cdh='cd ~/Hexo'
-alias cdl='cd /Users/pegasus/Works/leancloud_demo/; source ./bin/activate'
-alias cdj='cd ~/Hexo/themes/jacman'
-alias cdb='cd ~/Hexo/source/_posts'
-alias cdd='cd ~/Hexo/source/_drafts'
-alias cds='cd /Users/pegasus/Program/Sites'
-alias cdlib='cd /Users/pegasus/Program/py_test/lib/python2.7/site-packages'
-alias cdlib3='cd /Users/pegasus/Program/py3.5_test/lib/python3.5/site-packages'
-alias cdp2='cd /Users/pegasus/Program/py_test; source ./bin/activate;'
-alias spy2='source /Users/pegasus/Program/py_test/bin/activate;'
-alias cdw='cd /Users/pegasus/Program/py_test/WeiboApp'
-alias cdp='cd /Users/pegasus/Program/py3.5_test; source ./bin/activate;'
-alias spy='source /Users/pegasus/Program/py3.5_test/bin/activate;'
-alias ce='crontab -e '
-alias cl='crontab -l '
-alias ed='eval $(docker-machine env default)'
-alias lo='locate '
-alias loc="open http://127.0.0.1"
-alias lsn='ls | nl'
-alias gs='git status -s'
-alias gnew='function _new() { git checkout -b $1; git pull origin $1 }; _new'
-alias gmg='git commit -m'
-alias gitproxy="git config --global https.proxy http://127.0.0.1:63463; git config --global https.proxy https://127.0.0.1:63463"
-alias ungitproxy="git config --global --unset http.proxy; git config --global --unset https.proxy"
-alias hexog='hexo g'
-alias hs='hexo s'
-alias hn='hexo n'
-alias hd='sudo hexo d'
-alias his='history'
-alias exi='exit'
-alias ctags='/usr/local/bin/ctags'
-alias mc='make clean'
-alias ja='java '
-alias jc='javac '
-alias py='python '
-alias py3s='python3.4 -m http.server'
-alias ipy='ipython'
-alias vi="/usr/local/Cellar/vim/7.4.1016/bin/vim"
-alias vim="/usr/local/Cellar/vim/7.4.1016/bin/vim"
-alias vd="/usr/local/Cellar/vim/7.4.1016/bin/vimdiff "
-alias vimdiff="/usr/local/Cellar/vim/7.4.1016/bin/vimdiff "
-#alias vd='vimdiff '
-#alias vi='mvim -v'
-#alias vin='vi /usr/local/etc/nginx/nginx.conf'
-#alias vim='mvim -v'
-#alias vd='vimdiff '
-alias mvim='mvim -v '
-alias cl='clang '
-alias g++='g++ -Wall '
-alias gcc='gcc -Wall '
-alias cc='cc -Wall '
-alias xo='open '
-alias o='open '
-alias phptag='ctags -R --fields=+laimS --languages=php'
-alias psp='ps aux | grep python'
-alias pi='~/pi'
-alias rm='rmtrash '
-alias rmc='rm *.pyc; rm .cache; rm __pycache__'
-alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \;'
-alias runl='python manage.py runserver'
-alias run='python manage.py runserver 0.0.0.0:8000'
-alias runs='python manage.py shell'
-alias rs='redis-server'
-#alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate;fswatch -o ./*.py  | xargs -n1  ./runtest.sh'
-# https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
-alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
-alias mysqlsqlstart='mysql.server start'
-alias -s h=vi
-alias -s c=vi
-alias -s cpp=vi
-alias -s java=vi
-alias -s txt=vi
-alias tf='tail -f '
-alias prettyjson='python -m json.tool'
-alias y='youdao '
-alias t='tmux '
-alias tp='tmuxp load'
-export TERM="xterm-256color"    # iterm vim support ariline
-
-# youbute
-alias download_youbute_mp3='youtube-dl --extract-audio --audio-format mp3 '
-alias download_youbute='youtube-dl -f bestvideo+bestaudio '
-alias download_youbute_mp3_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' --extract-audio --audio-format mp3 '
-alias download_youbute_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' -f bestvideo+bestaudio '
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -158,7 +86,7 @@ alias download_youbute_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' -f be
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump)
+#plugins=(git autojump zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -169,7 +97,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # You may need to manually set your language environment
 #export LANG=en_US.UTF-8
-export LC_ALL=zh_CN.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -184,35 +111,62 @@ export LC_ALL=zh_CN.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export NVM_DIR="/Users/pegasus/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# open vscode from terminal
+function code {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        local argPath="$1"
+        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+        open -a "Visual Studio Code" "$argPath"
+    fi
+}
 
+# fzf config, must brew install fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#nvm use 0.12.0
-alias nvmm='nvm use 0.12.0'
-alias eslint='/Users/pegasus/.nvm/versions/node/v4.0.0/bin/eslint'
+# the fuck config, must brew install thefuck
+eval $(thefuck --alias)
 
-
+# autojump config, brew innstall autojump
 [[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# for golang
-export GOPATH=$HOME/Program/go
+# install zplug, plugin manager for zsh, https://github.com/zplug/zplug
+# curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# zplug configruation
+if [[ ! -d "${ZPLUG_HOME}" ]]; then
+  if [[ ! -d ~/.zplug ]]; then
+    git clone https://github.com/zplug/zplug ~/.zplug
+    # If we can't get zplug, it'll be a very sobering shell experience. To at
+    # least complete the sourcing of this file, we'll define an always-false
+    # returning zplug function.
+    if [[ $? != 0 ]]; then
+      function zplug() {
+        return 1
+      }
+    fi
+  fi
+  export ZPLUG_HOME=~/.zplug
+fi
+if [[ -d "${ZPLUG_HOME}" ]]; then
+  source "${ZPLUG_HOME}/init.zsh"
+fi
+zplug 'plugins/git', from:oh-my-zsh, if:'which git'
+zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions', defer:2
+zplug 'zsh-users/zsh-history-substring-search'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
+if ! zplug check; then
+  zplug install
+fi
 
-# for php
-export PATH="$(brew --prefix php70)/bin:$PATH"
-#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+zplug load
 
-
-# https://github.com/seebi/dircolors-solarized，终端自动安装solarized主题
-# https://github.com/gibbling/dircolors
-export TERM="xterm-256color"
-eval $(gdircolors ~/.dircolors/dircolors.256dark)
-
-# Aliases
-alias ls='gls --color=auto'
-alias ll='ls -al'
+# source your own shrc file if exists
+[ -f ~/.env.sh ] && source ~/.env.sh
