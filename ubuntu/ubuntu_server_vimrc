@@ -1,5 +1,5 @@
-"http://stackoverflow.com/questions/30444890/vim-use-python3-interpreter-in-python-mode
-"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" install vim-plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " https://superuser.com/questions/302186/vim-scrolls-very-slowly-when-a-line-is-too-long
 " Syntax coloring lines that are too long just slows down the world
@@ -91,7 +91,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'fullybaked/toggle-numbers.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized.git'
+Plug 'w0ng/vim-hybrid'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plug 'tpope/vim-sensible'
@@ -485,11 +485,5 @@ set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 if &diff
     colorscheme evening
 else
-    " solarized 主题
-    let g:solarized_termtrans = 1
-    "let g:solarized_termcolors=256
-    set background=dark
-    colorscheme solarized
-    let g:solarized_visibility = "high"
-    let g:solarized_contrast = "high"
+    colorscheme hybrid
 endif
