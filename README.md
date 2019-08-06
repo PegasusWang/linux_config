@@ -66,5 +66,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 # install zplug, plugin manager for zsh, https://github.com/zplug/zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-```
+
 # install iterm2 theme: https://draculatheme.com/iterm/
+```
+
+# 注意：
+
+- 如果 oh-my-zsh 使用 powerlevel10k 之类的特殊主题，注意需要安装 nerd font 之类的特殊字体显示图标
