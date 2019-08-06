@@ -64,9 +64,8 @@ bind r source-file ~/.tmux.conf
 # THEME
 set -g status-bg black
 set -g status-fg white
-set -g window-status-current-bg white
-set -g window-status-current-fg black
-set -g window-status-current-attr bold
+# https://github.com/tmux/tmux/wiki/FAQ#how-do-i-translate--fg--bg-and--attr-options-into--style-options
+set -g window-status-current-style bg=white,fg=black,bold  # for tmux >= 2.9
 set -g status-interval 60
 set -g status-left-length 30
 set -g status-left '#[fg=green](#S) #(whoami)'
