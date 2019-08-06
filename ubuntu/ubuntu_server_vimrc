@@ -476,20 +476,10 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_autosave = 1
-let g:go_def_mode = 'godef'  " gopls faster than guru
 
-autocmd MyAutoCmd FileType go
-	\   nmap <C-]> <Plug>(go-def)
-	\ | nmap <Leader>god  <Plug>(go-describe)
-	\ | nmap <Leader>goc  <Plug>(go-callees)
-	\ | nmap <Leader>goC  <Plug>(go-callers)
-	\ | nmap <Leader>goi  <Plug>(go-info)
-	\ | nmap <Leader>gom  <Plug>(go-implements)
-	\ | nmap <Leader>gos  <Plug>(go-callstack)
-	\ | nmap <Leader>goe  <Plug>(go-referrers)
-	\ | nmap <Leader>gor  <Plug>(go-run)
-	\ | nmap <Leader>gov  <Plug>(go-vet)
-
+" for nerdcommenter.vim
+nmap <Leader>v <plug>NERDCommenterToggle
+let g:NERDSpaceDelims = 1
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
