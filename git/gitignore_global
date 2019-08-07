@@ -1,5 +1,11 @@
+# editor plugin
 .ropeproject/
+
+# personal test file
 mydoc
 .tmp
 wnnrun.sh
 wnntest.sh
+
+# personal ignore file
+.gometalinter.json
