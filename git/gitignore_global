@@ -1,11 +1,42 @@
-# editor plugin
 .ropeproject/
+*.swp
+*.swo
+*.so
+*.pyc
+*.pyo
 
-# personal test file
-mydoc
-.tmp
-wnnrun.sh
+# TOOD file
+TODO.md
+TODO.txt
+todo.md
+todo.txt
+
+# testfile
+run_admin.sh
 wnntest.sh
+wnnrun.sh
+run.sh
+.python-version
+t.js
+.tmp
 
-# personal ignore file
-.gometalinter.json
+# mvn
+mvn_publish.sh
+
+
+# js
+.tern-port
+.tern-project
+
+.netrwhist
+.agignore
+
+
+# IDE
+.idea
+
+# mac
+.DS_Store
+
+# personal
+mydoc
