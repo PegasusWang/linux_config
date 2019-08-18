@@ -135,12 +135,16 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'davidhalter/jedi-vim'
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-dispatch'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 "Plug 'jmcantrell/vim-virtualenv'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'kien/rainbow_parentheses.vim'
 "Plug 'Valloric/ListToggle'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'  " snippets collections
 "Plug 'Valloric/YouCompleteMe'
 " Plug 'scrooloose/syntastic'
@@ -510,3 +514,6 @@ nmap sd <Plug>(easymotion-s)
 nmap sf <Plug>(easymotion-overwin-f)
 map  sh <Plug>(easymotion-linebackward)
 map  sl <Plug>(easymotion-lineforward)
+
+
+let g:deoplete#enable_at_startup = 1
