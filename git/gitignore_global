@@ -1,9 +1,7 @@
-.ropeproject/
+# vim
 *.swp
 *.swo
 *.so
-*.pyc
-*.pyo
 
 # TOOD file
 TODO.md
@@ -11,26 +9,30 @@ TODO.txt
 todo.md
 todo.txt
 
+# python
+.ropeproject/
+*.pyc
+*.pyo
+
 # testfile
 run_admin.sh
 wnntest.sh
 wnnrun.sh
 run.sh
 .python-version
-t.js
 .tmp
 
 # mvn
 mvn_publish.sh
 
-
-# js
+# js/node
 .tern-port
 .tern-project
+t.js
+node_modules/
 
-.netrwhist
+# ag silver searcher
 .agignore
-
 
 # IDE
 .idea
@@ -40,3 +42,9 @@ mvn_publish.sh
 
 # personal
 mydoc
+
+# golang
+.gometalinter.json
+
+
+.netrwhist
