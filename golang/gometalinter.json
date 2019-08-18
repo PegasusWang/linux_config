@@ -3,5 +3,6 @@
     "exported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported",
     "method parameter \\w+ should be \\w+",
     "struct field \\w+ should be \\w+"
+    "var \\w+ should be \\w+"
   ]
 }
