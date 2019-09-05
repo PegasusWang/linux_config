@@ -51,3 +51,7 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 cp mac_zshrc  ~/.zshrc
 source ~/.zshrc
 ```
+
+# Ref
+
+- https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
