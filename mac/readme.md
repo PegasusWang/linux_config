@@ -11,6 +11,11 @@ brew install zsh
 
 - https://github.com/robbyrussell/oh-my-zsh
 
+```
+# The installation script should set zsh to your default shell, but if it doesn't you can do it manually:
+chsh -s $(which zsh)
+```
+
 
 # 安装 oh-my-zsh
 
