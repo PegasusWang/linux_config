@@ -1,17 +1,14 @@
-mac 安装 oh-my-zsh 主题
+mac 安装 oh-my-zsh 主题 (mac install oh-mh-zsh and powerlevel10k theme)
 
 # 安装 iterm2
 
 https://www.iterm2.com/downloads.html
 
 
-# 安装或者升级你的 zsh 版本
-
-brew install zsh
-
-- https://github.com/robbyrussell/oh-my-zsh
-
+# 安装或者升级你的 zsh 版本 (install or upgrade zsh)
 ```
+# https://github.com/robbyrussell/oh-my-zsh
+brew install zsh
 # The installation script should set zsh to your default shell, but if it doesn't you can do it manually:
 chsh -s $(which zsh)
 ```
@@ -24,7 +21,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-# 安装字体
+# 安装字体 (install font)
 ```
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 brew tap homebrew/cask-fonts
