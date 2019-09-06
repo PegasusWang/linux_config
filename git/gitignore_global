@@ -48,3 +48,6 @@ mydoc
 
 
 .netrwhist
+
+# redis
+dump.rdb
