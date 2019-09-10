@@ -4,6 +4,15 @@ mac 安装 oh-my-zsh 主题 (mac install oh-mh-zsh and powerlevel10k theme)
 
 https://www.iterm2.com/downloads.html
 
+# 安装 iterm2 theme (optional)
+
+Iterm2 theme:
+
+- https://github.com/MartinSeeler/iterm2-material-design
+- https://draculatheme.com/iterm/
+
+Term2 > Preferences > Profiles > Colors Tab -> import from and choose theme file
+
 
 # 安装或者升级你的 zsh 版本 (install or upgrade zsh)
 ```
@@ -52,3 +61,4 @@ source ~/.zshrc
 # Ref
 
 - https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
+- https://medium.com/@rafavinnce/iterm2-zsh-oh-my-zsh-material-design-the-most-power-full-terminal-on-macos-332b1ee364a5
