@@ -158,8 +158,8 @@ linters-settings:
     # See https://go-critic.github.io/overview#checks-overview
     # To check which checks are enabled run `GL_DEBUG=gocritic golangci-lint run`
     # By default list of stable checks is used.
-    enabled-checks:
-      - rangeValCopy
+    # enabled-checks:
+    #   - rangeValCopy
 
     # Which checks should be disabled; can't be combined with 'enabled-checks'; default is empty
     disabled-checks:
@@ -177,17 +177,12 @@ linters-settings:
         sizeThreshold: 32
 
 linters:
+  disable-all: true
   enable:
     - megacheck
     - govet
     - errcheck
-      # golint 过于严格，禁用
-      #- golint
-  enable-all: false
-  disable:
-    - maligned
-    - prealloc
-  disable-all: false
+    # - golint  # golint 过于严格，禁用
   presets:
     - bugs
     - unused
