@@ -1,7 +1,6 @@
- # vim-go 配置
+# vim-go 配置
 
- vim-go 使用 gometalinter 可以忽略一些lint 提示。用户目录或者项目目录新增 .gometalinter.json 文件
-
+vim-go 现在使用 golangci-lint，废弃 gometalinter。请使用 golangci.yml 配置
 
 ```json
 {
@@ -10,4 +9,4 @@
 ```
 
 - https://github.com/golang/lint/issues/186
-- https://github.com/alecthomas/gometalinter
+- https://github.com/golangci/golangci-lint
