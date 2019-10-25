@@ -123,10 +123,10 @@ function code {
     fi
 }
 
-# fzf config, must brew install fzf
+# fzf config, must "brew install fzf" first
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# the fuck config, must brew install thefuck
+# the fuck config, must "brew install thefuck"
 # eval $(thefuck --alias)
 
 # autojump config, brew install autojump

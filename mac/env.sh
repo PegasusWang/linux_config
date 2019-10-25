@@ -78,6 +78,8 @@ alias rs='redis-server'
 #alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate;fswatch -o ./*.py  | xargs -n1  ./runtest.sh'
 # https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
 # alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
+alias monitor="when-changed -r -v -1 . "    # pip install when-changed
+alias monitor_go_run="when-changed -r -v -1 . go run"
 alias runtest="when-changed -v -r -1 -s ./ ./bin/test"
 alias testcommand="when-changed -v -r -1 -s ./ ./wnntest.sh"
 alias bt="./bin/test"
@@ -122,7 +124,7 @@ export NVM_DIR="/Users/wnn/.nvm"
 #nvm use 0.12.0
 alias nvmm='nvm use 8.10.0'
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 export GOPATH=$HOME/go    # don't forget to change your path correctly!
@@ -140,3 +142,8 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # init 会每次启动的时候载入虚拟环境
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# https://github.com/huan/swagger-edit
+function swagger-edit() {
+  docker run -ti --rm --volume="$(pwd)":/swagger -p 8080:8080 zixia/swagger-edit "$@"
+}
