@@ -1,0 +1,16 @@
+{
+  "rpc/*.go": {"alternate": "rpc/impl/{}.go"},
+  "rpc/impl/*.go": {"alternate": "rpc/{}.go"},
+  "service/*.go": {"alternate": "service/impl/{}.go"},
+  "service/impl/*.go": {"alternate": "service/{}.go"},
+  "model/*.go": {"alternate": "model/impl/{}.go"},
+  "model/impl/*.go": {"alternate": "model/{}.go"},
+  "models/*.go": {"alternate": "models/impl/{}.go"},
+  "models/impl/*.go": {"alternate": "models/{}.go"},
+  "dao/*.go": {"alternate": "dao/impl/{}.go"},
+  "dao/impl/*.go": {"alternate": "dao/{}.go"},
+  "controller/*.go": {"alternate": "controller/impl/{}.go"},
+  "controller/impl/*.go": {"alternate": "controller/{}.go"},
+  "controllers/*.go": {"alternate": "controllers/impl/{}.go"},
+  "controllers/impl/*.go": {"alternate": "controllers/{}.go"}
+}
