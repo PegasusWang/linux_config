@@ -3,6 +3,10 @@
 *.swo
 *.so
 
+# vim plugin
+# https://github.com/tpope/vim-projectionist
+.projections.json
+
 # TOOD file
 TODO.md
 TODO.txt
@@ -18,6 +22,7 @@ todo.txt
 run_admin.sh
 wnntest.sh
 wnnrun.sh
+wnntodo.md
 run.sh
 .python-version
 .tmp
