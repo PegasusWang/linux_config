@@ -17,3 +17,5 @@ docker build -t dvim
 把 projections.json 放到项目根目录 .projections.json。
 然后使用 `:A` 可以在对应的文件跳转，比如 go 的 interface 文件和 impl 实现文件。
 类似 cpp 里使用 a.vim 在头文件和 cpp 文件快速跳转。
+
+- https://medium.com/aaron-renner/navigating-vim-projects-like-a-boss-81c808328807
