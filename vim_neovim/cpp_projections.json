@@ -1,4 +1,0 @@
-{
-  "src/*.h": {"alternate": "src/{}.cpp"},
-  "src/*.cpp": {"alternate": "src/{}.h"}
-}

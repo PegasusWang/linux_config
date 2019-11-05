@@ -12,5 +12,7 @@
   "controller/*.go": {"alternate": "controller/impl/{}.go"},
   "controller/impl/*.go": {"alternate": "controller/{}.go"},
   "controllers/*.go": {"alternate": "controllers/impl/{}.go"},
-  "controllers/impl/*.go": {"alternate": "controllers/{}.go"}
+  "controllers/impl/*.go": {"alternate": "controllers/{}.go"},
+  "src/*.h": {"alternate": "src/{}.cpp"},
+  "src/*.cpp": {"alternate": "src/{}.h"}
 }
