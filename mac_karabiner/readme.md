@@ -23,6 +23,9 @@ bind -n M-Left select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
+# 使用 shift + up/down 来切换 window。我把 right_command + np 映射到了 left_shift + up/down
+bind -n S-Up  previous-window
+bind -n S-Down next-window
 ```
 
 tmux移动窗口比较频繁，我修改成了 options+方向键，但是 left_option 同样不好盲打，我改成了 right_command+wasd 映射到
