@@ -6,12 +6,12 @@
 
 - wasd.json: use right_command + WASD as arrow key
 - page_up_down.json: use left_command + [ ] as page_up and page_down
-- command_jk_copy.json: use right_command + j/k as command + c/v
+- command_pn_copy.json: use right_command + n/p as command + c/v
 - alt_arrow_to_alt_hjkl.json: use alt + hjkl to alt + arrow, so I can use alt+hjkl select tmux pane
 - right_command_arrow_to_alt_hjkl.json: use right_command + wasd to alt + hjkl, so I can use right_command+wasd select tmux pane
 
 json 文件放入之后，打开 Karabiner-Elements -> Complex modifications -> Add rule，就可以看到你的相关改键配置，点击加入就可以生效。
-这里我把 right_command + WASD 修改成上下左右，command + [] 翻页， right_command+jk 复制粘贴,
+这里我把 right_command + WASD 修改成上下左右，command + [] 翻页， right_command+n/p 复制粘贴,
 right_command + wasd 移动 tmux 窗口(tmux需要相关配置)
 
 tmux 配置：
@@ -23,7 +23,7 @@ bind -n M-Left select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
-# 使用 shift + up/down 来切换 window。我把 right_command + np 映射到了 left_shift + up/down
+# 使用 shift + up/down 来切换 window。我把 right_command + jk 映射到了 left_shift + up/down
 bind -n S-Up  previous-window
 bind -n S-Down next-window
 ```

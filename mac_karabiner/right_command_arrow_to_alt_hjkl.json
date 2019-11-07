@@ -95,7 +95,7 @@
       ]
     },
     {
-      "description": "Exchange right_command+WASD and right_command + n/p to alt+arrow",
+      "description": "Exchange right_command+WASD and right_command + jk to alt+arrow",
       "manipulators": [
         {
           "type": "basic",
@@ -240,7 +240,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "n",
+            "key_code": "j",
             "modifiers": {
               "mandatory": [
                 "right_command"
@@ -275,7 +275,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "p",
+            "key_code": "k",
             "modifiers": {
               "mandatory": [
                 "right_command"
