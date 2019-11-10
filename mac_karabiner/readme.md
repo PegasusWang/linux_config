@@ -1,5 +1,7 @@
 # mac 使用 Karabiner-Elements  改键配置(HHKB 无鼠标编程指南)
 
+写了一个一篇[无鼠标编程指南(视频)](https://zhuanlan.zhihu.com/p/91031876)，感兴趣可以参考一下。
+
 首先安装 [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) 。然后配置文件放置位置在
 
 ~/.config/karabiner/assets/complex_modifications/wasd.json
