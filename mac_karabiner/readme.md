@@ -1,10 +1,10 @@
 # mac 使用 Karabiner-Elements  改键配置(HHKB 无鼠标编程指南)
 
-写了一个一篇[无鼠标编程指南(视频)](https://zhuanlan.zhihu.com/p/91031876)，感兴趣可以参考一下。
+写了一篇[mac 无鼠标编程指南(视频)](https://zhuanlan.zhihu.com/p/91031876)和我使用到的一些设备 [程序员双十一剁手指南](https://zhuanlan.zhihu.com/p/89192238) 感兴趣可以参考一下。
 
 首先安装 [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) 。然后配置文件放置位置在
 
-~/.config/karabiner/assets/complex_modifications/wasd.json
+`~/.config/karabiner/assets/complex_modifications/wasd.json`
 
 - wasd.json: use right_command + WASD as arrow key
 - page_up_down.json: use left_command + [ ] as page_up and page_down
@@ -43,4 +43,3 @@ Iterm2 可以增加绑定，比然我自己使用 left_command + jk 来左右切
 - https://github.com/tekezo/Karabiner-Elements
 - https://www.jianshu.com/p/47d5de7f12bc
 - https://madogiwa.github.io/KE-complex_modifications/
-
