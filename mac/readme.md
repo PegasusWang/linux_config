@@ -58,7 +58,20 @@ cp mac_zshrc  ~/.zshrc
 source ~/.zshrc
 ```
 
+# 安装 tmux 和 tmux 插件管理器(optional)
+
+```sh
+# install tmux plugin manager
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm , use prefix + I install plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# MacOS install tmux
+brew install tmux
+# copy my tmux  conf, or you can use  https://github.com/gpakosz/.tmux
+cp tmux.conf ~/.tmux.conf
+```
+
 # Ref
 
 - https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
 - https://medium.com/@rafavinnce/iterm2-zsh-oh-my-zsh-material-design-the-most-power-full-terminal-on-macos-332b1ee364a5
+- https://github.com/gpakosz/.tmux
