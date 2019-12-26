@@ -49,6 +49,17 @@ Iterm2 里配置非 acsii 字体。(Iterm2 -> Preferences -> Profiles -> Text ->
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ```
 
+# 安装命令行工具
+
+```sh
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+brew install thefuck
+brew install autojump
+```
+
 # 复制 zshrc 文件
 
 ```sh

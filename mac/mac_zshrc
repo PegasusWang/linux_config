@@ -123,11 +123,8 @@ function code {
     fi
 }
 
-# fzf config, must "brew install fzf" first
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# the fuck config, must "brew install thefuck"
-# eval $(thefuck --alias)
+# the fuck config, must brew install thefuck
+eval $(thefuck --alias)
 
 # autojump config, brew install autojump
 [[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
@@ -176,3 +173,7 @@ zplug load
 
 # NOTE: use cc to clear screen. I use tmux ctrl+hjkl switch panel, but ctrl+l conflict with clear-screen
 # bindkey "cc" clear-screen
+
+# fzf config, must brew install fzf
+# NOTE: put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
