@@ -36,6 +36,7 @@ alias loc="open http://127.0.0.1"
 alias lsn='ls | nl'
 alias mp="mitmproxy -p8888"
 alias grm='git rebase master'
+alias gclone='git clone '
 alias gdc='git diff --cached'
 alias gdm='git diff master'
 alias gs='git status -s'
@@ -64,7 +65,7 @@ alias nv="nvim "
 alias cl='clang '
 alias g++='g++ -Wall '
 alias gcc='gcc -Wall '
-alias cc='cc -Wall '
+# alias cc='cc -Wall '
 alias xo='open '
 alias o='open '
 alias psp='ps aux | grep python'
@@ -79,7 +80,7 @@ alias rs='redis-server'
 # https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
 # alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
 alias monitor="when-changed -r -v -1 . "    # pip install when-changed
-alias monitor_go_run="when-changed -r -v -1 . go run"
+alias go_monitor_run="when-changed -r -v -1 . go run"
 alias runtest="when-changed -v -r -1 -s ./ ./bin/test"
 alias testcommand="when-changed -v -r -1 -s ./ ./wnntest.sh"
 alias bt="./bin/test"
@@ -96,7 +97,6 @@ alias -s txt=vi
 alias tf='tail -f '
 alias prettyjson='python -m json.tool'
 alias y='youdao '
-alias t='tmux '
 alias tl='tmux ls'
 alias tat='tmux at -t'
 alias ta='tmux at -t'
@@ -140,8 +140,28 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # init 会每次启动的时候载入虚拟环境
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+
+# http proxy
+function unset_httpproxy() {
+    unset https_proxy; unset http_proxy
+}
+
+function ss_httpproxy() {
+  export http_proxy=http://127.0.0.1:1087
+  export https_proxy=http://127.0.0.1:1087
+}
+
+function ss_gitproxy() {
+    git config --global https.proxy http://127.0.0.1:1087
+    git config --global https.proxy https://127.0.0.1:1087
+}
+
+function unset_gitproxy() {
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+}
 
 # https://github.com/huan/swagger-edit
 function swagger-edit() {
