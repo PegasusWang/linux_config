@@ -1,12 +1,14 @@
-mac 安装 oh-my-zsh 主题 (mac install oh-mh-zsh and powerlevel10k theme)
+# Mac Terminal Setup
 
-# 安装 iterm2
+mac 安装 oh-my-zsh 主题 (mac install oh-mh-zsh and powerlevel10k theme)，终端配置
+
+## 安装 iterm2
 
 https://www.iterm2.com/downloads.html
 
-# 安装 iterm2 theme (optional)
+## 安装 iterm2 theme (optional)
 
-Iterm2 theme:
+Iterm2 theme(I use dracula):
 
 - https://github.com/MartinSeeler/iterm2-material-design
 - https://draculatheme.com/iterm/
@@ -14,7 +16,7 @@ Iterm2 theme:
 Term2 > Preferences > Profiles > Colors Tab -> import from and choose theme file.
 
 
-# 安装或者升级你的 zsh 版本 (install or upgrade zsh)
+## 安装或者升级你的 zsh 版本 (install or upgrade zsh)
 
 ```sh
 # https://github.com/robbyrussell/oh-my-zsh
@@ -23,14 +25,14 @@ brew install zsh
 chsh -s $(which zsh)
 ```
 
-# 安装 oh-my-zsh
+## 安装 oh-my-zsh
 
 ```
 # https://github.com/robbyrussell/oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-# 安装字体 (install font)
+## 安装字体 (install nerd-font)
 
 ```sh
 # https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
@@ -38,18 +40,19 @@ brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 ```
 
-Iterm2 里配置非 acsii 字体。(Iterm2 -> Preferences -> Profiles -> Text -> Non-Ascii-Font 选择 nerd-font and restart Iterm2),
-之后重启 Iterm2 生效
+Iterm2 里配置非 acsii 字体。
+
+(Iterm2 -> Preferences -> Profiles -> Text -> Non-Ascii-Font 选择 nerd-font and restart Iterm2), 之后重启 Iterm2 生效
 
 
-# 安装 zplug 插件管理器
+## 安装 zplug 插件管理器
 
 ```sh
 # https://github.com/zplug/zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ```
 
-# 安装命令行工具
+## 安装命令行工具
 
 ```sh
 brew install fzf
@@ -60,7 +63,7 @@ brew install thefuck
 brew install autojump
 ```
 
-# 复制 zshrc 文件
+## 复制 zshrc 文件
 
 ```sh
 # 复制我的 zshrc 文件，你可以删除相应的 fzf, thefuck 配置，brew install 相应的命令行工具
@@ -69,7 +72,7 @@ cp mac_zshrc  ~/.zshrc
 source ~/.zshrc
 ```
 
-# 安装 tmux 和 tmux 插件管理器(optional)
+## 安装 tmux 和 tmux 插件管理器(optional)
 
 ```sh
 # install tmux plugin manager
