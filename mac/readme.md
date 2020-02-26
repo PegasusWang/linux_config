@@ -81,7 +81,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # MacOS install tmux
 brew install tmux
 brew install reattach-to-user-namespace
-# copy my tmux  conf, or you can use  https://github.com/gpakosz/.tmux
+# copy my tmux conf, or suggest use https://github.com/gpakosz/.tmux
 cp tmux.conf ~/.tmux.conf
 ```
 
