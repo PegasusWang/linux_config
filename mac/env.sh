@@ -81,6 +81,7 @@ alias rs='redis-server'
 # alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
 alias monitor="when-changed -r -v -1 . "    # pip install when-changed
 alias go_monitor_run="when-changed -r -v -1 . go run"
+alias py_monitor_run="when-changed -r -v -1 . python " # pip install when-changed
 alias runtest="when-changed -v -r -1 -s ./ ./bin/test"
 alias testcommand="when-changed -v -r -1 -s ./ ./wnntest.sh"
 alias bt="./bin/test"
@@ -118,11 +119,11 @@ alias download_youbute_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' -f be
 # alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 
 
-export NVM_DIR="/Users/wnn/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #nvm use 0.12.0
-alias nvmm='nvm use 8.10.0'
+alias nvmm='nvm use stable'
 
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
@@ -161,6 +162,15 @@ function ss_gitproxy() {
 function unset_gitproxy() {
     git config --global --unset http.proxy
     git config --global --unset https.proxy
+}
+
+function pytest_monitor_run() {
+  when-changed -r -v -1 "$1" pytest -s "$1"
+}
+
+# alias go_monitor_run="when-changed -r -v -1 . go run" # pip install when-changed
+function go_monitor_run() {
+  when-changed -r -v -1 "$1" go run "$1"
 }
 
 # https://github.com/huan/swagger-edit
