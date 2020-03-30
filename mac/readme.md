@@ -40,7 +40,7 @@ brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 ```
 
-Iterm2 里配置非 acsii 字体。
+Iterm2 里配置非 acsii 字体，否则对于 powerlevel10k 主题的特殊字体会显示不出来。
 
 (Iterm2 -> Preferences -> Profiles -> Text -> Non-Ascii-Font 选择 nerd-font and restart Iterm2), 之后重启 Iterm2 生效
 
