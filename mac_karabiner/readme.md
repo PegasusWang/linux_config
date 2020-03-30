@@ -6,15 +6,18 @@
 
 `~/.config/karabiner/assets/complex_modifications/wasd.json`
 
-- wasd.json: use right_command + WASD as arrow key
 - page_up_down.json: use left_command + [ ] as page_up and page_down
 - command_pn_copy.json: use right_command + n/p as command + c/v
-- alt_arrow_to_alt_hjkl.json: use alt + hjkl to alt + arrow, so I can use alt+hjkl select tmux pane
 - right_command_arrow_to_alt_hjkl.json: use right_command + wasd to alt + hjkl, so I can use right_command+wasd select tmux pane
+- wasd.json: use right_command + WASD as arrow key
+> - alt_arrow_to_alt_hjkl.json: use alt + hjkl to alt + arrow, so I can use alt+hjkl select tmux pane
 
 json 文件放入之后，打开 Karabiner-Elements -> Complex modifications -> Add rule，就可以看到你的相关改键配置，点击加入就可以生效。
 这里我把 right_command + WASD 修改成上下左右，command + [] 翻页， right_command+n/p 复制粘贴,
-right_command + wasd 移动 tmux 窗口(tmux需要相关配置)
+right_command + wasd 移动 tmux 窗口(tmux需要相关配置)。
+
+注意如果配置冲突了 Karabiner-Elements 会根据配置的顺序决定配置，放到上边的配置优先级高。
+比如我这里的配置是 Iterm2 下边 right_command+wasd 会用来切 tmux 窗口，但是别的窗口下 right_command+wasd 是改成了方向键。
 
 tmux 配置：
 
