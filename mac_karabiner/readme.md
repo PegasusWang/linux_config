@@ -37,9 +37,9 @@ tmux移动窗口比较频繁，我修改成了 options+方向键，但是 left_o
 left_option+方向键，这样移动 tmux 窗口就可以用 right_command + wasd了，解放了双手。
 
 Item2 配置：
-Iterm2 可以增加绑定，比然我自己使用 left_command + jk 来左右切换窗口。(keys->key bindings)
+Iterm2 可以增加绑定，比如我自己使用 left_command + jk 来左右切换窗口。(keys->key bindings)
 
-目前使用 hhkb (iterm2+oh-my-zsh+neovim+tmux) 操作手指完全集中在主键盘区，增加了编辑效率，基本实现了无鼠标编程。
+目前使用 hhkb (iterm2+oh-my-zsh+neovim+tmux) 操作手指完全集中在主键盘区，增加了编辑效率，可以实现无鼠标编程。
 
 # 参考：
 
