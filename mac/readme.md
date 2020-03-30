@@ -63,7 +63,7 @@ brew install thefuck
 brew install autojump
 ```
 
-## 复制 zshrc 文件
+## 复制 zshrc 文件(zshrc 包含插件和主题)
 
 ```sh
 # 复制我的 zshrc 文件，你可以删除相应的 fzf, thefuck 配置，brew install 相应的命令行工具
@@ -81,8 +81,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # MacOS install tmux
 brew install tmux
 brew install reattach-to-user-namespace
-# copy my tmux conf, or suggest use https://github.com/gpakosz/.tmux
-cp tmux.conf ~/.tmux.conf
+# copy my tmux conf, I use https://github.com/gpakosz/.tmux
+cp .tmux.conf ~/.tmux.conf
+cp .tmux.conf.local ~/.tmux.conf.local
 ```
 
 # Ref
