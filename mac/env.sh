@@ -80,7 +80,7 @@ alias rs='redis-server'
 # https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
 # alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
 alias monitor="when-changed -r -v -1 . "    # pip install when-changed
-alias go_monitor_run="when-changed -r -v -1 . go run"
+# alias go_monitor_run="when-changed -r -v -1 . go run"
 alias py_monitor_run="when-changed -r -v -1 . python " # pip install when-changed
 alias runtest="when-changed -v -r -1 -s ./ ./bin/test"
 alias testcommand="when-changed -v -r -1 -s ./ ./wnntest.sh"
