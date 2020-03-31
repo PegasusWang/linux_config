@@ -33,8 +33,8 @@ bind -n S-Up  previous-window
 bind -n S-Down next-window
 ```
 
-tmux移动窗口比较频繁，我修改成了 options+方向键，但是 left_option 同样不好盲打，我改成了 right_command+wasd 映射到
-left_option+方向键，这样移动 tmux 窗口就可以用 right_command + wasd了，解放了双手。
+tmux移动窗口比较频繁，我修改成了 options+方向键，但是 left_option 同样不好盲打，我改成了 left_command+hjkl 映射到
+left_option+方向键，这样移动 tmux 窗口就可以用 left_command + hjkl了，解放了双手。
 
 Item2 配置：
 Iterm2 可以增加绑定，比如我自己使用 left_command + jk 来左右切换窗口。(keys->key bindings)
