@@ -8,6 +8,8 @@ export INTELLIJ_HOME=/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/
 export PYTHONIOENCODING=utf-8
 export EDITOR='nvim'
 export LC_ALL=zh_CN.UTF-8
+# Ignore files specified by .gitignore https://github.com/junegunn/fzf.vim/issues/121
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
 
 alias no='node '
@@ -177,3 +179,5 @@ function go_monitor_run() {
 function swagger-edit() {
   docker run -ti --rm --volume="$(pwd)":/swagger -p 8080:8080 zixia/swagger-edit "$@"
 }
+
+bindkey "jj" clear-screen
