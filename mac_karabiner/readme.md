@@ -1,3 +1,7 @@
+# mac 备份 karabiner 配置
+
+复制或者直接把文件 `~/.config/karabiner/karabiner.json` 放到版本库
+
 # mac 使用 Karabiner-Elements  改键配置(HHKB 无鼠标编程指南)
 
 写了一篇[mac 无鼠标编程指南(视频)](https://zhuanlan.zhihu.com/p/91031876)和我使用到的一些设备 [程序员双十一剁手指南](https://zhuanlan.zhihu.com/p/89192238) 感兴趣可以参考一下。
