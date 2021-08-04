@@ -92,3 +92,4 @@ cp .tmux.conf.local ~/.tmux.conf.local
 - https://medium.com/@rafavinnce/iterm2-zsh-oh-my-zsh-material-design-the-most-power-full-terminal-on-macos-332b1ee364a5
 - https://github.com/gpakosz/.tmux
 - [为 vim + tmux 开启真彩色(true color)](https://lotabout.me/2018/true-color-for-tmux-and-vim/)
+- https://towardsdatascience.com/the-ultimate-guide-to-your-terminal-makeover-e11f9b87ac99
