@@ -360,6 +360,9 @@ bind -n S-Right next-window
 bind -n S-Up  previous-window
 bind -n S-Down next-window
 
+# use prefix + m zoom and unzoom panes
+bind-key -T prefix m resize-pane -Z
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here
