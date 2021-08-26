@@ -418,7 +418,7 @@ set -g @resurrect-capture-pane-contents 'on'
 #
 # weather() {
 #   curl -m 1 'wttr.in/Beijing?format=4' 2>/dev/null
-#   sleep 180 # sleep for 3 minutes, throttle network requests whatever the value of status-interval
+#   sleep 900 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {
