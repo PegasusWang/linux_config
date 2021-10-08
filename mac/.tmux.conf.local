@@ -339,8 +339,8 @@ tmux_conf_copy_to_os_clipboard=true
 #set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
+set -gu prefix2
+unbind C-a
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
@@ -421,7 +421,7 @@ set -g @resurrect-capture-pane-contents 'on'
 #
 # weather() {
 #   curl -m 1 'wttr.in/Beijing?format=4' 2>/dev/null
-#   sleep 7200 # sleep for 2hours, throttle network requests whatever the value of status-interval
+#   sleep 7200 # sleep long seconds, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {
