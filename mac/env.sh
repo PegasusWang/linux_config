@@ -58,6 +58,7 @@ alias mc='make clean'
 alias ja='java '
 alias jc='javac '
 alias py='python '
+alias py3='python3 '
 alias py3s='python3.6 -m http.server'
 alias ipy='ipython'
 alias ci="vi "
@@ -99,7 +100,6 @@ alias -s java=vi
 alias -s txt=vi
 alias tf='tail -f '
 alias prettyjson='python -m json.tool'
-alias y='youdao '
 alias tl='tmux ls'
 alias tat='tmux at -t'
 alias ta='tmux at -t'
@@ -107,11 +107,14 @@ alias tn='tmux rename -t'
 alias tnew='tmux new -s '
 alias tpl='tmuxp load '
 
-# youbute
-alias download_youbute_mp3='youtube-dl --extract-audio --audio-format mp3 --no-playlist'
-alias download_youbute='youtube-dl -f bestvideo+bestaudio '
-alias download_youbute_mp3_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' --extract-audio --audio-format mp3 '
-alias download_youbute_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' -f bestvideo+bestaudio '
+# youtube
+alias download_youtube_mp3='youtube-dl --extract-audio --audio-format mp3 --no-playlist'
+alias download_youtube='youtube-dl -f bestvideo+bestaudio '
+alias download_youtube_mp3_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' --extract-audio --audio-format mp3 '
+alias download_youtube_proxy='youtube-dl --proxy 'socks5://127.0.0.1:1080' -f bestvideo+bestaudio '
+# show or hide desktop icon
+alias hide_desktop_icon='defaults write com.apple.finder CreateDesktop -bool false; killall Finder'
+alias show_desktop_icon='defaults write com.apple.finder CreateDesktop -bool true; killall Finder'
 
 # for php
 # export PATH="$(brew --prefix php70)/bin:$PATH"
@@ -175,6 +178,17 @@ function go_monitor_run() {
   when-changed -r -v -1 "$1" go run "$1"
 }
 
+function gor() {
+  when-changed -s -r -v -1 "$1" go run "$1"
+}
+
+function pyr() {
+  when-changed -s -r -v -1 "$1" python3 "$1"
+}
+
+function gof() {
+  golines -w -m 120 "$1"
+}
 # https://github.com/huan/swagger-edit
 function swagger-edit() {
   docker run -ti --rm --volume="$(pwd)":/swagger -p 8080:8080 zixia/swagger-edit "$@"
