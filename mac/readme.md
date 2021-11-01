@@ -70,6 +70,7 @@ brew install autojump
 # you may brew install thefuck, fzf
 cp mac_zshrc  ~/.zshrc
 source ~/.zshrc
+# 你自己的 shell 配置可以写到 ~/.env.sh，检测有这个文件会自动 source
 ```
 
 ## 安装 tmux 和 tmux 插件管理器(optional)
