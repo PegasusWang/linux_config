@@ -18,7 +18,7 @@
 brew tap caskroom/cask
 
 # brew cask install
-brew cask install iterm2 \
+brew install --cask iterm2 \
   alfread \
   docker-toolbox
 
