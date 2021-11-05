@@ -127,9 +127,10 @@ function code {
 eval $(thefuck --alias)
 
 # autojump config, brew install autojump
-[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
 
 # install zplug, plugin manager for zsh, https://github.com/zplug/zplug
 # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -169,10 +170,13 @@ zplug load
 [ -f ~/.env.sh ] && source ~/.env.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # NOTE: use cc to clear screen. I use tmux ctrl+hjkl switch panel, but ctrl+l conflict with clear-screen
 # bindkey "cc" clear-screen
+
+# enable iterm2_shell_integration
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # fzf config, must brew install fzf
 # NOTE: put this line in the end of your zshrc, or it may not work, https://github.com/junegunn/fzf/issues/1304
