@@ -87,6 +87,17 @@ cp .tmux.conf ~/.tmux.conf
 cp .tmux.conf.local ~/.tmux.conf.local
 ```
 
+## 增加你的终端光标移动速度(移动速度飞起)
+
+```sh
+# 终端下执行以下几个命令，然后重新登出账户并登入（或者重启）
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1  # 默认值 2，设置成 1 合适，设置成 0 就太快了
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+```
+
 # Ref
 
 - https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
