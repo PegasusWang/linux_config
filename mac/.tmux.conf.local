@@ -346,7 +346,7 @@ unbind C-a
 # bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+# set -g status-position top
 
 # Use Alt-arrow keys without prefix key to switch panes
 bind -n M-Left select-pane -L
