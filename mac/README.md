@@ -1,4 +1,4 @@
-# Mac Terminal Setup
+# Mac Terminal(iterm2) Setup
 
 mac 安装 oh-my-zsh 主题 (mac install oh-mh-zsh and powerlevel10k theme)，终端配置
 
@@ -90,7 +90,7 @@ cp .tmux.conf.local ~/.tmux.conf.local
 ## 增加你的终端光标移动速度(移动速度飞起)
 
 ```sh
-# 终端下执行以下几个命令，然后重新登出账户并登入（或者重启）
+# 终端下执行以下几个命令，然后重新登出当前账户并登入（或者重启）
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
@@ -102,6 +102,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 - https://sourabhbajaj.com/mac-setup/iTerm/zsh.html
 - https://medium.com/@rafavinnce/iterm2-zsh-oh-my-zsh-material-design-the-most-power-full-terminal-on-macos-332b1ee364a5
-- https://github.com/gpakosz/.tmux
+- https://github.com/gpakosz/.tmux oh-my-tmux 配置
 - [为 vim + tmux 开启真彩色(true color)](https://lotabout.me/2018/true-color-for-tmux-and-vim/)
 - https://towardsdatascience.com/the-ultimate-guide-to-your-terminal-makeover-e11f9b87ac99
