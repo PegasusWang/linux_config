@@ -83,8 +83,6 @@ alias rs='redis-server'
 # https://github.com/joh/when-changed，监控文件变动，我修改了下，只监控py和shell文件，用来修改后自动运行单元测试
 # alias runtest='source /Users/pegasus/Program/py3.5_test/bin/activate; when-changed -v -r -1 -s ../ ./runtest.sh'
 alias monitor="when-changed -r -v -1 . "    # pip install when-changed
-# alias go_monitor_run="when-changed -r -v -1 . go run"
-alias py_monitor_run="when-changed -r -v -1 . python " # pip install when-changed
 alias runtest="when-changed -v -r -1 -s ./ ./bin/test"
 alias testcommand="when-changed -v -r -1 -s ./ ./wnntest.sh"
 alias bt="./bin/test"
@@ -107,6 +105,7 @@ alias ta='tmux at -t'
 alias tn='tmux rename -t'
 alias tnew='tmux new -s '
 alias tpl='tmuxp load '
+alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 # youtube
 alias download_youtube_mp3='youtube-dl --extract-audio --audio-format mp3 --no-playlist'
@@ -138,7 +137,7 @@ export GOPATH=$HOME/go    # don't forget to change your path correctly!
 # export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-alias updatedb='sudo /usr/libexec/locate.updatedb'
+
 
 # openssl
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -160,9 +159,15 @@ function ss_httpproxy() {
   export https_proxy=http://127.0.0.1:1087
 }
 
+# shadowsocks
 function ss_gitproxy() {
     git config --global http.proxy http://127.0.0.1:1087
     git config --global https.proxy https://127.0.0.1:1087
+}
+
+function gitproxy() {
+    git config --global http.proxy http://127.0.0.1:1080
+    git config --global https.proxy https://127.0.0.1:1080
 }
 
 function unset_gitproxy() {
@@ -171,12 +176,16 @@ function unset_gitproxy() {
 }
 
 function pytest_monitor_run() {
-  when-changed -r -v -1 "$1" pytest -s "$1"
+  when-changed -s -r -v -1 "$1" pytest -s "$1"
+}
+
+function pyt() {
+  when-changed -s -r -v -1 "$1" pytest -s "$1"
 }
 
 # alias go_monitor_run="when-changed -r -v -1 . go run" # pip install when-changed
 function go_monitor_run() {
-  when-changed -r -v -1 "$1" go run "$1"
+  when-changed -s -r -v -1 "$1" go run "$1"
 }
 
 function gor() {

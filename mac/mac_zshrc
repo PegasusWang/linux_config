@@ -124,7 +124,7 @@ function code {
 }
 
 # the fuck config, must brew install thefuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # autojump config, brew install autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
