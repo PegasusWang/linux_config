@@ -42,6 +42,7 @@ alias gclone='git clone '
 alias gdc='git diff --cached'
 alias gdm='git diff master'
 alias gs='git status -s'
+alias gh="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/git@/http:\/\//' -e's/\.git$//' | sed -E 's/(\/\/[^:]*):/\1\//'\`" # open github
 alias gmg='git commit -m'
 alias gpo='git push origin '
 alias gpom='git push origin master'
