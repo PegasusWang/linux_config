@@ -12,6 +12,7 @@ export LC_ALL=zh_CN.UTF-8
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 
+alias e='exa'
 alias no='node '
 alias q='exit'
 alias quit='exit'
