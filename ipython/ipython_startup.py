@@ -4,20 +4,20 @@
 # Ned's .startup.py file    ipython 启动加载文件，用来导入一些自定义函数或者模块
 # http://stackoverflow.com/questions/11124578/automatically-import-modules-when-entering-the-python-or-ipython-interpreter
 
-print("(.startup.py)")
-
-import datetime as dt
-import os
-import pprint
-import re
-import sys
-import time
 import json
+import time
+import sys
+import re
+import pprint
+import os
+import datetime as dt
+import collections
+
 
 try:
     import matplotlib.pyplot as plt
     import pandas as pd
-    from pandas import Series, DataFrame
+    # from pandas import Series, DataFrame
     import numpy as np
     import requests as req
 except ImportError:
@@ -39,15 +39,17 @@ pp = pprint.pprint
 json_dumps = _json_dumps
 
 
-print("(imported datetime, os, pprint, re, sys, time, json)")
+print("(.startup.py)")
+print("(imported datetime, os, pprint, re, sys, time, json, collections)")
 
 
 def is_reload():
-    """ 本地调试页面的时候用 export LENS_ADMIN_DEBUG=1 """
-    flag = os.environ.get('RELOAD')
+    """ 本地调试页面的时候用 export IPYTHON_RELOAD=1 """
+    flag = os.environ.get('IPYTHON_RELOAD')  # 自己定义的环境变量
     if flag in ('1', 'True', 'true'):
         return True
     return False
+
 
 # http://shawnleezx.github.io/blog/2015/08/03/some-notes-on-ipython-startup-script/
 _is_reload = is_reload()
