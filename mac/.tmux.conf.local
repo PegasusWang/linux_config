@@ -430,7 +430,7 @@ set -g @resurrect-capture-pane-contents 'on'
 # # /!\ do not "uncomment" the functions: the leading "# " characters are needed
 #
 # weather() {
-#   curl -m 1 'wttr.in/Beijing?format=4' 2>/dev/null
+#   curl -m 3 'wttr.in/Beijing?format=4' 2>/dev/null
 #   sleep 7200 # sleep long seconds, throttle network requests whatever the value of status-interval
 # }
 #
