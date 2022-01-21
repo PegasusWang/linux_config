@@ -211,4 +211,9 @@ function swagger-edit() {
   docker run -ti --rm --volume="$(pwd)":/swagger -p 8080:8080 zixia/swagger-edit "$@"
 }
 
+# mac os copy path, install realpath first
+function path() {
+  realpath "$1" | pbcopy
+}
+
 bindkey "jj" clear-screen
