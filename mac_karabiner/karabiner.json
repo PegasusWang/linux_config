@@ -566,7 +566,7 @@
                             },
                             "to": [
                                 {
-                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                    "consumer_key_code": "volume_increment"
                                 }
                             ]
                         },
@@ -606,7 +606,7 @@
                             },
                             "to": [
                                 {
-                                    "consumer_key_code": "volume_decrement"
+                                    "key_code": "grave_accent_and_tilde"
                                 }
                             ]
                         },
@@ -616,7 +616,7 @@
                             },
                             "to": [
                                 {
-                                    "consumer_key_code": "volume_increment"
+                                    "consumer_key_code": "volume_decrement"
                                 }
                             ]
                         },
