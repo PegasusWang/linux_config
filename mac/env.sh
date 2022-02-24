@@ -37,6 +37,7 @@ alias ed='eval $(docker-machine env default)'
 alias lo='locate '
 alias lc='leetcode ' # https://github.com/skygragon/leetcode-cli
 alias lcg='leetcode show -x -g -l python'
+alias lcm='leetcode show -x -g -l mysql'
 alias lcgo='leetcode show -x -g -l golang'
 alias lct='leetcode test '
 alias lcs='leetcode submit '
