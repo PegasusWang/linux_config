@@ -408,7 +408,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 # prefix + Ctrl-s - save;  prefix + Ctrl-r - restore.  https://github.com/tmux-plugins/tmux-resurrect
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
-# restore vim/neovim session
+# restore vim/neovim session, vim/neovim install https://github.com/tpope/vim-obsession
 set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
