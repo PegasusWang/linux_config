@@ -1,0 +1,12 @@
+{
+    "autologin": {
+        "enable": true
+    },
+    "color": {
+        "enable": true,
+        "theme": "default"
+    },
+    "file": {
+        "show": "${fid}_${slug}"
+    }
+}
