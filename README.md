@@ -10,6 +10,11 @@
 - Vscode/Neovim
 - Pycharm/Idea/Goland
 
+
+# Mac 终端环境快速安装
+
+https://github.com/PegasusWang/linux_config/tree/master/mac
+
 # Mac 环境快速安装
 
 ```
