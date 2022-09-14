@@ -20,21 +20,25 @@
 # new window retains current path, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify new-window bindings)
 tmux_conf_new_window_retain_current_path=true
 
 # new pane retains current path, possible values are:
 #   - true (default)
 #   - false
+#   - disabled (do not modify split-window bindings)
 tmux_conf_new_pane_retain_current_path=true
 
-# new pane tries to reconnect ssh sessions (experimental), possible values are:
+# new pane tries to reconnect ssh sessions, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify split-window bindings)
 tmux_conf_new_pane_reconnect_ssh=false
 
 # prompt for session name when creating a new session, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify new-session bindings)
 tmux_conf_new_session_prompt=false
 
 
@@ -42,8 +46,13 @@ tmux_conf_new_session_prompt=false
 
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
-#  - false (default)
-tmux_conf_24b_colour=false
+#  - false
+#  - auto (default)
+#
+# automatic detection relies on the COLORTERM environment variable being defined
+# to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
+# see https://github.com/termstandard/colors
+tmux_conf_24b_colour=auto
 
 # default theme
 tmux_conf_theme_colour_1="#080808"    # dark gray
@@ -227,7 +236,7 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | %H:%M %m/%d/%Y %A | #{weather} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | %H:%M %Y/%m/%d %A | #{weather} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -318,6 +327,7 @@ tmux_conf_theme_clock_style="24"
 # in copy mode, copying selection also copies to the OS clipboard
 #   - true
 #   - false (default)
+#   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
 tmux_conf_copy_to_os_clipboard=true
@@ -343,6 +353,9 @@ unbind C-a
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
+
+# if you don't want Oh my tmux! to alter a binding, use #!important
+# bind v new-window -c #{pane_current_path} #!important
 
 # move status line to top
 #set -g status-position top
@@ -374,7 +387,7 @@ bind-key -T prefix m resize-pane -Z
 # by default, launching tmux will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_launch=false
+tmux_conf_update_plugins_on_launch=true
 
 # by default, reloading the configuration will update tpm and all plugins
 #   - true (default)
@@ -408,7 +421,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 # prefix + Ctrl-s - save;  prefix + Ctrl-r - restore.  https://github.com/tmux-plugins/tmux-resurrect
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
-# restore vim/neovim session, vim/neovim install https://github.com/tpope/vim-obsession
+# restore vim/neovim session
 set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
