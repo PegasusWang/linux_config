@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+DISABLE_AUTO_UPDATE="true"
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -155,9 +156,9 @@ fi
 zplug 'plugins/git', from:oh-my-zsh, if:'which git'
 zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-autosuggestions', defer:2
 zplug 'zsh-users/zsh-completions', defer:2
-zplug 'zsh-users/zsh-history-substring-search'
+zplug 'zsh-users/zsh-history-substring-search', defer:2
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
 if ! zplug check; then

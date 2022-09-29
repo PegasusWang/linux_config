@@ -68,7 +68,7 @@ brew install autojump
 ```sh
 # 复制我的 zshrc 文件，你可以删除相应的 fzf, thefuck 配置，brew install 相应的命令行工具
 # you may brew install thefuck, fzf
-cp mac_zshrc  ~/.zshrc
+cp .zshrc  ~/.zshrc
 source ~/.zshrc
 # 你自己的 shell 配置可以写到 ~/.env.sh，检测有这个文件会自动 source
 ```
