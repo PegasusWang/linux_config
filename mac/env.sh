@@ -219,3 +219,9 @@ function path() {
 }
 
 bindkey "jj" clear-screen
+
+
+# applescript alias
+alias mi='osascript ~/.applescript/iterm2.scpt'
+alias lr='osascript ~/.applescript/lr.scpt'
+alias oi='osascript ~/.applescript/open_iterm2.scpt'
