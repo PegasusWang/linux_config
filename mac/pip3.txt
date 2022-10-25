@@ -18,13 +18,14 @@ bcrypt==3.2.0
 beautifulsoup4==4.9.3
 bidict==0.21.2
 black==21.10b0
+bottle==0.12.19
 bs4==0.0.1
 cachetools==4.2.2
 certifi==2020.11.8
 cffi==1.14.3
 chardet==3.0.4
 cli-helpers==2.1.0
-click==7.1.2
+click==8.1.3
 colorama==0.4.4
 commonmark==0.9.1
 configobj==5.0.6
@@ -36,6 +37,7 @@ cryptography==36.0.1
 cycler==0.10.0
 decorator==4.4.2
 defusedxml==0.7.1
+deprecation==2.1.0
 diagrams==0.18.0
 dicttoxml==1.7.4
 docopt==0.6.2
@@ -46,8 +48,9 @@ epy-reader==2021.2.3
 et-xmlfile==1.0.1
 Fabric3==1.14.post1
 ffmpeg-python==0.2.0
-Flask==2.0.1
+Flask==2.1.2
 Flask-SocketIO==5.1.1
+fpdf==1.7.2
 fsspec==2021.5.0
 future==0.18.2
 Glances==3.2.3.1
@@ -62,6 +65,8 @@ httpie==2.4.0
 idna==2.10
 ifaddr==0.1.7
 imagesize==1.3.0
+img2pdf==0.4.4
+importlib-metadata==4.11.3
 importlib-resources==5.2.1
 iniconfig==1.1.1
 instant-rst @ https://github.com/Rykka/instant-rst.py/archive/master.zip
@@ -74,6 +79,7 @@ itsdangerous==2.0.1
 jdcal==1.4.1
 jedi==0.18.0
 jedi-language-server==0.34.8
+jieba==0.42.1
 Jinja2==3.0.1
 joblib==1.0.1
 kafka-python==2.0.2
@@ -101,7 +107,7 @@ numpy==1.22.0
 oauthlib==3.1.1
 opencv-python==4.5.5.62
 openpyxl==3.0.5
-packaging==20.9
+packaging==21.3
 pandas==1.1.4
 paramiko==2.7.2
 parso==0.8.2
@@ -111,12 +117,13 @@ pathtools==0.1.2
 pbr==5.6.0
 pexpect==4.8.0
 pickleshare==0.7.5
+pikepdf==5.6.1
 Pillow==8.0.1
 platformdirs==2.4.0
 pluggy==0.13.1
 present==0.6.0
 prompt-toolkit==3.0.8
-protobuf==3.19.1
+protobuf==3.19.4
 psutil==5.8.0
 ptyprocess==0.6.0
 py==1.10.0
@@ -131,7 +138,7 @@ pyDeprecate==0.3.0
 pyee==7.0.4
 pyfiglet==0.8.post1
 pygls==0.11.2
-Pygments==2.7.2
+Pygments==2.13.0
 PyJWT==1.7.1
 pylint==2.7.2
 PyMySQL==0.10.1
@@ -273,7 +280,7 @@ pyPdf==1.13
 pyperclip==1.8.2
 pyppeteer==0.2.2
 PySocks==1.7.1
-pytest==6.2.3
+pytest==6.2.5
 python-dateutil==2.8.1
 python-engineio==4.2.1
 python-markdown-math==0.6
@@ -318,6 +325,7 @@ termcolor==1.1.0
 terminaltables==3.1.0
 threadpoolctl==2.1.0
 times==0.7
+tinify==1.5.2
 tinycss2==0.6.1
 toml==0.10.2
 tomli==1.2.1
