@@ -39,6 +39,7 @@ alias lc='leetcode ' # https://github.com/skygragon/leetcode-cli
 alias lcg='leetcode show -x -g -l python'
 alias lcm='leetcode show -x -g -l mysql'
 alias lcgo='leetcode show -x -g -l golang'
+function lcso() { leetcode show "$1" --solution } # leetcode show 1 --solution
 alias lct='leetcode test '
 alias lcs='leetcode submit '
 alias loc="open http://127.0.0.1"
@@ -132,9 +133,10 @@ alias show_desktop_icon='defaults write com.apple.finder CreateDesktop -bool tru
 # alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
 # alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 
-
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# nvm config, brew install nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #nvm use 0.12.0
 alias nvmm='nvm use stable'
