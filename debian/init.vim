@@ -250,6 +250,13 @@ noremap <leader>r :e!<cr>  " reload without save
 noremap <leader>q :qa!<cr>  " quit all window without save
 noremap <leader>w :w<cr>
 
+" Window-control prefix
+nnoremap  [Window]   <Nop>
+nmap      s [Window]
+
+nnoremap <silent> [Window]v  :<C-u>split<CR>
+nnoremap <silent> [Window]g  :<C-u>vsplit<CR>
+
 " use ctrl+h/j/k/l switch window
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -294,10 +301,6 @@ com! FormatJSONPy3 %!python3 -m json.tool
 com! FormatJSONPy2 %!python -m json.tool
 com! FormatJSONPy2Utf8 %!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=2)"
 
-" fzf.vim
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
-nnoremap <silent> <Leader>f :Buffers <CR>
-nnoremap <silent> <c-p> :Files <CR>
 
 " for golang https://github.com/fatih/vim-go
 " https://github.com/fatih/vim-go-tutorial
@@ -338,7 +341,7 @@ let g:go_highlight_variable_declarations = 0
 let g:go_highlight_variable_assignments = 0
 let g:go_fmt_command = "goimports"
 let g:go_def_reuse_buffer = 1
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 if has('nvim') || exists(':terminal')
   let g:go_term_enabled = 1
   let g:go_term_close_on_exit = 0
@@ -533,3 +536,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+" fzf.vim
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>f :Buffers <CR>
+nnoremap <silent> <c-p> :Files <CR>
