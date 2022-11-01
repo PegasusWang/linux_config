@@ -2,9 +2,11 @@
 	name = PeasusWang
 	email = 291374108@qq.com
 [core]
-	editor = vim
+	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	quotePath = false
 	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = auto
 [color "branch"]
