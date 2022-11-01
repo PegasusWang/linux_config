@@ -61,6 +61,8 @@ set nocompatible              " be iMproved, required
 call plug#begin('~/.vim/plugged')
 
 Plug 'gregsexton/MatchTag'
+Plug 'itchyny/vim-cursorword'
+Plug 'Raimondi/delimitMate'
 Plug 'tpope/tpope-vim-abolish'  "https://github.com/tpope/tpope-vim-abolish 转换骆驼命名法
 Plug 'terryma/vim-expand-region'
 Plug 'stephpy/vim-yaml'
@@ -71,7 +73,6 @@ Plug 'fullybaked/toggle-numbers.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0ng/vim-hybrid'
 Plug 'jaxbot/semantic-highlight.vim'
-Plug 'lfv89/vim-interestingwords'    " https://github.com/lfv89/vim-interestingwords
 Plug 'tpope/vim-sensible'
 Plug 'elzr/vim-json'
 Plug 'solarnz/thrift.vim'
@@ -124,8 +125,7 @@ nnoremap <silent> <LocalLeader>E :<C-u>let NERDTreeWinPos=1 \| NERDTreeToggle<CR
 nnoremap <silent> <LocalLeader>A :<C-u>let NERDTreeWinPos=1 \| NERDTreeFind<CR>
 
 " for Tagbarbar, sudo apt-get install ctags
-nnoremap <silent> <F8> :TagbarToggle<CR>
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>b :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0    " sort by sourcefile
 let g:tagbar_autopreview = 0
@@ -189,11 +189,10 @@ nnoremap tt :tab split<CR>
 let g:NERDTrimTrailingWhitespace = 1
 let g:javascript_plugin_jsdoc = 1
 
-"http://vimawesome.com/plugin/rainbow-parentheses-vim   花里胡哨的彩虹括号^_^
-
+" indentLine
 let g:indentLine_enabled = 1
-let g:indentLine_color_term = 239
-let g:LargeFile=1
+" do not remove last sapce, indent for tab
+set list lcs=tab:\|\ 
 
 
 " for json
@@ -263,26 +262,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-
-" https://github.com/lfv89/vim-interestingwords 高亮感兴趣的 word
-nnoremap <silent> <leader>f :call InterestingWords('n')<cr>
-nnoremap <silent> <leader>F :call UncolorAllWords()<cr>
-
-" https://github.com/jaxbot/semantic-highlight.vim
-"nnoremap <Leader>s :SemanticHighlightToggle<cr>
-
 " 禁止 startify 自动切换目录
 let g:startify_change_to_dir = 0
-
-
-" 用 ,a 搜索当前 cursor 下单词，-w 参数精确匹配单词
-if executable('ag')
-    noremap <leader>a :Ag! -w "<cword>"<cr>
-else
-    let g:ack_default_options = " -H --nopager --nocolor --nogroup --column"
-    noremap <Leader>a :Ack <cword><cr>
-endif
-
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -353,9 +334,6 @@ let g:NERDSpaceDelims = 1
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" Setting up how to display whitespace characters
-set list
-set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 
 " when use diff from cmd line, change color theme
 if &diff
@@ -542,3 +520,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>f :Buffers <CR>
 nnoremap <silent> <c-p> :Files <CR>
+
+
+" cursorword
+let g:cursorword = 1
