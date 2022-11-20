@@ -64,8 +64,6 @@ alias his='history'
 alias exi='exit'
 alias ctags='/usr/local/bin/ctags'
 alias mc='make clean'
-alias ja='java '
-alias jc='javac '
 alias py='python '
 alias py3='python3 '
 alias py3s='python3.6 -m http.server'
@@ -144,7 +142,7 @@ alias nvmm='nvm use stable'
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
-export GOPATH=$HOME/go    # don't forget to change your path correctly!
+export GOPATH=$HOME/work    # don't forget to change your path correctly!
 # export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
