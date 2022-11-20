@@ -69,9 +69,12 @@ brew install autojump
 # 复制我的 zshrc 文件，你可以删除相应的 fzf, thefuck 配置，brew install 相应的命令行工具
 # you may brew install thefuck, fzf
 cp .zshrc  ~/.zshrc
+cp .p10k.zsh ~/.p10k.zsh
 source ~/.zshrc
 # 你自己的 shell 配置可以写到 ~/.env.sh，检测有这个文件会自动 source
 ```
+
+如果你不喜欢现在的 powerlevel10k zsh 主题，你可以终端下执行 `p10k configure` 交互式重新配置
 
 ## 安装 tmux 和 tmux 插件管理器(optional)
 
