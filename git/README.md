@@ -30,3 +30,8 @@ footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.
 ```
 
 甚至还可以用现成的工具：https://github.com/commitizen/cz-cli
+
+
+# 如何在终端拿下更优雅地 git diff 文件
+
+使用 https://github.com/dandavison/delta 可以实现在终端下两边 diff 文件(side-by-size)。
