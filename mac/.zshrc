@@ -121,8 +121,8 @@ if [[ -d "${ZPLUG_HOME}" ]]; then
   source "${ZPLUG_HOME}/init.zsh"
 fi
 zplug 'plugins/git', from:oh-my-zsh, if:'which git'
-zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
-zplug "plugins/vi-mode", from:oh-my-zsh
+zplug 'romkatv/powerlevel10k', as:theme, depth:1
+zplug 'plugins/vi-mode', from:oh-my-zsh
 zplug 'zsh-users/zsh-autosuggestions', defer:2
 zplug 'zsh-users/zsh-completions', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:2
