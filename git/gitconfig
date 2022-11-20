@@ -4,9 +4,37 @@
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	quotePath = false
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	quotePath = false
+	# brew install git-delta
+	pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	features = side-by-side line-numbers decorations
+	syntax-theme = Dracula
+	plus-style = syntax "#003800"
+	minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+	hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+	line-numbers-left-style = cyan
+	line-numbers-right-style = cyan
+	line-numbers-minus-style = 124
+	line-numbers-plus-style = 28
+
+[merge]
+	conflictstyle = diff3
+
 [color]
 	ui = auto
 [color "branch"]
@@ -25,10 +53,13 @@
 	untracked = red bold
 [diff]
 	tool = vimdiff
+    colorMoved = default
 [difftool]
 	prompt = false
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
+[includeIf "gitdir:~/Programs/"]
+	path = ~/Programs/.gitconfig-wnn
 [commit]
 	template = ~/.gitmessage
 [pager]
