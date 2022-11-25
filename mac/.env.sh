@@ -225,3 +225,7 @@ bindkey "jj" clear-screen
 alias mi='osascript ~/.applescript/iterm2.scpt'
 alias lr='osascript ~/.applescript/lr.scpt'
 alias oi='osascript ~/.applescript/open_iterm2.scpt'
+
+
+# 工作用机器等相关配置放到单独文件，不可加入版本库，防止泄露工作敏感信息！！！
+[ -f ~/.work.sh ] && source ~/.work.sh
