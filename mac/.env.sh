@@ -54,6 +54,7 @@ alias gh="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 
 alias gmg='git commit -m'
 alias gpo='git push origin '
 alias gpom='git push origin master'
+alias glom='git pull origin master'
 alias grebase2='git rebase -i HEAD~~'
 alias gnew='function _new() { git checkout -b $1; git pull origin $1 }; _new'
 alias hexog='hexo g'
@@ -142,8 +143,9 @@ alias nvmm='nvm use stable'
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
+# golang env config
+export GOROOT="/usr/local/go"
 export GOPATH=$HOME/work    # don't forget to change your path correctly!
-# export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
