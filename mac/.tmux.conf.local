@@ -5,16 +5,6 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
-# -- navigation ----------------------------------------------------------------
-
-# if you're running tmux within iTerm2
-#   - and tmux is 1.9 or 1.9a
-#   - and iTerm2 is configured to let option key act as +Esc
-#   - and iTerm2 is configured to send [1;9A -> [1;9D for option + arrow keys
-# then uncomment the following line to make Meta + arrow keys mapping work
-#set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
-
-
 # -- windows & pane creation ---------------------------------------------------
 
 # new window retains current path, possible values are:
@@ -44,15 +34,29 @@ tmux_conf_new_session_prompt=false
 
 # -- display -------------------------------------------------------------------
 
-# RGB 24-bit colour support (tmux >= 2.2), possible values are:
-#  - true
-#  - false
-#  - auto (default)
+# RGB 24-bit colour support, possible values are:
+#   - true
+#   - false
+#   - auto (default)
 #
 # automatic detection relies on the COLORTERM environment variable being defined
 # to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
 # see https://github.com/termstandard/colors
 tmux_conf_24b_colour=auto
+
+
+# -- theming -------------------------------------------------------------------
+
+# enable or disable theming:
+#   - enabled (default)
+#   - disabled
+# when disabled, all tmux_conf_theme_xxx variables are ignored except:
+#   - tmux_conf_theme_pairing
+#   - tmux_conf_theme_prefix
+#   - tmux_conf_theme_mouse
+#   - tmux_conf_theme_root
+#   - tmux_conf_theme_synchronized
+tmux_conf_theme=enabled
 
 # default theme
 tmux_conf_theme_colour_1="#080808"    # dark gray
@@ -96,7 +100,7 @@ tmux_conf_theme_colour_17="#e4e4e4"   # white
 tmux_conf_theme_window_fg="default"
 tmux_conf_theme_window_bg="default"
 
-# highlight focused pane (tmux >= 2.1), possible values are:
+# highlight focused pane, possible values are:
 #   - true
 #   - false (default)
 tmux_conf_theme_highlight_focused_pane=false
@@ -112,6 +116,9 @@ tmux_conf_theme_pane_border_style=thin
 # pane borders colours:
 tmux_conf_theme_pane_border="$tmux_conf_theme_colour_2"
 tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_4"
+%if #{>=:#{version},3.2}
+tmux_conf_theme_pane_active_border="#{?pane_in_mode,$tmux_conf_theme_colour_9,#{?synchronize-panes,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_4}}"
+%endif
 
 # pane indicator colours (when you hit <prefix> + q)
 tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
@@ -329,7 +336,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 #   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
-# on Linux, this requires xsel or xclip
+# on Linux, this requires xsel, xclip or wl-copy
 tmux_conf_copy_to_os_clipboard=true
 
 
