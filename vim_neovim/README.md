@@ -21,8 +21,8 @@ docker build -t dvim
 - https://medium.com/aaron-renner/navigating-vim-projects-like-a-boss-81c808328807
 
 
-# mac vim 中文输入切换问题
-vim 中文输入法在切换到 normal 模式的时候比较麻烦，还需要切换输入法。可以使用 smart-im 插件解决。
+# mac vim 中文输入法切换问题
+vim 中文输入法在切换到 normal 模式的时候比较麻烦，还需要切换输入法到英文才能用。可以使用 smart-im 插件解决。
 
 https://github.com/ybian/smartim
 
@@ -30,6 +30,8 @@ https://github.com/ybian/smartim
 
 1. 安装命令行工具 im-select。 https://github.com/daipeihust/im-select
 
-brew tap daipeihust/tap && brew install im-select
+`brew tap daipeihust/tap && brew install im-select`
 
-2. vim 配置增加如下配置：`autocmd InsertLeave * :silent !/usr/local/bin/im-select com.apple.keylayout.ABC`
+2. vim 配置增加如下配置，离开插入模式的时候自动切换到默认的英文输入法：
+
+`autocmd InsertLeave * :silent !/usr/local/bin/im-select com.apple.keylayout.ABC`
