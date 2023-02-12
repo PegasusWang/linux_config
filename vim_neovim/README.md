@@ -32,6 +32,6 @@ https://github.com/ybian/smartim
 
 `brew tap daipeihust/tap && brew install im-select`
 
-2. vim 配置增加如下配置，离开插入模式的时候自动切换到默认的英文输入法：
+2. vim 配置增加如下配置，离开插入模式的时候自动切换到默认的英文输入法：(可以先用 im-select 命令看下你的默认输入法)
 
 `autocmd InsertLeave * :silent !/usr/local/bin/im-select com.apple.keylayout.ABC`
