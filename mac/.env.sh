@@ -27,6 +27,7 @@ alias cdb='cd ~/Hexo/source/_posts'
 alias cdd='cd ~/Hexo/source/_drafts'
 # nvm use 16.15.1; npm install -g curlconverter
 alias curl_to_requests='pbpaste | curlconverter - | pbcopy'
+alias curl_to_go='pbpaste | curlconverter - --language go | pbcopy'
 alias cds='cd /Users/pegasus/Program/Sites'
 alias cdlib='cd /Users/pegasus/Program/py_test/lib/python2.7/site-packages'
 alias cdlib3='cd /Users/pegasus/Program/py3.5_test/lib/python3.5/site-packages'
