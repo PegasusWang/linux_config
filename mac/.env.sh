@@ -123,7 +123,7 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 # youtube
 # python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 # alias download_youtube_mp3='yt-dlp --extract-audio --audio-format mp3 --no-playlist'
-alias download_youtube_mp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
+alias download_youtube_mp3='yt-dlp -x --audio-format mp3'
 alias download_youtube='yt-dlp -f bestvideo+bestaudio '
 alias download_youtube_mp3_proxy='yt-dlp --proxy 'socks5://127.0.0.1:1080' --extract-audio --audio-format mp3 '
 alias download_youtube_proxy='yt-dlp --proxy 'socks5://127.0.0.1:1080' -f bestvideo+bestaudio '
