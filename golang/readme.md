@@ -39,6 +39,7 @@ export PATH=$PATH:$GOROOT/bin
 
 ```
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.41.1
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.49.0
 ```
 
 # debian 安装指定版本 golang
@@ -55,4 +56,15 @@ export GOROOT="/usr/local/go"
 export GOPATH=$HOME/work
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+```
+
+# mac 安装go1.18
+
+```sh
+wget https://go.dev/dl/go1.18.10.darwin-amd64.tar.gz
+tar -zxvf go1.18.10.darwin-amd64.tar.gz
+sudo mv go /usr/local/go
+
+# install linter
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.47.3
 ```
