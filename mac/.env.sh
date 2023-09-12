@@ -214,6 +214,10 @@ function pyr() {
   when-changed -s -r -v -1 "$1" python3 "$1"
 }
 
+function pyjq() {
+  python3 "$1" | jq
+}
+
 function gof() {
   golines -w -m 120 "$1"
 }
