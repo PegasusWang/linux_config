@@ -38,6 +38,7 @@ node_modules/
 
 # ag silver searcher
 .agignore
+.ignore
 
 # IDE
 .idea
