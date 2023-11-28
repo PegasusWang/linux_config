@@ -147,6 +147,7 @@ export NVM_DIR="$HOME/.nvm"
 #nvm use 0.12.0
 alias nvmm='nvm use stable'
 
+
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
@@ -239,6 +240,9 @@ alias mi='osascript ~/.applescript/iterm2.scpt'
 alias lr='osascript ~/.applescript/lr.scpt'
 alias oi='osascript ~/.applescript/open_iterm2.scpt'
 
+func cleanmaster() {
+ gco -b f; ga . ; gmg "f" ; gcm ; gbd f -D;
+}
 
 # 工作用机器等相关配置放到单独文件，不可加入版本库，防止泄露工作敏感信息！！！
 [ -f ~/.work.sh ] && source ~/.work.sh
