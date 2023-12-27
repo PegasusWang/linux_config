@@ -217,7 +217,7 @@ function pyr() {
 
 # pyjq python file and format json
 function pyjq() {
-  python3 "$1" | jq -S
+  python3 "$1" | jq
 }
 
 # jq sort keys
