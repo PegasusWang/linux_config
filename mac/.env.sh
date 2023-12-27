@@ -215,8 +215,14 @@ function pyr() {
   when-changed -s -r -v -1 "$1" python3 "$1"
 }
 
+# pyjq python file and format json
 function pyjq() {
-  python3 "$1" | jq
+  python3 "$1" | jq -S
+}
+
+# jq sort keys
+function pyjqs() {
+  python3 "$1" | jq -S
 }
 
 function gof() {
