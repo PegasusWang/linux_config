@@ -212,6 +212,10 @@ function gor() {
   when-changed -s -r -v -1 "$1" go run "$1"
 }
 
+function got() {
+  when-changed -s -r -v -1 . go test -v
+}
+
 function pyr() {
   when-changed -s -r -v -1 "$1" python3 "$1"
 }
