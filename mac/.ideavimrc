@@ -6,6 +6,10 @@ set nu
 set ignorecase
 set smartcase
 set clipboard+=unnamed
+set keep-english-in-normal
+
+set argtextobj
+set surround
 
 " keymaps
 
@@ -18,10 +22,9 @@ nnoremap <C-c> <Esc>
 " redo
 nnoremap U <C-r>
 
-" comfort shortcuts
-nnoremap <C-d> yyp
+nnoremap <C-w>o :action MaximizeEditorInSplit<CR>
 
-" terminal
+" comfort shortcuts
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
@@ -33,17 +36,23 @@ nnoremap <C-p> :action GotoFile<CR>
 nnoremap <leader>f :action RecentFiles<CR>
 
 " navigation
-nnoremap J }
-nnoremap K {
+" nnoremap J }
+" nnoremap K {
 
 nnoremap sg :action SplitVertically<CR>
 nnoremap sv :action SplitHorizontally<CR>
 nnoremap sm :action MoveEditorToOppositeTabGroup<CR>
 
-nnoremap sh <c-w>h
-nnoremap sl <c-w>l
-nnoremap sj <c-w>j
-nnoremap sk <c-w>k
+" nnoremap sh <c-w>h
+" nnoremap sl <c-w>l
+" nnoremap sj <c-w>j
+" nnoremap sk <c-w>k
+
+" use ctrl+h/j/k/l switch window
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 nnoremap <TAB> :action PreviousTab<CR>
 nnoremap <S-TAB> :action NextTab<CR>
@@ -73,8 +82,8 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 nnoremap gi :action GotoImplementation<CR>
 
 " code selection
-nnoremap <S-j> :action MoveLineDown<CR>
-nnoremap <S-k> :action MoveLineUp<CR>
+" nnoremap <S-j> :action MoveLineDown<CR>
+" nnoremap <S-k> :action MoveLineUp<CR>
 
 " debugging
 nnoremap <leader>dc :action Debug<CR>
@@ -95,7 +104,8 @@ map <leader>J <Plug>(easymotion-s)
 map <leader>j <Plug>(easymotion-f)
 
 Plug 'preservim/nerdtree'
-map <c-n> :NERDTree<CR>
+" map <c-n> :NERDTree<CR>
+map ;a :NERDTree<CR>
 ":NERDTreeFocus
 ":NERDTreeToggle
 map <c-n>n :NERDTreeClose<CR>
