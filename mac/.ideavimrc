@@ -1,3 +1,4 @@
+" source ~/.ideavimrc
 " base configuration
 set showmode
 set incsearch
@@ -15,6 +16,12 @@ set surround
 
 " the leader key
 let mapleader=","
+
+# insert mode map
+inoremap jj <Esc>`^
+noremap <leader>e :q<cr>
+" buffer delete
+noremap <leader>q :bd<cr>
 
 " the escape button
 nnoremap <C-c> <Esc>
@@ -34,6 +41,8 @@ nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 " find
 nnoremap <C-p> :action GotoFile<CR>
 nnoremap <leader>f :action RecentFiles<CR>
+
+nnoremap <leader>b :action FileStructurePopup<CR>
 
 " navigation
 " nnoremap J }
@@ -56,6 +65,8 @@ noremap <C-l> <C-w>l
 
 nnoremap <TAB> :action PreviousTab<CR>
 nnoremap <S-TAB> :action NextTab<CR>
+nnoremap [b :action PreviousTab<CR>
+nnoremap [n :action NextTab<CR>
 
 nnoremap ;q :action CloseContent<CR>
 nnoremap ;a :action CloseAllEditors<CR>
@@ -67,7 +78,7 @@ nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>p :action ReformatCode<CR>
 nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
 nnoremap <leader>su :action ShowUsages<CR>
-nnoremap <leader>sU :action FindUsages<CR>
+" nnoremap <leader>sU :action FindUsages<CR>
 nnoremap <leader>m  :action CollapseRegion<CR>
 nnoremap <leader>M  :action ExpandRegion<CR>
 nnoremap <leader>am :action CollapseAllRegions<CR>
@@ -76,10 +87,12 @@ nnoremap <leader>aM :action ExpandAllRegions<CR>
 
 " code information
 nnoremap <leader>d :action ShowHoverInfo<CR>
-nnoremap <leader>e :action ShowErrorDescription<CR>
+nnoremap <leader>E :action ShowErrorDescription<CR>
 
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gy :action GotoTypeDeclaration<CR>
+nnoremap gr :action ShowUsages<CR>
 
 " code selection
 " nnoremap <S-j> :action MoveLineDown<CR>
