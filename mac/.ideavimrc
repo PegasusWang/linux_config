@@ -18,6 +18,7 @@ set surround
 let mapleader=","
 
 # insert mode map
+imap <Leader>w <esc>:w<CR>
 inoremap jj <Esc>`^
 noremap <leader>e :q<cr>
 " buffer delete
@@ -119,8 +120,7 @@ map <leader>j <Plug>(easymotion-f)
 Plug 'preservim/nerdtree'
 " map <c-n> :NERDTree<CR>
 map ;a :NERDTree<CR>
-":NERDTreeFocus
-":NERDTreeToggle
+map ;e :NERDTreeToggle<CR>
 map <c-n>n :NERDTreeClose<CR>
 ":NERDTreeFind
 ":NERDTreeRefreshRoot
