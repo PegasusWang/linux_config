@@ -22,7 +22,8 @@ imap <Leader>w <esc>:w<CR>
 inoremap jj <Esc>`^
 noremap <leader>e :q<cr>
 " buffer delete
-noremap <leader>q :bd<cr>
+" close all tab group
+noremap <leader>q :action CloseAllEditors<cr>
 
 " the escape button
 nnoremap <C-c> <Esc>
@@ -73,8 +74,8 @@ nnoremap ;q :action CloseContent<CR>
 nnoremap ;a :action CloseAllEditors<CR>
 
 " code interactions
-nnoremap <leader>c :action CommentByLineComment<CR>
-nnoremap <leader>C :action CommentByBlockComment<CR>
+nnoremap <leader>v :action CommentByLineComment<CR>
+nnoremap <leader>V :action CommentByBlockComment<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>p :action ReformatCode<CR>
 nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
