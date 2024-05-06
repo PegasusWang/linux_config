@@ -50,6 +50,7 @@ alias loc="open http://127.0.0.1"
 alias lsn='ls | nl'
 alias mp="mitmproxy -p8888"
 alias grm='git rebase master'
+alias gresetsoft='git reset --soft HEAD^'
 alias gclone='git clone '
 alias gdc='git diff --cached'
 alias gdm='git diff master'
