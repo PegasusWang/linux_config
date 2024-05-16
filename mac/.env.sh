@@ -76,8 +76,9 @@ alias py3s='python3.6 -m http.server'
 alias ipy='ipython'
 alias ci="vi "
 alias vim="vi"
+# https://michaeluloth.com/neovim-switch-configs/
 alias nvi="nvim "
-alias nv="nvim "
+alias nvi_nococ='NVIM_APPNAME=nvim_nococ nvim' # use nvim_nococ ，不启动coc和vim-go，打开大go项目gopls太消耗cpu
 alias cl='clang '
 alias g++='g++ -Wall '
 alias gcc='gcc -Wall '
