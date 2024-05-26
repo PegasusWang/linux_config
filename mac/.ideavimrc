@@ -95,6 +95,7 @@ nnoremap <leader>E :action ShowErrorDescription<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gy :action GotoTypeDeclaration<CR>
 nnoremap gr :action ShowUsages<CR>
+nnoremap gR :action FindUsages<CR>
 
 " code selection
 " nnoremap <S-j> :action MoveLineDown<CR>
