@@ -70,6 +70,10 @@ nnoremap <S-TAB> :action NextTab<CR>
 nnoremap [b :action PreviousTab<CR>
 nnoremap [n :action NextTab<CR>
 
+" Command+` and Command+Shift+` 切换多个项目窗口
+" NextProjectWindow, PreviousProjectWindow, OpenProjectWindows
+nnoremap <leader>op :action OpenProjectWindows<CR>
+
 nnoremap ;q :action CloseContent<CR>
 nnoremap ;a :action CloseAllEditors<CR>
 
