@@ -50,6 +50,10 @@ nnoremap <leader>b :action FileStructurePopup<CR>
 " nnoremap J }
 " nnoremap K {
 
+" Jump between methods
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
 nnoremap sg :action SplitVertically<CR>
 nnoremap sv :action SplitHorizontally<CR>
 nnoremap sm :action MoveEditorToOppositeTabGroup<CR>
