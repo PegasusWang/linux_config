@@ -6,6 +6,7 @@ set nu
 " set relativenumber
 set ignorecase
 set smartcase
+set hls
 set clipboard+=unnamed
 set keep-english-in-normal
 
