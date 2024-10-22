@@ -25,6 +25,7 @@ noremap <leader>e :q<cr>
 " buffer delete
 " close all tab group
 noremap <leader>q :action CloseAllEditors<cr>
+noremap <leader>Y :action CopyPaths<cr>
 
 " the escape button
 nnoremap <C-c> <Esc>
