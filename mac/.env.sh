@@ -122,6 +122,7 @@ alias tnew='tmux new -s '
 alias tpl='tmuxp load '
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias gmt='go mod tidy'
+alias goland='/Applications/GoLand.app/Contents/MacOS/goland '
 
 # youtube
 # python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
