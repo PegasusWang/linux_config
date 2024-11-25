@@ -47,6 +47,7 @@ nnoremap <C-p> :action GotoFile<CR>
 nnoremap <leader>f :action RecentFiles<CR>
 
 nnoremap <leader>b :action FileStructurePopup<CR>
+nnoremap <leader>B :action ActivateStructureToolWindow<CR>
 
 " navigation
 " nnoremap J }
