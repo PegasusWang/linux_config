@@ -127,7 +127,8 @@ nnoremap <leader>rs :action Stop<CR>
 "---------- plugins ----------
 " easy motion
 Plug 'easymotion/vim-easymotion'
-map <leader>J <Plug>(easymotion-s)
+" map <leader>J <Plug>(easymotion-s)
+nmap ss <Plug>(easymotion-s)
 map <leader>j <Plug>(easymotion-f)
 
 Plug 'preservim/nerdtree'
