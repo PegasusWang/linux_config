@@ -127,7 +127,7 @@ alias goland='/Applications/GoLand.app/Contents/MacOS/goland '
 # youtube
 # python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 # alias download_youtube_mp3='yt-dlp --extract-audio --audio-format mp3 --no-playlist'
-alias download_youtube_mp3='yt-dlp yt-dlp --cookies-from-browser chrome  -x --audio-format mp3'
+alias download_youtube_mp3='yt-dlp --cookies-from-browser chrome  -x --audio-format mp3'
 alias download_youtube='yt-dlp --cookies-from-browser chrome -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]" '
 alias download_youtube_mp3_proxy='yt-dlp --proxy 'socks5://127.0.0.1:1080' --extract-audio --audio-format mp3 '
 alias download_youtube_proxy='yt-dlp --proxy 'socks5://127.0.0.1:1080' -f bestvideo+bestaudio '
