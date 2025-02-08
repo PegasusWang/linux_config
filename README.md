@@ -13,6 +13,7 @@
 
 # Mac 终端环境快速安装
 
+如果你使用 mac，可以参考这个文档教程快速设置一个美观的终端环境(包含iterm2/oh-my-zsh/tmux和主题等)：
 https://github.com/PegasusWang/linux_config/tree/master/mac
 
 # Mac 环境快速安装
