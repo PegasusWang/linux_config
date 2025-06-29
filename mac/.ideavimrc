@@ -57,6 +57,9 @@ nnoremap <leader>B :action ActivateStructureToolWindow<CR>
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
+
 nnoremap sg :action SplitVertically<CR>
 nnoremap sv :action SplitHorizontally<CR>
 nnoremap sm :action MoveEditorToOppositeTabGroup<CR>
