@@ -1,4 +1,5 @@
 " source ~/.ideavimrc
+" all action list: https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 " base configuration
 set showmode
 set incsearch
@@ -107,6 +108,7 @@ nnoremap <leader>E :action ShowErrorDescription<CR>
 
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gp :action GotoSuperMethod<CR>
 nnoremap gy :action GotoTypeDeclaration<CR>
 nnoremap gr :action ShowUsages<CR>
 nnoremap gR :action FindUsages<CR>
