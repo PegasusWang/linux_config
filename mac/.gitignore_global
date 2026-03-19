@@ -1,0 +1,86 @@
+# vim
+*.swp
+*.swo
+*.so
+
+# vim plugin
+# https://github.com/tpope/vim-projectionist
+.projections.json
+
+# TOOD file
+TODO.md
+TODO.txt
+todo.md
+todo.txt
+
+# python
+.ropeproject/
+*.pyc
+*.pyo
+
+# testfile
+run_admin.sh
+wnntest.sh
+wnntest/
+wnnrun.sh
+wnnsync.sh
+restart.sh
+upload_novelapi.sh
+upload_bookapi.sh
+upload_novelrpc.sh
+upload_coldstart.sh
+wnntodo.md run.sh
+.python-version
+.tmp
+
+# mvn
+mvn_publish.sh
+
+# js/node
+.tern-port
+.tern-project
+t.js
+node_modules/
+
+# ag silver searcher
+.agignore
+.ignore
+
+# IDE
+.idea
+
+# mac
+.DS_Store
+
+# personal
+mydoc
+_mydoc
+
+# golang
+.gometalinter.json
+
+
+.netrwhist
+
+# redis
+dump.rdb
+
+# novel
+novelapi.sh
+bookapi.sh
+novelfm_api.sh
+novel_vest_api.sh
+novelrpc.sh
+goapi.sh
+
+
+# novel binary
+novel_vest_api
+
+kitex_gen_old
+migrate_rpc
+
+
+# worktree
+.wt
+.worktree
