@@ -84,3 +84,4 @@ migrate_rpc
 # worktree
 .wt
 .worktree
+.work.sh
