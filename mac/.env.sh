@@ -125,6 +125,7 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias gmt='go mod tidy'
 alias goland='/Applications/GoLand.app/Contents/MacOS/goland '
 alias gld='/Applications/GoLand.app/Contents/MacOS/goland '
+alias pyc='/Applications/PyCharm\ CE.app/Contents/MacOS/pycharm '
 alias jn='jupyter notebook'  # pip install notebook
 
 # youtube
