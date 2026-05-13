@@ -1,5 +1,6 @@
 " source ~/.ideavimrc
 " all action list: https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+" goland 2026.1 all action list https://gist.github.com/PegasusWang/8aac4301598a2bafdc0a0cb19aa3fce3
 " base configuration
 set showmode
 set incsearch
