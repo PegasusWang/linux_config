@@ -467,6 +467,7 @@ tmux_conf_uninstall_plugins_on_reload=false
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+set -g @plugin 'hiroppy/tmux-agent-sidebar'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 # prefix + Ctrl-s - save;  prefix + Ctrl-r - restore.  https://github.com/tmux-plugins/tmux-resurrect
@@ -477,6 +478,7 @@ set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
 set -g @resurrect-capture-pane-contents 'on'
+set -g @sidebar_bottom_height '0'
 
 # -- custom variables ----------------------------------------------------------
 
