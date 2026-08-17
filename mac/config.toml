@@ -1,0 +1,79 @@
+onboarding = false
+
+[theme]
+name = "dracula"
+auto_switch = false
+
+[keys]
+# Match the current tmux prefix.
+prefix = "ctrl+b"
+
+# Direct pane navigation, matching Alt + arrow in tmux.
+focus_pane_left = "alt+left"
+focus_pane_right = "alt+right"
+focus_pane_up = "alt+up"
+focus_pane_down = "alt+down"
+
+# Direct tab navigation, corresponding to tmux windows.
+next_tab = "alt+n"
+previous_tab = "alt+p"
+
+# Tmux-style prefix actions.
+detach = "prefix+d"
+new_tab = "prefix+c"
+rename_tab = "prefix+comma"
+close_tab = "prefix+ampersand"
+close_pane = "prefix+x"
+zoom = "prefix+m"
+split_horizontal = "prefix+minus"
+split_vertical = "prefix+v"
+switch_tab = "prefix+1..9"
+
+# agent
+previous_agent = "alt+k"
+next_agent = "alt+j"
+focus_agent = "alt+1..9"
+
+[ui]
+agent_panel_sort = "priority"
+show_agent_labels_on_pane_borders = false
+pane_borders = false
+pane_gaps = false
+hide_tab_bar_when_single_tab = true
+
+[ui.toast]
+delivery = "terminal"
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  ["state_icon", "agent", "state_text"],
+  ["terminal_title_stripped"],
+  ["workspace", "tab"],
+]
+
+
+# herdr plugin action invoke down --plugin herdr-nav-plus
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "herdr-nav-plus.left"
+description = "navigate left (vim/pane)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "herdr-nav-plus.down"
+description = "navigate down (vim/pane/workspace)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "herdr-nav-plus.up"
+description = "navigate up (vim/pane/workspace)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "herdr-nav-plus.right"
+description = "navigate right (vim/pane)"
