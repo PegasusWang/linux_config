@@ -121,11 +121,12 @@ alias ta='tmux at -t'
 alias tn='tmux rename -t'
 alias tnew='tmux new -s '
 alias tpl='tmuxp load '
+alias h='herdr '
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias gmt='go mod tidy'
 alias goland='/Applications/GoLand.app/Contents/MacOS/goland '
 alias gld='/Applications/GoLand.app/Contents/MacOS/goland '
-alias pyc='/Applications/PyCharm\ CE.app/Contents/MacOS/pycharm '
+alias pyc='/Applications/PyCharm.app/Contents/MacOS/pycharm '
 alias jn='jupyter notebook'  # pip install notebook
 
 # youtube
