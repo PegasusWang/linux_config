@@ -1,5 +1,9 @@
 onboarding = false
 
+# ~/.config/herdr/config.toml
+[session]
+resume_agents_on_restore = true
+
 [theme]
 name = "dracula"
 auto_switch = false
@@ -18,6 +22,10 @@ focus_pane_down = "alt+down"
 next_tab = "alt+n"
 previous_tab = "alt+p"
 
+# workspace
+previous_workspace = "ctrl+p"
+next_workspace = "ctrl+n"
+
 # Tmux-style prefix actions.
 detach = "prefix+d"
 new_tab = "prefix+c"
@@ -25,29 +33,48 @@ rename_tab = "prefix+comma"
 close_tab = "prefix+ampersand"
 close_pane = "prefix+x"
 zoom = "prefix+m"
-split_horizontal = "prefix+minus"
-split_vertical = "prefix+v"
+split_horizontal = "prefix+'"
+split_vertical = "prefix+%"
 switch_tab = "prefix+1..9"
 
 # agent
+previous_agent = "alt+k"
+next_agent = "alt+j"
 focus_agent = "alt+1..9"
 
 [ui]
 agent_panel_sort = "priority"
 show_agent_labels_on_pane_borders = false
-pane_borders = false
+pane_borders = true
 pane_gaps = false
 hide_tab_bar_when_single_tab = true
 
+status_indicators = "symbols"
 [ui.toast]
 delivery = "terminal"
 
+# [ui.sidebar.agents]
+# row_gap = 0
+# rows = [
+#   ["state_icon", "agent", "state_text"],
+#   ["terminal_title_stripped"],
+#   ["workspace", "tab"],
+# ]
+
+# https://github.com/douglascorrea/herdr-agent-inbox
 [ui.sidebar.agents]
 row_gap = 0
 rows = [
   ["state_icon", "agent", "state_text"],
-  ["terminal_title_stripped"],
-  ["workspace", "tab"],
+  [{ token = "$flag", fg = "#f1fa8c", bold = true }, "agent", "workspace", { token = "$age", dim = true }],
+  [{ token = "$last_prompt", fg = "#8be9fd", dim = true }],
+  [{ token = "$last_reply", fg = "#50fa7b", dim = true }],
+]
+
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace", "$agents", { token = "$busy", dim = true }],
+  ["branch", "git_status"],
 ]
 
 
