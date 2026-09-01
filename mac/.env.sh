@@ -46,9 +46,16 @@ alias lcgo='leetcode show -x -g -l golang'
 function lcso() { leetcode show "$1" --solution } # leetcode show 1 --solution
 alias lct='leetcode test '
 alias lcs='leetcode submit '
+
+# 后边跟上题号数字使用 cargo install leetcode-cli
+alias led='leetcode edit --lang=python '
+alias let='leetcode test '
+alias lee='leetcode exec '
+
 alias loc="open http://127.0.0.1"
 alias lsn='ls | nl'
 alias mp="mitmproxy -p8888"
+alias gcm='git checkout $(git_main_branch)'
 alias grm='git rebase master'
 alias gitresetsoft='git reset --soft HEAD^'
 alias gclone='git clone '
