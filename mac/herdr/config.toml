@@ -23,8 +23,8 @@ next_tab = "alt+n"
 previous_tab = "alt+p"
 
 # workspace
-previous_workspace = "ctrl+p"
-next_workspace = "ctrl+n"
+previous_workspace = "ctrl+["
+next_workspace = "ctrl+]"
 
 # Tmux-style prefix actions.
 detach = "prefix+d"
@@ -44,7 +44,7 @@ focus_agent = "alt+1..9"
 
 [ui]
 agent_panel_sort = "priority"
-show_agent_labels_on_pane_borders = false
+show_agent_labels_on_pane_borders = true
 pane_borders = true
 pane_gaps = false
 hide_tab_bar_when_single_tab = true
